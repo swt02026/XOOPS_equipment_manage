@@ -1,8 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jjes
- * Date: 2016/10/27
- * Time: 下午 02:26
- */
+    include '../../../include/cp_header.php';
+    xoops_cp_header();
+    xoops_cp_footer();
 ?>
