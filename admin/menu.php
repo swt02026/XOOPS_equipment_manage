@@ -18,7 +18,7 @@
             'title' => '設備借用',
             'link' => 'index.php',
             'desc' => '設備借用',
-            'icon' => 'image/index.jpg'
+            'icon' => 'image/admin/index.jpg'
         ]
     ];
 ?>
