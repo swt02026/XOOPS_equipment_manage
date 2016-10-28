@@ -1,0 +1,6 @@
+CREATE TABLE `equipment_owner` (
+  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `owner` VARCHAR (10) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
