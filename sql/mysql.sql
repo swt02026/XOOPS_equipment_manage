@@ -10,7 +10,9 @@ CREATE TABLE `equipment_desc` (
   `name` VARCHAR (30) NOT NULL DEFAULT '',
   `image` LONGBLOB NOT NULL ,
   PRIMARY KEY (`id`),
-  CONSTRAINT test FOREIGN KEY (`id`) REFERENCES equipment_owner(id) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT test FOREIGN KEY (`id`) REFERENCES equipment_owner(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 )
   COLLATE='utf8_general_ci'
   ENGINE=InnoDB;
