@@ -10,7 +10,7 @@
                  ON %1$s.id=%2$s.id",
         $xoopsDB->prefix('equipment_desc'), $xoopsDB('equipment_owner'));
 
-    $query = $xoopsDB->query($sql);
-    print_r($query->fetchArray($query));
+    //$query = $xoopsDB->query($sql);
+   // print_r($query->fetchArray($query));
     xoops_cp_footer();
 ?>
