@@ -43,9 +43,9 @@
         <entry file="file://$PROJECT_DIR$/admin/manage.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding>
-                <marker date="1477892651770" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
+                <marker date="1477892735345" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
               </folding>
             </state>
           </provider>
@@ -282,12 +282,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="7813000" />
+      <workItem from="1477869997504" duration="7897000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28343000" />
+    <option name="totallyTimeSpent" value="28427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -368,7 +368,7 @@
         <state relative-caret-position="51">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <marker date="1477892651770" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
+            <marker date="1477892735345" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
           </folding>
         </state>
       </provider>
@@ -402,7 +402,7 @@
         <state relative-caret-position="68">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <marker date="1477892651770" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
+            <marker date="1477892735345" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
           </folding>
         </state>
       </provider>
@@ -451,7 +451,7 @@
         <state relative-caret-position="68">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <marker date="1477892651770" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
+            <marker date="1477892735345" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
           </folding>
         </state>
       </provider>
@@ -577,9 +577,9 @@
     <entry file="file://$PROJECT_DIR$/admin/manage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding>
-            <marker date="1477892651770" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
+            <marker date="1477892735345" expanded="true" signature="133:275" ph="SELECT %1$.n... " />
           </folding>
         </state>
       </provider>
