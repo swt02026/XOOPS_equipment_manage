@@ -6,7 +6,7 @@ CREATE TABLE `equipment_owner` (
   COLLATE='utf8_general_ci'
   ENGINE=InnoDB;
 CREATE TABLE `equipment_desc` (
-  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` SMALLINT,
   `name` VARCHAR (30) NOT NULL DEFAULT '',
   `image` LONGBLOB NOT NULL ,
   PRIMARY KEY (`id`),
