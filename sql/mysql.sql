@@ -3,4 +3,12 @@ CREATE TABLE `equipment_owner` (
   `owner` VARCHAR (10) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
+CREATE TABLE `equipment_desc` (
+  `id` SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR (30) NOT NULL DEFAULT '',
+  `image` LONGBLOB NOT NULL ,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id`) REFERENCES equipment_owner(id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
 
