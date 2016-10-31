@@ -11,6 +11,6 @@
         $xoopsDB->prefix('equipment_desc'), $xoopsDB->prefix('equipment_owner'));
 
     $query = $xoopsDB->query($sql);
-    print_r($query->fetchArray($query));
+    var_dump($query->fetchArray($query));
     xoops_cp_footer();
 ?>
