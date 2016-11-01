@@ -29,11 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="xoops_version.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xoops_version.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="46" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="manage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/manage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="306">
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="43" />
               <folding>
                 <marker date="1477981328701" expanded="true" signature="133:158" ph="SELECT owner... " />
                 <marker date="1477981328701" expanded="true" signature="133:159" ph="SELECT owner... " />
@@ -52,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="append.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="append.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -75,8 +85,8 @@
       <file leaf-file-name="equipment_manage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/equipment_manage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="255">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -102,12 +112,12 @@
         <option value="$PROJECT_DIR$/admin/about.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/templates/equipment_about.html" />
-        <option value="$PROJECT_DIR$/xoops_version.php" />
         <option value="$PROJECT_DIR$/admin/manage.php" />
         <option value="$PROJECT_DIR$/sql/mysql.sql" />
         <option value="$PROJECT_DIR$/templates/equipment_append.html" />
-        <option value="$PROJECT_DIR$/templates/equipment_manage.html" />
         <option value="$PROJECT_DIR$/admin/crud/append.php" />
+        <option value="$PROJECT_DIR$/templates/equipment_manage.html" />
+        <option value="$PROJECT_DIR$/xoops_version.php" />
       </list>
     </option>
   </component>
@@ -323,12 +333,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="30981000" />
+      <workItem from="1477869997504" duration="31213000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51511000" />
+    <option name="totallyTimeSpent" value="51743000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -585,25 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xoops_version.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/manage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <marker date="1477981328701" expanded="true" signature="133:158" ph="SELECT owner... " />
-            <marker date="1477981328701" expanded="true" signature="133:159" ph="SELECT owner... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -630,6 +621,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sql/mysql.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -640,16 +639,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/equipment_manage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="255">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
+    <entry file="file://$PROJECT_DIR$/admin/manage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="306">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="43" />
+          <folding>
+            <marker date="1477981328701" expanded="true" signature="133:158" ph="SELECT owner... " />
+            <marker date="1477981328701" expanded="true" signature="133:159" ph="SELECT owner... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xoops_version.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="46" />
           <folding />
         </state>
       </provider>
