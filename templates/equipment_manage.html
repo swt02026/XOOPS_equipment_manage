@@ -12,16 +12,26 @@
             <td>操作</td>
         </tr>
         </thead>
-        <tbody>
 
-        <{foreach from=$dataArray item=data}>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <tbody>
+                <tr>
+                    <form action="crud/append.php">
+                    <td>
+                        <label for="名稱"></label>
+                        <input id="名稱" type="text" name="name">
+                    </td>
+                    <td>
+                        <label for="持有者"></label>
+                        <input id="持有者" type="text" name="owner">
+                    </td>
+                    <td>
+                        <label for="持有者"></label>
+                        <input id="持有者" type="text" name="owner">
+                    </td>
+                    </form>
+                </tr>
+            </tbody>
 
-        </tbody>
     </table>
 </body>
 </html>
