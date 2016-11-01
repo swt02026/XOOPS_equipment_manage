@@ -42,11 +42,11 @@
       <file leaf-file-name="manage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/manage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="187">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding>
-                <marker date="1477979986161" expanded="true" signature="133:158" ph="SELECT owner... " />
-                <marker date="1477979986161" expanded="true" signature="133:159" ph="SELECT owner... " />
+                <marker date="1477980053966" expanded="true" signature="133:158" ph="SELECT owner... " />
+                <marker date="1477980053966" expanded="true" signature="133:159" ph="SELECT owner... " />
               </folding>
             </state>
           </provider>
@@ -283,15 +283,15 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="25667000" />
+      <workItem from="1477869997504" duration="25733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46197000" />
+    <option name="totallyTimeSpent" value="46263000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
+    <frame x="1016" y="-8" width="1296" height="1040" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -369,8 +369,8 @@
         <state relative-caret-position="51">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <marker date="1477979986161" expanded="true" signature="133:158" ph="SELECT owner... " />
-            <marker date="1477979986161" expanded="true" signature="133:159" ph="SELECT owner... " />
+            <marker date="1477980053966" expanded="true" signature="133:158" ph="SELECT owner... " />
+            <marker date="1477980053966" expanded="true" signature="133:159" ph="SELECT owner... " />
           </folding>
         </state>
       </provider>
@@ -404,8 +404,8 @@
         <state relative-caret-position="68">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <marker date="1477979986161" expanded="true" signature="133:158" ph="SELECT owner... " />
-            <marker date="1477979986161" expanded="true" signature="133:159" ph="SELECT owner... " />
+            <marker date="1477980053966" expanded="true" signature="133:158" ph="SELECT owner... " />
+            <marker date="1477980053966" expanded="true" signature="133:159" ph="SELECT owner... " />
           </folding>
         </state>
       </provider>
@@ -454,8 +454,8 @@
         <state relative-caret-position="68">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <marker date="1477979986161" expanded="true" signature="133:158" ph="SELECT owner... " />
-            <marker date="1477979986161" expanded="true" signature="133:159" ph="SELECT owner... " />
+            <marker date="1477980053966" expanded="true" signature="133:158" ph="SELECT owner... " />
+            <marker date="1477980053966" expanded="true" signature="133:159" ph="SELECT owner... " />
           </folding>
         </state>
       </provider>
@@ -580,11 +580,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/manage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
-            <marker date="1477979986161" expanded="true" signature="133:158" ph="SELECT owner... " />
-            <marker date="1477979986161" expanded="true" signature="133:159" ph="SELECT owner... " />
+            <marker date="1477980053966" expanded="true" signature="133:158" ph="SELECT owner... " />
+            <marker date="1477980053966" expanded="true" signature="133:159" ph="SELECT owner... " />
           </folding>
         </state>
       </provider>
