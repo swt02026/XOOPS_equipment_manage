@@ -7,6 +7,7 @@
         $xoopsDB->prefix('equipment_desc'));
 
     $query = $xoopsDB->query($sql);
-    var_dump($xoopsDB->fetchArray($query));
+    var_dump($query);
+    //var_dump($query->fetchArray($query));
     xoops_cp_footer();
 ?>
