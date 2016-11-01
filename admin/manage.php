@@ -8,8 +8,8 @@
 
     $query = $xoopsDB->query($sql);
 
-    if($xoopsDB->getFieldsNum($query) > 0){
-        echo "something";
+    if($xoopsDB->getFieldsNum($query) > 1){
+        echo $xoopsDB->getFieldsNum($query);
         while ($row = $xoopsDB->fetchArray($query)){
 
         }
