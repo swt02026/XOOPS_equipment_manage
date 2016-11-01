@@ -6,11 +6,7 @@
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
-    <script>
-        $('#add_data').click(function () {
-            $('#add_form').toggle();
-        });
-    </script>
+
 </head>
 <body>
     <table class="table">
@@ -23,7 +19,7 @@
         </thead>
     </table>
     <button id="add_data" onclick="$('#add_form').toggle();">新增資料</button>
-    <form action="crud/append.php" METHOD="post" enctype="multipart/form-data"  >
+    <form action="crud/append.php" METHOD="post" enctype="multipart/form-data" hidden>
         <table id="add_form" >
             <tbody>
                 <tr>
