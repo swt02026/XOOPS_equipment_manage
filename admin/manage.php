@@ -9,9 +9,11 @@
     $query = $xoopsDB->query($sql);
     $query_data = [];
     if($xoopsDB->getRowsNum($query) > 0){
+
         while ($row = $xoopsDB->fetchArray($query)){
-            var_dump($row);
+            $query_data[] = $row;
         }
+        print_r($query_data);
     }
     else{
 

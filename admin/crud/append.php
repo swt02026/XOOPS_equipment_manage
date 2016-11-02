@@ -20,10 +20,10 @@
         $sql = sprintf("INSERT INTO %s VALUES(NULL, '{$post_data_name}', '{$owner}', {$post_data_amount});"
             , $xoopsDB->prefix('equipment_desc'));
 
-        echo $sql;
+        //echo $sql;
         $xoopsDB->queryF($sql);
     }
 
 
-    //echo "<script>window.location.href='../manage.php';</script>";
+    echo "<script>window.location.href='../manage.php';</script>";
 
