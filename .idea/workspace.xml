@@ -42,13 +42,13 @@
       <file leaf-file-name="append.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+            <state relative-caret-position="374">
+              <caret line="22" column="106" selection-start-line="22" selection-start-column="106" selection-end-line="22" selection-end-column="106" />
               <folding>
-                <marker date="1478055094006" expanded="true" signature="502:604" ph="INSERT INTO " />
-                <marker date="1478055094006" expanded="true" signature="502:638" ph="INSERT INTO " />
-                <marker date="1478055094006" expanded="true" signature="689:742" ph="SELECT owner... " />
-                <marker date="1478055094006" expanded="true" signature="689:757" ph="SELECT owner... " />
+                <marker date="1478055168508" expanded="true" signature="502:604" ph="INSERT INTO " />
+                <marker date="1478055168508" expanded="true" signature="502:638" ph="INSERT INTO " />
+                <marker date="1478055168508" expanded="true" signature="689:742" ph="SELECT owner... " />
+                <marker date="1478055168508" expanded="true" signature="689:767" ph="SELECT owner... " />
               </folding>
             </state>
           </provider>
@@ -352,12 +352,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="48612000" />
+      <workItem from="1477869997504" duration="48688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69142000" />
+    <option name="totallyTimeSpent" value="69218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -690,13 +690,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        <state relative-caret-position="374">
+          <caret line="22" column="106" selection-start-line="22" selection-start-column="106" selection-end-line="22" selection-end-column="106" />
           <folding>
-            <marker date="1478055094006" expanded="true" signature="502:604" ph="INSERT INTO " />
-            <marker date="1478055094006" expanded="true" signature="502:638" ph="INSERT INTO " />
-            <marker date="1478055094006" expanded="true" signature="689:742" ph="SELECT owner... " />
-            <marker date="1478055094006" expanded="true" signature="689:757" ph="SELECT owner... " />
+            <marker date="1478055168508" expanded="true" signature="502:604" ph="INSERT INTO " />
+            <marker date="1478055168508" expanded="true" signature="502:638" ph="INSERT INTO " />
+            <marker date="1478055168508" expanded="true" signature="689:742" ph="SELECT owner... " />
+            <marker date="1478055168508" expanded="true" signature="689:767" ph="SELECT owner... " />
           </folding>
         </state>
       </provider>
