@@ -5,7 +5,7 @@
  * Date: 2016/11/1
  * Time: 下午 02:29
  */
-    include '../../../mainfile.php';
+    include '../../../../mainfile.php';
 
     $post_data = array_map("addslashes", $_POST);
     $post_data_name = $post_data["name"];
