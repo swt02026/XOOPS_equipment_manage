@@ -20,15 +20,14 @@
         $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`) VALUES('{$post_data_name}', '{$owner}', {$post_data_amount});"
             , $xoopsDB->prefix('equipment_desc'));
 
-        $check_sql = sprintf("SELECT owner, name FROM %s WHERE owner='{$owner}' AND name='{$post_data_name}';",
+        /*$check_sql = sprintf("SELECT owner, name FROM %s WHERE owner='{$owner}' AND name='{$post_data_name}';",
             $xoopsDB->prefix('equipment_desc'));
 
         $check_result = $xoopsDB->query($check_sql);
+        */
 
-        if($xoopsDB->getRowsNum($check_result) == 0) {
 
-            $xoopsDB->queryF($sql);
-        }
+        $xoopsDB->queryF($sql);
     }
 
 
