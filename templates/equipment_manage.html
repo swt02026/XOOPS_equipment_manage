@@ -26,7 +26,17 @@
                 <td>數量</td>
             </tr>
         </thead>
-
+        <tbody>
+            <{foreach from=$query_rows item=row}>
+                <tr>
+                    <{foreach from=$row item=elem}>
+                        <td>
+                            <{$elem}>
+                        </td>
+                    <{/foreach}>
+                </tr>
+            <{/foreach}>
+        </tbody>
     </table>
 
     <button id="add_data" onclick="$('#add_form').toggle();">新增資料</button>
