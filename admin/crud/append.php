@@ -9,9 +9,6 @@
 
     $post_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
 
-
-
-
     if(strlen( $post_data["name"]) &&
         strlen($post_data["amount"]) &&
         intval($post_data["amount"]) > 0) {
@@ -23,7 +20,7 @@
         $sql = sprintf("INSERT INTO %s VALUES(NULL, '{$post_data_name}', '{$owner}', {$post_data_amount})"
             , $xoopsDB->prefix('equipment_manage'));
 
-        echo $sql;
+        echo $post_data_name;
     }
 
 
