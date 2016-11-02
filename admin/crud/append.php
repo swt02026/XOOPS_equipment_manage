@@ -19,5 +19,5 @@
 
         echo $sql;
     }
-    header("../manage.php");
+    echo "<script>window.location='../manage.php'</script>";
 
