@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <script
@@ -18,27 +18,34 @@
 
 </head>
 <body>
-    <table class="table">
-        <thead>
-            <tr>
-                <td>名稱</td>
-                <td>持有者</td>
-                <td>數量</td>
-            </tr>
-        </thead>
-        <tbody>
-            <{foreach from=$query_rows item=row}>
+    <form action="crud/delete.php">
+        <table class="table">
+            <thead>
                 <tr>
-                    <{foreach from=$row item=elem}>
-                        <td>
-                            <{$elem}>
-                        </td>
-                    <{/foreach}>
+                    <td>名稱</td>
+                    <td>持有者</td>
+                    <td>數量</td>
+                    <td>操作</td>
                 </tr>
-            <{/foreach}>
-        </tbody>
-    </table>
-
+            </thead>
+            <tbody>
+                <{foreach from=$query_rows item=row}>
+                    <tr>
+                        <{foreach from=$row item=elem name=it}>
+                            <td>
+                                <{if $smarty.foreach.it.index != 0}>
+                                    <{$elem}>
+                                <{/if}>
+                                <{else}>
+                                    <input type="submit" name="刪除" value="<{$elem}>" />
+                                <{/else}>
+                            </td>
+                        <{/foreach}>
+                    </tr>
+                <{/foreach}>
+            </tbody>
+        </table>
+    </form>
     <button id="add_data" onclick="$('#add_form').toggle();">新增資料</button>
     <form action="crud/append.php" METHOD="post" enctype="multipart/form-data">
         <table id="add_form"  style="display: none;">
