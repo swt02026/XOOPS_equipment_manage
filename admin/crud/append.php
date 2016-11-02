@@ -7,17 +7,25 @@
  */
     include '../../../../mainfile.php';
 
-    $post_data = array_map("addslashes", $_POST);
-    $post_data_name = $post_data["name"];
-    $post_data_amount = $post_data["amount"];
-    $owner = $xoopsUser->uname();
+    $post_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
 
-    if(strlen( $post_data["name"]) && strlen($post_data["amount"])) {
 
-        $sql = sprintf("INSERT INTO %s VALUES(NULL, '{$post_data_name}', '{$owner}', '{$post_data_amount}')"
+
+
+    if(strlen( $post_data["name"]) &&
+        strlen($post_data["amount"]) &&
+        intval($post_data["amount"]) > 0) {
+
+        $post_data_name = $post_data["name"];
+        $post_data_amount = intval($post_data["amount"]);
+        $owner = $xoopsUser->uname();
+
+        $sql = sprintf("INSERT INTO %s VALUES(NULL, '{$post_data_name}', '{$owner}', {$post_data_amount})"
             , $xoopsDB->prefix('equipment_manage'));
 
         echo $sql;
     }
-    echo "<script>window.location='../manage.php'</script>";
+
+
+    //echo "<script>window.location.href='../manage.php';</script>";
 
