@@ -12,7 +12,7 @@
     $post_data_amount = $post_data["amount"];
     $owner = $xoopsUser->uname();
 
-    $sql = sprintf("INSERT INTO %s VALUES(\'{$post_data_name}\', \'{$owner}\', \'{$post_data_amount}\')"
+    $sql = sprintf("INSERT INTO %s VALUES('{$post_data_name}', '{$owner}', '{$post_data_amount}')"
         , $xoopsDB->prefix('equipment_manage'));
 
     echo $sql;
