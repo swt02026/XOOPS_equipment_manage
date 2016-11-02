@@ -3,7 +3,8 @@ CREATE TABLE `equipment_desc` (
   `owner` VARCHAR (10) NOT NULL DEFAULT '',
   `name` VARCHAR (30) NOT NULL DEFAULT '',
   `amount` INT UNSIGNED NOT NULL ,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT uq UNIQUE (owner, name)
 )
   COLLATE='utf8_general_ci'
   ENGINE=InnoDB;
