@@ -7,17 +7,18 @@
         $xoopsDB->prefix('equipment_desc'));
 
     $query = $xoopsDB->query($sql);
-    $query_data = [];
+
+
     if($xoopsDB->getRowsNum($query) > 0){
 
+        $query_rows = [];
         while ($row = $xoopsDB->fetchArray($query)){
-            $query_data[] = $row;
+            $query_rows[] = $row;
         }
         print_r($query_data);
+        $xoopsTpl->assign('query_rows', $query_rows);
     }
-    else{
 
-    }
     $xoopsTpl->display('db:equipment_manage.html');
     xoops_cp_footer();
 ?>

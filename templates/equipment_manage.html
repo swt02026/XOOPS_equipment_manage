@@ -36,11 +36,11 @@
                 <tr>
                     <td>
                         名稱
-                        <input type="text" name="name">
+                        <input type="text" name="name" pattern="[^-*.,!;']+">
                     </td>
                     <td>
                         數量
-                        <input type="text" name="amount">
+                        <input type="text" name="amount" pattern="[1-9]\d*">
                     </td>
                     <td>
                         <input type="submit" value="新增">
