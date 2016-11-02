@@ -35,10 +35,9 @@
                             <td>
                                 <{if $smarty.foreach.it.index != 0}>
                                     <{$elem}>
-                                <{/if}>
                                 <{else}>
                                     <input type="submit" name="刪除" value="<{$elem}>" />
-                                <{/else}>
+                                <{/if}>
                             </td>
                         <{/foreach}>
                     </tr>
