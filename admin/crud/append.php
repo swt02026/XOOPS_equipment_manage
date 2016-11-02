@@ -7,13 +7,13 @@
  */
     include '../../../../mainfile.php';
 
-    $post_data = array_map("addslashes", $_POST);
-    $post_data_name = $post_data["name"];
-    $post_data_amount = $post_data["amount"];
-    $owner = $xoopsUser->uname();
+    list($post_data_name, $post_data_amount) = array_map("addslashes", $_POST);
 
-    $sql = sprintf("INSERT INTO %s VALUES('{$post_data_name}', '{$owner}', '{$post_data_amount}')"
+
+    $owner = $xoopsUser->uname();
+    $sql = sprintf("INSERT INTO %s VALUES(NULL, '{$post_data_name}', '{$owner}', '{$post_data_amount}')"
         , $xoopsDB->prefix('equipment_manage'));
 
     echo $sql;
+
 
