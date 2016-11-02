@@ -42,11 +42,11 @@
       <file leaf-file-name="append.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
               <folding>
-                <marker date="1478053751905" expanded="true" signature="502:610" ph="INSERT INTO " />
-                <marker date="1478053751905" expanded="true" signature="502:644" ph="INSERT INTO " />
+                <marker date="1478053813792" expanded="true" signature="502:604" ph="INSERT INTO " />
+                <marker date="1478053813792" expanded="true" signature="502:638" ph="INSERT INTO " />
               </folding>
             </state>
           </provider>
@@ -350,12 +350,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="47269000" />
+      <workItem from="1477869997504" duration="47330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67799000" />
+    <option name="totallyTimeSpent" value="67860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -688,11 +688,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="459">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
           <folding>
-            <marker date="1478053751905" expanded="true" signature="502:610" ph="INSERT INTO " />
-            <marker date="1478053751905" expanded="true" signature="502:644" ph="INSERT INTO " />
+            <marker date="1478053813792" expanded="true" signature="502:604" ph="INSERT INTO " />
+            <marker date="1478053813792" expanded="true" signature="502:638" ph="INSERT INTO " />
           </folding>
         </state>
       </provider>
