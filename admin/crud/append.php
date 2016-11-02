@@ -18,7 +18,7 @@
         $owner = $xoopsUser->uname();
 
         $sql = sprintf("INSERT INTO %s VALUES(NULL, '{$post_data_name}', '{$owner}', {$post_data_amount});"
-            , $xoopsDB->prefix('equipment_manage'));
+            , $xoopsDB->prefix('equipment_desc'));
 
         echo $sql;
         $xoopsDB->queryF($sql);
