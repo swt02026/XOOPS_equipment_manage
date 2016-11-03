@@ -85,14 +85,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="equipment_manage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="equipment_manage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/equipment_manage.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="38" column="112" selection-start-line="38" selection-start-column="112" selection-end-line="38" selection-end-column="112" />
+              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#form#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/crud/delete.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,6 +134,7 @@
         <option value="$PROJECT_DIR$/admin/crud/append.php" />
         <option value="$PROJECT_DIR$/admin/manage.php" />
         <option value="$PROJECT_DIR$/templates/equipment_manage.html" />
+        <option value="$PROJECT_DIR$/admin/crud/delete.php" />
       </list>
     </option>
   </component>
@@ -350,12 +361,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="60777000" />
+      <workItem from="1477869997504" duration="60856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81307000" />
+    <option name="totallyTimeSpent" value="81386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -690,10 +701,18 @@
     <entry file="file://$PROJECT_DIR$/templates/equipment_manage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="38" column="112" selection-start-line="38" selection-start-column="112" selection-end-line="38" selection-end-column="112" />
+          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
           <folding>
             <element signature="n#style#0;n#table#0;n#form#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/crud/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
