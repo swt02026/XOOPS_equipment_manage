@@ -5,6 +5,7 @@
  * Date: 2016/11/3
  * Time: 上午 08:25
  */
+    include '../../../../mainfile.php';
     var_dump($_POST);
 
     $delete_data = array_map("addslashes",
@@ -23,3 +24,4 @@
         $xoopsDB->queryF($sql);
 
     }
+    header('../manage.php');

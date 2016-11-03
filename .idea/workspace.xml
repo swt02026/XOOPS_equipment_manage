@@ -42,8 +42,8 @@
       <file leaf-file-name="append.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+            <state relative-caret-position="119">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="39" />
               <folding>
                 <marker date="1478056732330" expanded="true" signature="502:604" ph="INSERT INTO " />
                 <marker date="1478056732330" expanded="true" signature="502:638" ph="INSERT INTO " />
@@ -100,15 +100,15 @@
       <file leaf-file-name="delete.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/crud/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state relative-caret-position="442">
+              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
               <folding>
-                <marker date="1478135367519" expanded="true" signature="436:459" ph="DELETE FROM " />
-                <marker date="1478135367519" expanded="true" signature="436:472" ph="DELETE FROM " />
-                <marker date="1478135367519" expanded="true" signature="436:484" ph="DELETE FROM " />
-                <marker date="1478135367519" expanded="true" signature="436:497" ph="DELETE FROM " />
-                <marker date="1478135367519" expanded="true" signature="436:506" ph="DELETE FROM " />
-                <marker date="1478135367519" expanded="true" signature="436:507" ph="DELETE FROM " />
+                <marker date="1478135537952" expanded="true" signature="476:499" ph="DELETE FROM " />
+                <marker date="1478135537952" expanded="true" signature="476:512" ph="DELETE FROM " />
+                <marker date="1478135537952" expanded="true" signature="476:524" ph="DELETE FROM " />
+                <marker date="1478135537952" expanded="true" signature="476:537" ph="DELETE FROM " />
+                <marker date="1478135537952" expanded="true" signature="476:546" ph="DELETE FROM " />
+                <marker date="1478135537952" expanded="true" signature="476:547" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -368,12 +368,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="63026000" />
+      <workItem from="1477869997504" duration="63200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83556000" />
+    <option name="totallyTimeSpent" value="83730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -706,8 +706,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="39" />
           <folding>
             <marker date="1478056732330" expanded="true" signature="502:604" ph="INSERT INTO " />
             <marker date="1478056732330" expanded="true" signature="502:638" ph="INSERT INTO " />
@@ -717,15 +717,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="442">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
           <folding>
-            <marker date="1478135367519" expanded="true" signature="436:459" ph="DELETE FROM " />
-            <marker date="1478135367519" expanded="true" signature="436:472" ph="DELETE FROM " />
-            <marker date="1478135367519" expanded="true" signature="436:484" ph="DELETE FROM " />
-            <marker date="1478135367519" expanded="true" signature="436:497" ph="DELETE FROM " />
-            <marker date="1478135367519" expanded="true" signature="436:506" ph="DELETE FROM " />
-            <marker date="1478135367519" expanded="true" signature="436:507" ph="DELETE FROM " />
+            <marker date="1478135537952" expanded="true" signature="476:499" ph="DELETE FROM " />
+            <marker date="1478135537952" expanded="true" signature="476:512" ph="DELETE FROM " />
+            <marker date="1478135537952" expanded="true" signature="476:524" ph="DELETE FROM " />
+            <marker date="1478135537952" expanded="true" signature="476:537" ph="DELETE FROM " />
+            <marker date="1478135537952" expanded="true" signature="476:546" ph="DELETE FROM " />
+            <marker date="1478135537952" expanded="true" signature="476:547" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
