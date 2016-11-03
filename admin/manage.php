@@ -15,7 +15,6 @@
         while ($row = $xoopsDB->fetchArray($query)){
             $query_rows[] = $row;
         }
-        print_r($query_data);
         $xoopsTpl->assign('query_rows', $query_rows);
     }
 
