@@ -24,4 +24,4 @@
         $xoopsDB->queryF($sql);
 
     }
-    header('../manage.php');
+    header('location:../manage.php');
