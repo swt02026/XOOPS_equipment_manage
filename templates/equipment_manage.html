@@ -18,7 +18,7 @@
 
 </head>
 <body>
-    <form action="crud/delete.php">
+    <form action="crud/delete.php" method="post" enctype="multipart/form-data">
         <table class="table">
             <thead>
                 <tr>
@@ -33,10 +33,10 @@
                     <tr>
                         <{foreach from=$row item=elem name=it}>
                             <td>
-                                <{if $smarty.foreach.it.index != 0}>
+                                <{if $smarty.foreach.it.index != 3}>
                                     <{$elem}>
                                 <{else}>
-                                    <input type="submit" name="刪除" value="<{$elem}>" />
+                                    <input type="submit"  value="delete" onclick="$('#delete_id').value = <{$elem}>;" />
                                 <{/if}>
                             </td>
                         <{/foreach}>
@@ -44,6 +44,7 @@
                 <{/foreach}>
             </tbody>
         </table>
+        <input type="hidden" id="delete_id" name="delete_id"/>
     </form>
     <button id="add_data" onclick="$('#add_form').toggle();">新增資料</button>
     <form action="crud/append.php" METHOD="post" enctype="multipart/form-data">

@@ -55,11 +55,11 @@
       <file leaf-file-name="manage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/manage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="85">
+              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding>
-                <marker date="1478076192397" expanded="true" signature="133:171" ph="SELECT owner... " />
-                <marker date="1478076192397" expanded="true" signature="133:172" ph="SELECT owner... " />
+                <marker date="1478076563947" expanded="true" signature="133:172" ph="SELECT owner... " />
+                <marker date="1478076563947" expanded="true" signature="133:173" ph="SELECT owner... " />
               </folding>
             </state>
           </provider>
@@ -88,8 +88,8 @@
       <file leaf-file-name="equipment_manage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/equipment_manage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+            <state relative-caret-position="476">
+              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#form#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -350,12 +350,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="56700000" />
+      <workItem from="1477869997504" duration="59797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77230000" />
+    <option name="totallyTimeSpent" value="80327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -436,8 +436,8 @@
         <state relative-caret-position="51">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <marker date="1478076192397" expanded="true" signature="133:171" ph="SELECT owner... " />
-            <marker date="1478076192397" expanded="true" signature="133:172" ph="SELECT owner... " />
+            <marker date="1478076563947" expanded="true" signature="133:172" ph="SELECT owner... " />
+            <marker date="1478076563947" expanded="true" signature="133:173" ph="SELECT owner... " />
           </folding>
         </state>
       </provider>
@@ -473,8 +473,8 @@
         <state relative-caret-position="68">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <marker date="1478076192397" expanded="true" signature="133:171" ph="SELECT owner... " />
-            <marker date="1478076192397" expanded="true" signature="133:172" ph="SELECT owner... " />
+            <marker date="1478076563947" expanded="true" signature="133:172" ph="SELECT owner... " />
+            <marker date="1478076563947" expanded="true" signature="133:173" ph="SELECT owner... " />
           </folding>
         </state>
       </provider>
@@ -526,8 +526,8 @@
         <state relative-caret-position="68">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding>
-            <marker date="1478076192397" expanded="true" signature="133:171" ph="SELECT owner... " />
-            <marker date="1478076192397" expanded="true" signature="133:172" ph="SELECT owner... " />
+            <marker date="1478076563947" expanded="true" signature="133:172" ph="SELECT owner... " />
+            <marker date="1478076563947" expanded="true" signature="133:173" ph="SELECT owner... " />
           </folding>
         </state>
       </provider>
@@ -649,17 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/manage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <marker date="1478076192397" expanded="true" signature="133:171" ph="SELECT owner... " />
-            <marker date="1478076192397" expanded="true" signature="133:172" ph="SELECT owner... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -687,10 +676,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/manage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding>
+            <marker date="1478076563947" expanded="true" signature="133:172" ph="SELECT owner... " />
+            <marker date="1478076563947" expanded="true" signature="133:173" ph="SELECT owner... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/equipment_manage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="38" column="75" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+        <state relative-caret-position="476">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#table#0;n#form#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
