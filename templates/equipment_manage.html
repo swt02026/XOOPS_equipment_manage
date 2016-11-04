@@ -107,8 +107,10 @@
             this.data.name(val.name);
             this.data.amount(val.amount);
             this.data.id(val.id);
-            if(val.id!=0)
-                $('#update_form').show();
+
+            $('#update_form').show();
+            if(val.id==0)
+                $('#update_form').hide();
             $('#add_form').hide();
         }
 
