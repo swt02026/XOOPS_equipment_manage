@@ -12,7 +12,17 @@
 
     if(isset($update_data['update_id']) &&
         strlen( $update_data["name"]) &&
-        strlen($update_data["amount"])
+        strlen($update_data["amount"]) &&
+        intval($update_data["amount"]) > 0 &&
+        intval($update_data["amount"]) > 0
     ){
-        var_dump($update_data);
+
+        $update_name = $update_data["name"];
+        $update_amount = $update_data["amount"];
+        $update_id = $update_data['update_id'];
+        $sql = sprintf("UPDATE `%s` SET `name`='{$update_id}', `amount`={$update_amount} WHERE `id`={$update_id}" ,
+            $xoopsDB->prefix('equipment_desc')
+        );
+
+        echo $sql;
     }
