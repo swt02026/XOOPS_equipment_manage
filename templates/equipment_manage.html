@@ -47,8 +47,7 @@
                 </tr>
             </thead>
             <tbody>
-                <{foreach from=$query_rows item=row name=ito}>
-                    {$index=$smarty.foreach.ito.index}
+                <{foreach from=$query_rows item=row}>
                     <tr>
                         <{foreach from=$row item=elem name=it}>
                             <td>
@@ -57,12 +56,10 @@
                                 <{else}>
                                     <input type="submit" value="刪除"
                                            onclick="$('#delete_id').val(<{$elem}>);" />
-                                    <{section name=index loop=$query_rows}>
                                     <button
-                                           data-bind="click:update_data({name:<{$query_rows[index][0]}>, amount:<{$row[2]}>, id:<{$elem}>})">
+                                           data-bind="click:update_data({name:<{$query_rows[0][0]}>, amount:<{$row[2]}>, id:<{$elem}>})">
                                         修改
                                     </button>
-                                    <{/section}>
                                 <{/if}>
                             </td>
                         <{/foreach}>
@@ -71,6 +68,7 @@
             </tbody>
         </table>
         <input type="hidden" id="delete_id" name="delete_id"/>
+        <{$query_rows[0][0]}>
     </form>
 
     <button onclick="$('#add_form').toggle(); $('#update_form').hide();">新增資料</button>
