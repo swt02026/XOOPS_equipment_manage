@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 <{foreach from=$query_rows item=row name=ito}>
-                    <{$index=$smarty.foreach.ito.index}>
+                    <{assign $index=$smarty.foreach.ito.index}>
                     <tr>
                         <{foreach from=$row item=elem name=it}>
                             <td>
