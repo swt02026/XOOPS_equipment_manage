@@ -20,13 +20,11 @@
 
           data:{
               name: ko.observable(""),
-              owner: ko.observable(""),
               amount: ko.observable(0),
               id: ko.observable(0)
           },
           update_data:function (value) {
               this.data.name(value.name);
-              this.data.owner(value.owner);
               this.data.amount(value.amount);
               this.data.id(value.id);
               $('#update_form').show();
@@ -59,7 +57,7 @@
                                     <input type="submit" value="刪除"
                                            onclick="$('#delete_id').val(<{$elem}>);" />
                                     <button
-                                           data-bind="click:update_data({name:<{$row[0]}>, owner:<{$row[1]}>, amount:<{$row[2]}>, id:<{$row[3]}>})">
+                                           data-bind="click:update_data({name:<{$row[0]}>, amount:<{$row[2]}>, id:<{$row[3]}>})">
                                         修改
                                     </button>
                                 <{/if}>
@@ -99,11 +97,11 @@
                 <tr>
                     <td>
                         名稱
-                        <input type="text" name="name" pattern="[^-*.,!;'><\[\]=\+?/\\]+">
+                        <input data-bind="textInput:data.name" name="name" pattern="[^-*.,!;'><\[\]=\+?/\\]+">
                     </td>
                     <td>
                         數量
-                        <input type="text" name="amount" pattern="[1-9]\d*">
+                        <input data-bind="textInput:data.amount" name="amount" pattern="[1-9]\d*">
                     </td>
                     <td>
                         <input type="submit" value="確認修改">
