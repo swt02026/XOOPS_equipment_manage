@@ -80,6 +80,7 @@
                         數量
                         <input type="text" name="amount" data-bind="textInput: data.amount" pattern="[1-9]\d*">
                     </td>
+
                     <td>
                         <input type="submit" value="確認修改">
                     </td>
@@ -106,7 +107,8 @@
             this.data.name(val.name);
             this.data.amount(val.amount);
             this.data.id(val.id);
-            $('#update_form').show();
+            if(val.id!=0)
+                $('#update_form').show();
             $('#add_form').hide();
         }
 
