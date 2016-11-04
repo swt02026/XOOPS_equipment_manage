@@ -7,14 +7,14 @@
  */
     include '../../../../mainfile.php';
 
-    $post_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
+    $append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
 
-    if(strlen( $post_data["name"]) &&
-        strlen($post_data["amount"]) &&
-        intval($post_data["amount"]) > 0) {
+    if(strlen( $append_data["name"]) &&
+        strlen($append_data["amount"]) &&
+        intval($append_data["amount"]) > 0) {
 
-        $post_data_name = $post_data["name"];
-        $post_data_amount = intval($post_data["amount"]);
+        $post_data_name = $append_data["name"];
+        $post_data_amount = intval($append_data["amount"]);
         $owner = $xoopsUser->uname();
 
         $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`) VALUES('{$post_data_name}', '{$owner}', {$post_data_amount});"

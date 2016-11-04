@@ -6,16 +6,15 @@
  * Time: 上午 08:25
  */
     include '../../../../mainfile.php';
-    var_dump($_POST);
 
     $delete_data = array_map("addslashes",
         array_map("htmlspecialchars", $_POST));
 
-    $delete_id = intval($delete_data['delete_id']);
+
 
     if(isset($delete_data["delete_id"]) &&
-        $delete_id > 0){
-
+        intval($delete_data['delete_id']) > 0){
+        $delete_id = intval($delete_data['delete_id']);
         $db_name = $xoopsDB->prefix('equipment_desc');
         $owner = $xoopsUser->uname();
 
