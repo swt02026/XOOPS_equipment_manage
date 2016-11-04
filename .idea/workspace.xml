@@ -57,14 +57,14 @@
       <file leaf-file-name="update.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/crud/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="425">
+              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding>
-                <marker date="1478248250915" expanded="true" signature="611:650" ph="UPDATE `%s` " />
-                <marker date="1478248250915" expanded="true" signature="611:661" ph="UPDATE `%s` " />
-                <marker date="1478248250915" expanded="true" signature="611:677" ph="UPDATE `%s` " />
-                <marker date="1478248250915" expanded="true" signature="611:689" ph="UPDATE `%s` " />
-                <marker date="1478248250915" expanded="true" signature="611:701" ph="UPDATE `%s` " />
+                <marker date="1478248322263" expanded="true" signature="611:650" ph="UPDATE `%s` " />
+                <marker date="1478248322263" expanded="true" signature="611:661" ph="UPDATE `%s` " />
+                <marker date="1478248322263" expanded="true" signature="611:677" ph="UPDATE `%s` " />
+                <marker date="1478248322263" expanded="true" signature="611:689" ph="UPDATE `%s` " />
+                <marker date="1478248322263" expanded="true" signature="611:701" ph="UPDATE `%s` " />
               </folding>
             </state>
           </provider>
@@ -73,8 +73,8 @@
       <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/crud/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+            <state relative-caret-position="374">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="31" />
               <folding>
                 <marker date="1478246683810" expanded="true" signature="481:504" ph="DELETE FROM " />
                 <marker date="1478246683810" expanded="true" signature="481:517" ph="DELETE FROM " />
@@ -355,12 +355,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="100111000" />
+      <workItem from="1477869997504" duration="100176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120641000" />
+    <option name="totallyTimeSpent" value="120706000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -704,8 +704,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+        <state relative-caret-position="374">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="31" />
           <folding>
             <marker date="1478246683810" expanded="true" signature="481:504" ph="DELETE FROM " />
             <marker date="1478246683810" expanded="true" signature="481:517" ph="DELETE FROM " />
@@ -719,14 +719,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="425">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <marker date="1478248250915" expanded="true" signature="611:650" ph="UPDATE `%s` " />
-            <marker date="1478248250915" expanded="true" signature="611:661" ph="UPDATE `%s` " />
-            <marker date="1478248250915" expanded="true" signature="611:677" ph="UPDATE `%s` " />
-            <marker date="1478248250915" expanded="true" signature="611:689" ph="UPDATE `%s` " />
-            <marker date="1478248250915" expanded="true" signature="611:701" ph="UPDATE `%s` " />
+            <marker date="1478248322263" expanded="true" signature="611:650" ph="UPDATE `%s` " />
+            <marker date="1478248322263" expanded="true" signature="611:661" ph="UPDATE `%s` " />
+            <marker date="1478248322263" expanded="true" signature="611:677" ph="UPDATE `%s` " />
+            <marker date="1478248322263" expanded="true" signature="611:689" ph="UPDATE `%s` " />
+            <marker date="1478248322263" expanded="true" signature="611:701" ph="UPDATE `%s` " />
           </folding>
         </state>
       </provider>

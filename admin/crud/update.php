@@ -23,6 +23,6 @@
         $sql = sprintf("UPDATE `%s` SET `name`='{$update_name}', `amount`={$update_amount} WHERE `id`={$update_id}" ,
             $xoopsDB->prefix('equipment_desc')
         );
-
-        echo $sql;
+        $xoopsDB->queryF($sql);
+        header('location:../manage.php');
     }
