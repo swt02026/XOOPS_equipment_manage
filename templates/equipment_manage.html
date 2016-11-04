@@ -97,18 +97,18 @@
     <button data-bind="click: update_data({name:'3',amount:5,id:1});">
         t2
     </button>
-
+    <input data-bind="textInput:data.name">
     <form action="crud/update.php" METHOD="post" enctype="multipart/form-data">
         <table id="update_form">
             <tbody>
                 <tr>
                     <td>
                         名稱
-                        <input data-bind="textInput:data.name" name="name" pattern="[^-*.,!;'><\[\]=\+?/\\]+">
+                        <input type="text" name="name" pattern="[^-*.,!;'><\[\]=\+?/\\]+">
                     </td>
                     <td>
                         數量
-                        <input data-bind="textInput:data.amount" name="amount" pattern="[1-9]\d*">
+                        <input type="text" name="amount" pattern="[1-9]\d*">
                     </td>
                     <td>
                         <input type="submit" value="確認修改">
