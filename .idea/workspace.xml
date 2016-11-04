@@ -57,14 +57,14 @@
       <file leaf-file-name="update.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/crud/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
               <folding>
-                <marker date="1478248214921" expanded="true" signature="611:648" ph="UPDATE `%s` " />
-                <marker date="1478248214921" expanded="true" signature="611:659" ph="UPDATE `%s` " />
-                <marker date="1478248214921" expanded="true" signature="611:675" ph="UPDATE `%s` " />
-                <marker date="1478248214921" expanded="true" signature="611:687" ph="UPDATE `%s` " />
-                <marker date="1478248214921" expanded="true" signature="611:699" ph="UPDATE `%s` " />
+                <marker date="1478248250915" expanded="true" signature="611:650" ph="UPDATE `%s` " />
+                <marker date="1478248250915" expanded="true" signature="611:661" ph="UPDATE `%s` " />
+                <marker date="1478248250915" expanded="true" signature="611:677" ph="UPDATE `%s` " />
+                <marker date="1478248250915" expanded="true" signature="611:689" ph="UPDATE `%s` " />
+                <marker date="1478248250915" expanded="true" signature="611:701" ph="UPDATE `%s` " />
               </folding>
             </state>
           </provider>
@@ -355,12 +355,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="100076000" />
+      <workItem from="1477869997504" duration="100111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120606000" />
+    <option name="totallyTimeSpent" value="120641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -719,14 +719,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding>
-            <marker date="1478248214921" expanded="true" signature="611:648" ph="UPDATE `%s` " />
-            <marker date="1478248214921" expanded="true" signature="611:659" ph="UPDATE `%s` " />
-            <marker date="1478248214921" expanded="true" signature="611:675" ph="UPDATE `%s` " />
-            <marker date="1478248214921" expanded="true" signature="611:687" ph="UPDATE `%s` " />
-            <marker date="1478248214921" expanded="true" signature="611:699" ph="UPDATE `%s` " />
+            <marker date="1478248250915" expanded="true" signature="611:650" ph="UPDATE `%s` " />
+            <marker date="1478248250915" expanded="true" signature="611:661" ph="UPDATE `%s` " />
+            <marker date="1478248250915" expanded="true" signature="611:677" ph="UPDATE `%s` " />
+            <marker date="1478248250915" expanded="true" signature="611:689" ph="UPDATE `%s` " />
+            <marker date="1478248250915" expanded="true" signature="611:701" ph="UPDATE `%s` " />
           </folding>
         </state>
       </provider>

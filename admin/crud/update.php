@@ -20,7 +20,7 @@
         $update_name = $update_data["name"];
         $update_amount = $update_data["amount"];
         $update_id = $update_data['update_id'];
-        $sql = sprintf("UPDATE `%s` SET `name`='{$update_id}', `amount`={$update_amount} WHERE `id`={$update_id}" ,
+        $sql = sprintf("UPDATE `%s` SET `name`='{$update_name}', `amount`={$update_amount} WHERE `id`={$update_id}" ,
             $xoopsDB->prefix('equipment_desc')
         );
 
