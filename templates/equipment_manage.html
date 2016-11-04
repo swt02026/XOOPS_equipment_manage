@@ -57,7 +57,7 @@
                                     <input type="submit" value="刪除"
                                            onclick="$('#delete_id').val(<{$elem}>);" />
                                     <button
-                                           data-bind="click:update_data({name:<{$row[0]}>, amount:<{$row[2]}>, id:<{$row[3]}>})">
+                                           data-bind="click:update_data({name:<{$row[0]}>, amount:<{$row[2]}>, id:<{$elem}>})">
                                         修改
                                     </button>
                                 <{/if}>
