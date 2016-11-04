@@ -28,7 +28,6 @@
             </thead>
             <tbody>
                 <{foreach from=$query_rows item=row name=ito}>
-                    <{assign var=index value=$smarty.foreach.ito.index}>
                     <tr>
                         <{foreach from=$row item=elem name=it}>
                             <td>
@@ -39,6 +38,8 @@
                                            onclick="$('#delete_id').val(<{$elem}>);" />
                                     <input value="修改" type="button" data-bind="click:update_data({name:'1', amount:20, id:<{$elem}>})">
                                     <button data-bind="click:update_data({name:'', amount:0, id: 0 })" hidden></button>
+                                    <{$row.name}>
+
                                 <{/if}>
                             </td>
                         <{/foreach}>
