@@ -27,8 +27,7 @@
               this.data.name(value.name);
               this.data.amount(value.amount);
               this.data.id(value.id);
-              $('#update_form').show();
-              $('#add_form').hide();
+
           }
 
         });
@@ -56,7 +55,7 @@
                                 <{else}>
                                     <input type="submit" value="刪除"
                                            onclick="$('#delete_id').val(<{$elem}>);" />
-                                    <button>
+                                    <button onclick="$('#update_form').show();$('#add_form').hide();">
                                         修改
                                     </button>
                                 <{/if}>
