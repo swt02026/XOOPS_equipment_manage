@@ -36,6 +36,7 @@
 
 </head>
 <body>
+<{$query_rows}>
     <form action="crud/delete.php" method="post" enctype="multipart/form-data">
         <table class="table">
             <thead>
@@ -68,7 +69,6 @@
             </tbody>
         </table>
         <input type="hidden" id="delete_id" name="delete_id"/>
-        <{$query_rows[0][0]}>
     </form>
 
     <button onclick="$('#add_form').toggle(); $('#update_form').hide();">新增資料</button>
