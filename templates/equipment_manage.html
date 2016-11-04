@@ -15,26 +15,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-    <script>
-       var vm = {
 
-          data:{
-              name: ko.observable(""),
-              amount: ko.observable(0),
-              id: ko.observable(0)
-          },
-          update_data:function (value) {
-              this.data.name(value.name);
-              this.data.amount(value.amount);
-              this.data.id(value.id);
-              console.log("aaa");
-//              $('#update_form').show();
-//              $('#add_form').hide();
-          }
-
-        };
-       ko.applyBindings(vm);
-    </script>
 
 </head>
 <body>
@@ -91,13 +72,15 @@
     </form>
 
     <button
-            data-bind="click: update_data({name:'1',amount:2, id:0});">
+            data-bind="click: change_model({v1:1,v2:2});">
         t1
     </button>
-    <button data-bind="click: update_data({name:'3',amount:5,id:1});">
+    <button data-bind="click: change_model({v1:3,v2:5});">
         t2
     </button>
-    <input data-bind="textInput:data.name">
+    <input data-bind="textInput: data.v1">
+    <input data-bind="textInput: data.v2">
+
     <form action="crud/update.php" METHOD="post" enctype="multipart/form-data">
         <table id="update_form">
             <tbody>
@@ -119,4 +102,18 @@
     </form>
 
 </body>
+<script>
+    var vm = {
+        data:{
+            v1:ko.observable(0),
+            v2:ko.observable(-1)
+        },
+        change_model:function(val){
+            //this.data = val;
+            this.data.v1(val.v1);
+            this.data.v2(val.v2);
+        }
+    };
+    ko.applyBindings(vm);
+</script>
 </html>
