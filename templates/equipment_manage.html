@@ -69,7 +69,7 @@
     </form>
 
     <form action="crud/update.php" METHOD="post" enctype="multipart/form-data">
-        <input type="hidden" name="update_id" data-bind="text: data.id">
+        <input type="hidden" name="update_id" data-bind="value: data.id">
         <table id="update_form" style="display: none;">
             <tbody>
                 <tr>
@@ -81,7 +81,6 @@
                         數量
                         <input type="text" name="amount" data-bind="textInput: data.amount" pattern="[1-9]\d*">
                     </td>
-
                     <td>
                         <input type="submit" value="確認修改">
                     </td>
