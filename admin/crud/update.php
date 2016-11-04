@@ -11,8 +11,8 @@
         array_map("htmlspecialchars", $_POST));
 
     if(isset($update_data['update_id']) &&
-        strlen( $post_data["name"]) &&
-        strlen($post_data["amount"])
+        strlen( $update_data["name"]) &&
+        strlen($update_data["amount"])
     ){
         var_dump($update_data);
     }

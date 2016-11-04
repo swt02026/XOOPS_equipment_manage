@@ -58,8 +58,8 @@
       <file leaf-file-name="update.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/crud/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="238">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -122,8 +122,8 @@
         <option value="$PROJECT_DIR$/admin/crud/delete.php" />
         <option value="$PROJECT_DIR$/templates/equipment_manage.html" />
         <option value="$PROJECT_DIR$/admin/crud/append.php" />
-        <option value="$PROJECT_DIR$/admin/crud/update.php" />
         <option value="$PROJECT_DIR$/admin/manage.php" />
+        <option value="$PROJECT_DIR$/admin/crud/update.php" />
       </list>
     </option>
   </component>
@@ -350,12 +350,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="98934000" />
+      <workItem from="1477869997504" duration="98984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119464000" />
+    <option name="totallyTimeSpent" value="119514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -716,8 +716,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/crud/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="238">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding />
         </state>
       </provider>
