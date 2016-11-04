@@ -33,7 +33,7 @@
           }
 
         };
-       ko.applyBinding(vm);
+       ko.applyBindings(vm);
     </script>
 
 </head>
@@ -94,7 +94,7 @@
             data-bind="click: update_data({name:'1',amount:2, id:0});">
         t1
     </button>
-    <button data-bind="click: update_data({v1:3,v2:5});">
+    <button data-bind="click: update_data({name:'3',amount:5,id:1});">
         t2
     </button>
 
