@@ -15,7 +15,7 @@
         while ($row = $xoopsDB->fetchArray($query)){
             $query_rows[] = $row;
         }
-        $xoopsDB->assign('json_data', json_encode($query_rows));
+        $xoopsTpl->assign('json_data', json_encode($query_rows));
         $xoopsTpl->assign('query_rows', $query_rows);
     }
 
