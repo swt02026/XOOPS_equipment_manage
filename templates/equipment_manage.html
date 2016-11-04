@@ -15,7 +15,6 @@
 
 </head>
 <body>
-    <{$query_rows[0].name}>
     <form action="crud/delete.php" method="post" enctype="multipart/form-data">
         <table class="table">
             <thead>
@@ -36,10 +35,8 @@
                                 <{else}>
                                     <input type="submit" value="刪除"
                                            onclick="$('#delete_id').val(<{$elem}>);" />
-                                    <input value="修改" type="button" data-bind="click:update_data({name:'1', amount:20, id:<{$elem}>})">
+                                    <input value="修改" type="button" data-bind="click:update_data({name:<{$row.name}>, amount:<{$row.amount}>, id:<{$elem}>})">
                                     <button data-bind="click:update_data({name:'', amount:0, id: 0 })" hidden></button>
-                                    <{$row.name}>
-
                                 <{/if}>
                             </td>
                         <{/foreach}>
