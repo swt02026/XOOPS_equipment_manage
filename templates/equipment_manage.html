@@ -16,7 +16,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
     <script>
+        ko.applyBindings({
 
+          data:{
+              name: ko.observable(""),
+              owner: ko.observable(""),
+              amount: ko.observable(0),
+              id: ko.observable(0)
+          },
+          update_data:function (value) {
+              this.data.name(value.name);
+              this.data.owner(value.owner);
+              this.data.amount(value.amount);
+              this.data.id(value.id);
+              $('#update_form').show();
+              $('#add_form').hide();
+          }
+
+        });
     </script>
 
 </head>
@@ -41,8 +58,10 @@
                                 <{else}>
                                     <input type="submit" value="刪除"
                                            onclick="$('#delete_id').val(<{$elem}>);" />
-                                    <input type="button" value="修改"
-                                           onclick="$('#update_form').show();$('#add_form').hide()">
+                                    <button
+                                           data-bind="click:update_data({name:<{$row[0]}>, owner:<{$row[1]}>, amount:<{$row[2}>, id:<{$row[3]}>})">
+                                        修改
+                                    </button>
                                 <{/if}>
                             </td>
                         <{/foreach}>
