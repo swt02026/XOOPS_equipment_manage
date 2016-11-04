@@ -89,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/templates/equipment_manage.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="561">
-              <caret line="61" column="147" selection-start-line="61" selection-start-column="147" selection-end-line="61" selection-end-column="147" />
+              <caret line="61" column="126" selection-start-line="61" selection-start-column="126" selection-end-line="61" selection-end-column="126" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#form#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#form#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -369,12 +369,12 @@
       <workItem from="1477548631325" duration="10245000" />
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
-      <workItem from="1477869997504" duration="79686000" />
+      <workItem from="1477869997504" duration="79721000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100216000" />
+    <option name="totallyTimeSpent" value="100251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -725,7 +725,7 @@
     <entry file="file://$PROJECT_DIR$/templates/equipment_manage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
-          <caret line="61" column="147" selection-start-line="61" selection-start-column="147" selection-end-line="61" selection-end-column="147" />
+          <caret line="61" column="126" selection-start-line="61" selection-start-column="126" selection-end-line="61" selection-end-column="126" />
           <folding>
             <element signature="n#style#0;n#table#0;n#form#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#form#2;n#body#0;n#html#0;n#!!top" expanded="true" />
