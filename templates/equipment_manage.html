@@ -15,20 +15,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-    <script>
-        var vm = {
-            data:{
-                v1:ko.observable(0),
-                v2:ko.observable(-1)
-            },
-            change_model:function(val){
-                //this.data = val;
-                this.data.v1(val.v1);
-                this.data.v2(val.v2);
-            }
-        };
-        ko.applyBindings(vm);
-    </script>
 
 </head>
 <body>
