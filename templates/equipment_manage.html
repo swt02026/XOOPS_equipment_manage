@@ -36,7 +36,6 @@
 
 </head>
 <body>
-<{$query_rows[0]}>
     <form action="crud/delete.php" method="post" enctype="multipart/form-data">
         <table class="table">
             <thead>
@@ -48,9 +47,9 @@
                 </tr>
             </thead>
             <tbody>
-                <{foreach from=$query_rows item=row}>
+                <{foreach $query_rows as $row}>
                     <tr>
-                        <{foreach from=$row item=elem name=it}>
+                        <{foreach $row as $elem name=it}>
                             <td>
                                 <{if $smarty.foreach.it.index != 3}>
                                     <{$elem}>
