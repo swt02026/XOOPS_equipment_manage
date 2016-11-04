@@ -88,8 +88,16 @@
         </table>
     </form>
 
+    <button
+            data-bind="click: update_data({name:'1',amount:2, id:0});">
+        t1
+    </button>
+    <button data-bind="click: update_data({v1:3,v2:5});">
+        t2
+    </button>
+
     <form action="crud/update.php" METHOD="post" enctype="multipart/form-data">
-        <table id="update_form" style="display: none;">
+        <table id="update_form">
             <tbody>
                 <tr>
                     <td>
