@@ -23,10 +23,10 @@
               amount: ko.observable(0),
               id: ko.observable(0)
           },
-          update_data:function (value) {
-              this.data.name(value.name);
-              this.data.amount(value.amount);
-              this.data.id(value.id);
+          update_data:function (val) {
+              this.data.name(val.name);
+              this.data.amount(val.amount);
+              this.data.id(val.id);
               console.log("aaa");
 //              $('#update_form').show();
 //              $('#add_form').hide();
@@ -91,10 +91,10 @@
     </form>
 
     <button
-            data-bind="click: update_data({name:'1',amount:2, id:0});">
+            data-bind="click: update_data({name:'1',amount:2, id:0})">
         t1
     </button>
-    <button data-bind="click: update_data({name:'3',amount:5, id:1});">
+    <button data-bind="click: update_data({name:'3',amount:5, id:1})">
         t2
     </button>
     <input data-bind="textInput: data.name">
