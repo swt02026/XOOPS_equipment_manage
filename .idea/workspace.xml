@@ -32,10 +32,22 @@
       <file leaf-file-name="equipment_borrow.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/equipment_borrow.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+            <state relative-caret-position="943">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
-                <element signature="e#1844#1851#0" expanded="true" />
+                <element signature="e#1966#1973#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="borrow.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/crud/borrow.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+              <folding>
+                <element signature="e#6#88#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,6 +95,7 @@
         <option value="$PROJECT_DIR$/xoops_version.php" />
         <option value="$PROJECT_DIR$/templates/well.tpl" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/admin/crud/borrow.php" />
         <option value="$PROJECT_DIR$/templates/equipment_borrow.html" />
       </list>
     </option>
@@ -311,12 +324,12 @@
       <workItem from="1477634026761" duration="62000" />
       <workItem from="1477634171613" duration="5768000" />
       <workItem from="1477869997504" duration="101850000" />
-      <workItem from="1478474901184" duration="18061000" />
+      <workItem from="1478474901184" duration="19305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140441000" />
+    <option name="totallyTimeSpent" value="141685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -389,7 +402,7 @@
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="e#1844#1851#0" expanded="true" />
+            <element signature="e#1966#1973#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -658,17 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-          <folding>
-            <marker date="1478246940140" expanded="true" signature="514:616" ph="INSERT INTO " />
-            <marker date="1478246940140" expanded="true" signature="514:650" ph="INSERT INTO " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/wall.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -725,12 +727,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/crud/append.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="82" />
+          <folding>
+            <marker date="1478246940140" expanded="true" signature="514:616" ph="INSERT INTO " />
+            <marker date="1478246940140" expanded="true" signature="514:650" ph="INSERT INTO " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/crud/borrow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <element signature="e#6#88#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/equipment_borrow.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+        <state relative-caret-position="943">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="e#1844#1851#0" expanded="true" />
+            <element signature="e#1966#1973#0" expanded="true" />
           </folding>
         </state>
       </provider>
