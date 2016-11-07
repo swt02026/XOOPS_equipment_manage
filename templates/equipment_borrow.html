@@ -5,9 +5,9 @@
 </head>
 <body>
     <div class="container">
-        <{foreach from=$query_rows item=row}>
-            <div class="row">
-                <div class="col-md-8 col-sm-8">
+        <div class="col-md-8 col-sm-8">
+            <{foreach from=$query_rows item=row}>
+                <div class="row">
                     <div class="well well-sm">
                         <div class="row">
                             <div class="col-md-4 col-sm-4">
@@ -21,8 +21,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        <{/foreach}>
+            <{/foreach}>
+        </div>
     </div>
 </body>
 </html>
