@@ -1,6 +1,6 @@
 <?php
     include '../../mainfile.php';
-    $xoopsOption['template_main'] = "equipment_borrow.html";
+    $xoopsOption['template_main'] = "db:equipment_borrow.html";
     include XOOPS_ROOT_PATH."/header.php";
 
     $sql = sprintf("SELECT  name, owner, amount, id  FROM %s",
