@@ -1,34 +1,50 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-
-        <form action="borrow.php" id="borrow_form">
-            <{foreach from=$query_rows item=row}>
-                <div class="col-md-6 col-sm-6">
-                    <div class="well well-sm">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <img src="" alt="無圖檔" class="img-responsive">
+    <form action="borrow.php" id="borrow_form">
+        <{foreach from=$query_rows item=row}>
+            <div class="col-md-6 col-sm-6">
+                <div class="well well-sm">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <img src="" alt="無圖檔" class="img-responsive">
+                        </div>
+                        <div class="col-md-8 col-sm-8">
+                            名稱：<{$row.name}><br />
+                            持有人:<{$row.owner}><br />
+                            數量：<{$row.amount}><br />
+                            <div class="form-group">
+                                <label for="borrow_number<{$row.id}>">借用數量：</label>
+                                <input id="borrow_number<{$row.id}>"
+                                       class="form-control"
+                                       type="number"
+                                       name="borrow_number[]"
+                                       min="0"
+                                       max="<{$row.amount}>">
                             </div>
-                            <div class="col-md-8 col-sm-8">
-                                名稱：<{$row.name}><br />
-                                持有人:<{$row.owner}><br />
-                                數量：<{$row.amount}><br />
-                                <div class="form-group">
-                                <label for="borrow_number<{$row.id}>">預借數量：</label>
-                                <input id="borrow_number<{$row.id}>" class="form-control" type="number" name="borrow_number[]" min="0">
-                                </div>
-                                <input type="hidden" value="<{$row.id}>">
-                            </div>
+                            <input type="hidden" value="<{$row.id}>">
                         </div>
                     </div>
                 </div>
-            <{/foreach}>
-            <button >送出</button>
-        </form>
-
+            </div>
+        <{/foreach}>
+        <button data-toggle="modal" data-target="#submitModal">送出</button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button data-dismiss="modal" class="close">&times;</button>
+                <h4 class="modal-title">借用確認</h4>
+            </div>
+            <div class="modal-body">
+                <p>名稱：<br />借用數量:<br /></p>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="close">關閉</button>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
