@@ -6,5 +6,8 @@
  * Time: 下午 02:40
  */
 
-    $borrow_data = array_map("intval", $_POST["borrow_number"]);
+    $borrow_data = array_filter(
+        array_map("intval", $_POST["borrow_number"]), function ($val){
+        return $val > 0;
+    });
     var_dump($borrow_data);
