@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <div class="form-group">
+
         <form action="borrow.php" id="borrow_form">
             <{foreach from=$query_rows item=row}>
                 <div class="col-md-6 col-sm-6">
@@ -17,7 +17,10 @@
                                 名稱：<{$row.name}><br />
                                 持有人:<{$row.owner}><br />
                                 數量：<{$row.amount}><br />
-                                預借數量：<input class="form-control" type="number" name="borrow_number" min="0">
+                                <div class="form-group">
+                                <label for="borrow_number">預借數量：</label>
+                                <input id="borrow_number" class="form-control" type="number" name="borrow_number" min="0">
+                                </div>
                                 <input type="hidden" value="<{$row.id}>">
                             </div>
                         </div>
@@ -26,6 +29,6 @@
             <{/foreach}>
             <button >送出</button>
         </form>
-    </div>
+
 </body>
 </html>
