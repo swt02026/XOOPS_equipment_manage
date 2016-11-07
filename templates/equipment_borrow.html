@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
 </head>
 <body>
-    <{foreach from=$query_rows item=row}>
-        <div class="col-md-6 col-sm-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <img src="" alt="無圖檔" class="img-responsive">
-                    </div>
-                    <div class="col-md-8 col-sm-8">
-                        名稱：<{$row.name}><br />
-                        持有人:<{$row.owner}><br />
-                        數量：<{$row.amount}><br />
-                        預借數量：<input type="number" name="borrow_number" min="0">
+    <div class="form-group">
+        <form action="borrow.php" id="borrow_form">
+            <{foreach from=$query_rows item=row}>
+                <div class="col-md-6 col-sm-6">
+                    <div class="well well-sm">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                                <img src="" alt="無圖檔" class="img-responsive">
+                            </div>
+                            <div class="col-md-8 col-sm-8">
+                                名稱：<{$row.name}><br />
+                                持有人:<{$row.owner}><br />
+                                數量：<{$row.amount}><br />
+                                預借數量：<input class="form-control" type="number" name="borrow_number" min="0">
+                                <input type="hidden" value="<{$row.id}>">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    <{/foreach}>
+            <{/foreach}>
+            <button >送出</button>
+        </form>
+    </div>
 </body>
 </html>
