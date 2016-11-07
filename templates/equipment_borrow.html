@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
 </head>
 <body>
-
-    <div class="well well-sm">
+    <{foreach from=$query_rows item=elem}>
         <div class="row">
-            <div class="col-md-4 col-sm-6">
-                <img src="" alt="無圖檔" class="img-responsive">
-            </div>
-            <div class="col-md-8 col-sm-8">
-                名稱：<{$query_rows[0].name}><br />
-                持有人:<br />
-                數量：<br />
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <img src="" alt="無圖檔" class="img-responsive">
+                    </div>
+                    <div class="col-md-8 col-sm-8">
+                        名稱：<{$elem.name}><br />
+                        持有人:<br />
+                        數量：<br />
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
+    <{/foreach}>
 </body>
 </html>
