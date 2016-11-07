@@ -6,5 +6,5 @@
  * Time: 下午 02:40
  */
 
-    //$append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
-    var_dump($_POST);
+    $borrow_data = array_map("intval", $_POST["borrow_number"]);
+    var_dump($borrow_data);
