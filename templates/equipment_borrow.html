@@ -32,7 +32,7 @@
                 </div>
             </div>
         <{/foreach}>
-        <button type="button" class="btn" data-toggle="modal" data-target="#submitModal">送出</button>
+        <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
 
         <div class="modal fade" id="submitModal" role="dialog">
             <div class="modal-dialog">
@@ -45,12 +45,14 @@
                         <p>名稱：<br />借用數量:<br /></p>
                     </div>
                     <div class="modal-footer">
-                        <button data-dismiss="modal" class="close">關閉</button>
+                        <button type="submit" class="btn btn-lg">確認送出</button>
+                        
+                        <button data-dismiss="modal" class="close">取消</button>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </form>
 </body>
 </html>
