@@ -6,7 +6,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
 </head>
 <body>
-    <form action="admin/crud/borrow.php" method="post" id="borrow_form">
+
+    <form action="admin/crud/borrow.php" method="post">
+
         <{foreach from=$query_rows item=row}>
             <div class="col-md-6 col-sm-6">
                 <div class="well well-sm">
@@ -19,15 +21,14 @@
                             持有人:<{$row.owner}><br />
                             數量：<{$row.amount}><br />
                             <div class="form-group">
-                                <label for="borrow_number<{$row.id}>">借用數量：</label>
-                                <input id="borrow_number<{$row.id}>"
+                                <label for="borrow<{$row.id}>">借用數量：</label>
+                                <input id="borrow<{$row.id}>"
                                        class="form-control"
                                        type="number"
                                        name="borrow_number[<{$row.id}>]"
                                        min="0"
-                                       max="<{$row.amount}>">
+                                       max="<{$row.amount}>" onkeyup="alert('aaa')">
                             </div>
-                            <input type="hidden" value="<{$row.id}>">
                         </div>
                     </div>
                 </div>
@@ -62,6 +63,12 @@
     </form>
 
 </body>
+<script>
+    ko.applyBindings({
+        post_data:[
 
+        ]
+    });
+</script>
 
 </html>
