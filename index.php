@@ -3,7 +3,7 @@
     $xoopsOption['template_main'] = "equipment_borrow.html";
     include XOOPS_ROOT_PATH."/header.php";
 
-    $sql = sprintf("SELECT  name, owner, amount, id  FROM %s",
+    $sql = sprintf("SELECT name, owner, amount, id  FROM %s",
         $xoopsDB->prefix('equipment_desc'));
 
     $query = $xoopsDB->query($sql);
