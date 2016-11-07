@@ -18,8 +18,8 @@
                                 持有人:<{$row.owner}><br />
                                 數量：<{$row.amount}><br />
                                 <div class="form-group">
-                                <label for="borrow_number">預借數量：</label>
-                                <input id="borrow_number" class="form-control" type="number" name="borrow_number" min="0">
+                                <label for="borrow_number<{$row.id}>">預借數量：</label>
+                                <input id="borrow_number<{$row.id}>" class="form-control" type="number" name="borrow_number[]" min="0">
                                 </div>
                                 <input type="hidden" value="<{$row.id}>">
                             </div>
