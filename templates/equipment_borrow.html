@@ -73,9 +73,10 @@
 </body>
 <script>
     var vm = {
-        data:kp.observableArray([]),
+        data:kp.observableArray(),
         pushData:function (val) {
             this.data.push(val);
+            console.log(data.length)
         }
     };
     ko.applyBindings(vm);
