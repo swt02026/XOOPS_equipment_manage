@@ -7,7 +7,7 @@
         $xoopsDB->prefix('equipment_desc'));
 
     $query = $xoopsDB->query($sql);
-
+    var_dump($query_rows);
     if($xoopsDB->getRowsNum($query) > 0){
 
         $query_rows = [];
@@ -15,7 +15,7 @@
 
             $query_rows[] = $row;
         }
-        $xoopsTpl->assign('query_rows', $query_rows);
+      //  $xoopsTpl->assign('query_rows', $query_rows);
     }
 
     include_once XOOPS_ROOT_PATH."/footer.php";
