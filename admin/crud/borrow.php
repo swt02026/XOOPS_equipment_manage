@@ -6,5 +6,5 @@
  * Time: 下午 02:40
  */
 
-    $append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
-    var_dump($append_data);
+    //$append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
+    var_dump($_POST);
