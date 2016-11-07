@@ -27,7 +27,9 @@
                                        type="number"
                                        name="borrow_number[<{$row.id}>]"
                                        min="0"
-                                       max="<{$row.amount}>" onchange="alert('aaa')">
+                                       max="<{$row.amount}>"
+                                       onchange="vm.pushData({name:<{$row.name}>})"
+                                       onkeyup="">
                             </div>
                         </div>
                     </div>
@@ -62,9 +64,21 @@
 
     </form>
 
+    <div data-bind="foreach: data">
+        <span data-bind="text:name">
+
+        </span>
+    </div>
+
 </body>
 <script>
-
+    var vm = {
+        data:kp.observableArray([]),
+        pushData:function (val) {
+            this.data.push(val);
+        }
+    };
+    ko.applyBindings(vm);
 </script>
 
 </html>
