@@ -63,9 +63,7 @@
         </div>
 
     </form>
-    <div id="app">
-        {{ message }}
-    </div>
+
     <div id="selected-list">
         <div v-for="item in items">
             {{ item.name }}
@@ -84,7 +82,7 @@
         },
         methods:{
             append: function (item) {
-                this.data.data.push(item)
+                this.data.items.push(item)
             }
         }
     });
