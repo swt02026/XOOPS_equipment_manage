@@ -33,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/templates/equipment_borrow.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="705">
-              <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+              <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
               <folding>
                 <element signature="e#1970#1977#0" expanded="true" />
               </folding>
@@ -339,12 +339,12 @@
       <workItem from="1477869997504" duration="101850000" />
       <workItem from="1478474901184" duration="21046000" />
       <workItem from="1478503044626" duration="4702000" />
-      <workItem from="1479079943802" duration="7726000" />
+      <workItem from="1479079943802" duration="7785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155854000" />
+    <option name="totallyTimeSpent" value="155913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -751,7 +751,7 @@
     <entry file="file://$PROJECT_DIR$/templates/equipment_borrow.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
-          <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+          <caret line="84" column="35" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
           <folding>
             <element signature="e#1970#1977#0" expanded="true" />
           </folding>
