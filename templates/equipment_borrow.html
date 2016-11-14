@@ -28,7 +28,7 @@
                                        name="borrow_number[<{$row.id}>]"
                                        min="0"
                                        max="<{$row.amount}>"
-                                       onchange="vm.pushData({name:'<{$row.name}>'})"
+                                       onchange="sel_list.append({name:'<{$row.name}>'})"
                                        onkeyup="">
                             </div>
                         </div>
@@ -63,23 +63,28 @@
         </div>
 
     </form>
-
-    <div data-bind="foreach: data">
-        <span data-bind="text:name">
-
-        </span>
+    <div id="selected-list">
+        <div v-for="item in items">
+            {{ item.name }}
+        </div>
     </div>
 
 </body>
+
 <script>
-    var vm = {
-        data:ko.observableArray(),
-        pushData:function (val) {
-            this.data.push(val);
-            console.log(this.data.length);
+    var sel_list = new Vue({
+        el: '#selected-list',
+        data:{
+            items:[
+
+            ]
+        },
+        methods:{
+            append: function (item) {
+                this.data.push(item)
+            }
         }
-    };
-    ko.applyBindings(vm);
+    });
 </script>
 
 </html>
