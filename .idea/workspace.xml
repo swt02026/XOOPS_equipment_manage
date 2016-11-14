@@ -32,8 +32,8 @@
       <file leaf-file-name="equipment_borrow.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/equipment_borrow.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+            <state relative-caret-position="790">
+              <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
               <folding>
                 <element signature="e#2021#2028#0" expanded="true" />
               </folding>
@@ -339,12 +339,12 @@
       <workItem from="1477869997504" duration="101850000" />
       <workItem from="1478474901184" duration="21046000" />
       <workItem from="1478503044626" duration="4702000" />
-      <workItem from="1479079943802" duration="6414000" />
+      <workItem from="1479079943802" duration="6572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154542000" />
+    <option name="totallyTimeSpent" value="154700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -750,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/equipment_borrow.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+        <state relative-caret-position="790">
+          <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
           <folding>
             <element signature="e#2021#2028#0" expanded="true" />
           </folding>
