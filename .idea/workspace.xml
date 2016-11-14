@@ -32,8 +32,8 @@
       <file leaf-file-name="equipment_borrow.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/equipment_borrow.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="30" column="59" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+            <state relative-caret-position="17">
+              <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
               <folding>
                 <element signature="e#1946#1953#0" expanded="true" />
               </folding>
@@ -339,12 +339,12 @@
       <workItem from="1477869997504" duration="101850000" />
       <workItem from="1478474901184" duration="21046000" />
       <workItem from="1478503044626" duration="4702000" />
-      <workItem from="1479079943802" duration="8178000" />
+      <workItem from="1479079943802" duration="8466000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156306000" />
+    <option name="totallyTimeSpent" value="156594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="-8" width="1296" height="1040" extended-state="6" />
@@ -750,8 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/equipment_borrow.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="59" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+        <state relative-caret-position="17">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
           <folding>
             <element signature="e#1946#1953#0" expanded="true" />
           </folding>
