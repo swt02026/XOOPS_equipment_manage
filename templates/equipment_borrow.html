@@ -6,8 +6,9 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
+    <div id="selected-list" class="container">
         <form action="admin/crud/borrow.php" method="post">
-            <div id="selected-list">
+
             <{foreach from=$query_rows item=row}>
                 <div class="col-md-6 col-sm-6">
                     <div class="well well-sm">
@@ -60,28 +61,11 @@
                     </div>
                 </div>
             </div>
-            </div>
         </form>
-
+    </div>
 
 </body>
 
-<script>
-    var sel_list = new Vue({
-        el: '#selected-list',
-        data:{
-            items:[
 
-            ]
-        },
-        methods:{
-            append: function () {
-                console.log("aaa");
-
-            }
-        }
-    });
-
-</script>
 
 </html>
