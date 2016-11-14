@@ -6,7 +6,6 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="selected-list">
         <form action="admin/crud/borrow.php" method="post">
 
             <{foreach from=$query_rows item=row}>
@@ -64,11 +63,6 @@
 
         </form>
 
-
-        <div v-for="item in items">
-            {{ item.name }}
-        </div>
-    </div>
 
 </body>
 
