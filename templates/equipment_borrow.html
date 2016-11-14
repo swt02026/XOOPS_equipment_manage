@@ -82,11 +82,11 @@
 
             ]
         },
-        methods:{
-            append: function (item) {
-                this.data.push(item)
-            }
+
+        append: function (item) {
+            this.data.items.push(item)
         }
+
     });
     var app = new Vue({
         el:'#app',
