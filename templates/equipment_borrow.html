@@ -28,7 +28,7 @@
                                        name="borrow_number[<{$row.id}>]"
                                        min="0"
                                        max="<{$row.amount}>"
-                                       v-on="change: append({name:'<{$row.name}>'})"
+                                       v-on="change: append"
                                        >
                             </div>
                         </div>
@@ -81,9 +81,9 @@
             ]
         },
         methods:{
-            append: function (item) {
+            append: function () {
                 console.log("aaa");
-                this.data.items.push(item);
+
             }
         }
     });
