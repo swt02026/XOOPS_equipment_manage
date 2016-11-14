@@ -28,8 +28,8 @@
                                        name="borrow_number[<{$row.id}>]"
                                        min="0"
                                        max="<{$row.amount}>"
-                                       onchange="sel_list.append({name:'<{$row.name}>'})"
-                                       onkeyup="">
+                                       v-on="change: append({name:'<{$row.name}>'})"
+                                       >
                             </div>
                         </div>
                     </div>
@@ -82,18 +82,13 @@
 
             ]
         },
-
-        append: function (item) {
-            this.data.items.push(item)
-        }
-
-    });
-    var app = new Vue({
-        el:'#app',
-        data:{
-            message: 'hello'
+        methods:{
+            append: function (item) {
+                this.data.data.push(item)
+            }
         }
     });
+
 </script>
 
 </html>
