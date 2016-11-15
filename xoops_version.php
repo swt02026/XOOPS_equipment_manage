@@ -25,6 +25,10 @@
         [
             'file' => 'equipment_borrow.html',
             'description' => 'equipment_borrow.html'
+        ],
+        [
+            'file' => 'equipment_borrow2.html',
+            'description' => 'equipment_borrow2.html'
         ]
     ];
 
