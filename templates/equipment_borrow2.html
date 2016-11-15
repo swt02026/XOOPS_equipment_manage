@@ -26,7 +26,7 @@
                                     <input :id="row.id"
                                            class="form-control"
                                            type="number"
-                                           name="borrow_number[]"
+                                           :name="'borrow_number[' + row.id + ']'"
                                            min="0"
                                            :max="row.amount"
                                            v-on:change="append"
