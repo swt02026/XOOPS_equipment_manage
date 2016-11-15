@@ -7,9 +7,10 @@
 </head>
 
 <body>
-    <div id="selected-list" class="container">
+
+    <div id="selected-list">
         <form action="admin/crud/borrow.php" method="post">
-            <{foreach from=$query_rows item=row}>
+            <div v-for="row in query_rows">
                 <div class="col-md-6 col-sm-6">
                     <div class="well well-sm">
                         <div class="row">
@@ -17,25 +18,25 @@
                                 <img src="" alt="無圖檔" class="img-responsive">
                             </div>
                             <div class="col-md-8 col-sm-8">
-                                名稱：<{$row.name}><br />
-                                持有人:<{$row.owner}><br />
-                                數量：<{$row.amount}><br />
+                                名稱：{{ row.name }}<br />
+                                持有人:{{ row.owner }}<br />
+                                數量：{{ row.amount }}<br />
                                 <div class="form-group">
-                                    <label for="borrow<{$row.id}>">借用數量：</label>
-                                    <input id="borrow<{$row.id}>"
+                                    <label :for="row.id" >借用數量：</label>
+                                    <input :id="row.id"
                                            class="form-control"
                                            type="number"
-                                           name="borrow_number[<{$row.id}>]"
+                                           name="borrow_number[]"
                                            min="0"
-                                           max="<{$row.amount}>"
+                                           :max="row.amount"
                                            v-on:change="append"
-                                           >
+                                    >
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <{/foreach}>
+            </div>
 
             <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
 
@@ -64,25 +65,27 @@
         </form>
     </div>
 
-    <script>
-        var sel_list = new Vue({
-            el: '#selected-list',
-            data: {
-                items:[
+<script>
+    var sel_list = new Vue({
+        el: '#selected-list',
+        data: {
+            items:[
 
-                ]
-            },
-            methods: {
-                append: function () {
-                    console.log("aaa");
-                }
+            ],
+            query_rows:[
+                {id:10, amount:20, owner:"aaa", name:"bbbb"},
+                {id:11, amount:30, owner:"baa", name:"bbba"}
+            ]
+        },
+        methods: {
+            append: function () {
+                console.log("aa")
             }
-        });
+        }
+    });
 
-    </script>
+</script>
 
 </body>
-
-
 
 </html>
