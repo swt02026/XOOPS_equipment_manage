@@ -22,14 +22,14 @@
                                 持有人:{{ row.owner }}<br />
                                 數量：{{ row.amount }}<br />
                                 <div class="form-group">
-                                    <label :for="row.id" >借用數量：</label>
-                                    <input :id="row.id"
+                                    <label :for="'a' + row.id" >借用數量：</label>
+                                    <input :id="'a' + row.id"
                                            class="form-control"
                                            type="number"
                                            :name="'borrow_number[' + row.id + ']'"
                                            min="0"
                                            :max="row.amount"
-                                           v-on:change="append"
+                                           @change="append(row, $event)"
                                     >
                                 </div>
                             </div>
@@ -39,6 +39,7 @@
             </div>
 
             <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
+
 
             <div class="modal fade" id="submitModal" role="dialog">
                 <div class="modal-dialog">
@@ -50,7 +51,9 @@
                         </div>
 
                         <div class="modal-body">
-                            <p>名稱：<br />借用數量:<br /></p>
+                            <div v-for="item in items">
+                                <p>名稱：{{ item.name }}<br />借用數量:{{ item.amount }}<br /></p>
+                            </div>
                         </div>
 
                         <div class="modal-footer">
@@ -78,8 +81,22 @@
             ]
         },
         methods: {
-            append: function () {
-                console.log("aa");
+            append: function (row, event) {
+
+                var checkNotExist = function (checkId) {
+
+                    return function (item) {
+                        return !(item.id == checkId);
+                    };
+                }(row.id);
+
+                this.items = this.items.filter(checkNotExist);
+                this.items.push({
+                   id: row.id,
+                   name: row.name,
+                   owner: row.owner,
+                   amount: event.target.value
+                });
             }
         }
     });
