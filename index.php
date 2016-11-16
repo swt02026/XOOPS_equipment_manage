@@ -7,7 +7,7 @@
         $xoopsDB->prefix('equipment_desc'));
 
     $query = $xoopsDB->query($sql);
-
+    $json_data = null;
     if($xoopsDB->getRowsNum($query) > 0){
 
         $query_rows = [];
