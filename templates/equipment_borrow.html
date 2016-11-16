@@ -30,6 +30,7 @@
                                            :name="'borrow_number[' + row.id + ']'"
                                            min="0"
                                            :max="row.amount"
+                                           :placeholder="'借用數量(1~' + row.amount + ')'"
                                            @change="append(row, $event)"
                                            required
                                     />
