@@ -30,7 +30,8 @@
                                        min="0"
                                        :max="row.amount"
                                        @change="append(row, $event)"
-                                >
+                                       required
+                                />
                             </div>
                             <input type="hidden" :id="row.id">
                         </div>
