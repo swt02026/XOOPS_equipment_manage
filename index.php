@@ -7,16 +7,17 @@
         $xoopsDB->prefix('equipment_desc'));
 
     $query = $xoopsDB->query($sql);
-    $json_data = null;
+    $query_rows = [];
+
     if($xoopsDB->getRowsNum($query) > 0){
 
-        $query_rows = [];
         while ($row = $xoopsDB->fetchArray($query)){
 
             $query_rows[] = $row;
         }
-        $json_data = json_encode($query_rows);
     }
+    
+    $json_data = json_encode($query_rows);
     $xoopsTpl->assign('json_data', $json_data);
     include_once XOOPS_ROOT_PATH."/footer.php";
 ?>
