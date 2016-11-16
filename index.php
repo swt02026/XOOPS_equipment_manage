@@ -1,6 +1,6 @@
 <?php
     include '../../mainfile.php';
-    $xoopsOption['template_main'] = "equipment_borrow2.html";
+    $xoopsOption['template_main'] = "equipment_borrow.html";
     include XOOPS_ROOT_PATH."/header.php";
 
     $sql = sprintf("SELECT name, owner, amount, id  FROM %s",
@@ -16,8 +16,8 @@
             $query_rows[] = $row;
         }
         $json_data = json_encode($query_rows);
-        echo $json_data;
-        //$xoopsTpl->assign('query_rows', $query_rows);
+
+        $xoopsTpl->assign('json_data', $json_data);
     }
 
     include_once XOOPS_ROOT_PATH."/footer.php";

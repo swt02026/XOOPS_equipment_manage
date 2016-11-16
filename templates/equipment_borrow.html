@@ -7,82 +7,103 @@
 </head>
 
 <body>
-    <div id="selected-list" class="container">
-        <form action="admin/crud/borrow.php" method="post">
-            <{foreach from=$query_rows item=row}>
-                <div class="col-md-6 col-sm-6">
-                    <div class="well well-sm">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <img src="" alt="無圖檔" class="img-responsive">
+
+<div id="selected-list">
+    <form action="admin/crud/borrow.php" method="post">
+        <div v-for="row in query_rows">
+            <div class="col-md-6 col-sm-6">
+                <div class="well well-sm">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <img src="" alt="無圖檔" class="img-responsive">
+                        </div>
+                        <div class="col-md-8 col-sm-8">
+                            名稱：{{ row.name }}<br />
+                            持有人:{{ row.owner }}<br />
+                            數量：{{ row.amount }}<br />
+                            <div class="form-group">
+                                <label :for="'a' + row.id" >借用數量：</label>
+                                <input :id="'a' + row.id"
+                                       class="form-control"
+                                       type="number"
+                                       :name="'borrow_number[' + row.id + ']'"
+                                       min="0"
+                                       :max="row.amount"
+                                       @change="append(row, $event)"
+                                >
                             </div>
-                            <div class="col-md-8 col-sm-8">
-                                名稱：<{$row.name}><br />
-                                持有人:<{$row.owner}><br />
-                                數量：<{$row.amount}><br />
-                                <div class="form-group">
-                                    <label for="borrow<{$row.id}>">借用數量：</label>
-                                    <input id="borrow<{$row.id}>"
-                                           class="form-control"
-                                           type="number"
-                                           name="borrow_number[<{$row.id}>]"
-                                           min="0"
-                                           max="<{$row.amount}>"
-                                           v-on:change="append"
-                                           >
-                                </div>
-                            </div>
+                            <input type="hidden" :id="row.id">
                         </div>
-                    </div>
-                </div>
-            <{/foreach}>
-
-            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
-
-            <div class="modal fade" id="submitModal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                        <div class="modal-header">
-                            <button data-dismiss="modal" class="close">&times;</button>
-                            <h4 class="modal-title">借用確認</h4>
-                        </div>
-
-                        <div class="modal-body">
-                            <p>名稱：<br />借用數量:<br /></p>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-lg">確認送出</button>
-
-                            <button data-dismiss="modal" class="btn btn-lg">取消</button>
-                        </div>
-
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
 
-    <script>
-        var sel_list = new Vue({
-            el: '#selected-list',
-            data: {
-                items:[
+        <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
 
-                ]
-            },
-            methods: {
-                append: function () {
-                    console.log("aaa");
-                }
+
+        <div class="modal fade" id="submitModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close">&times;</button>
+                        <h4 class="modal-title">借用確認</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div v-for="item in items">
+                            <p>名稱：{{ item.name }}<br />借用數量:{{ item.amount }}<br /></p>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-lg">確認送出</button>
+
+                        <button data-dismiss="modal" class="btn btn-lg">取消</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    var sel_list = new Vue({
+        el: '#selected-list',
+        data: {
+            items:[
+
+            ],
+            query_rows:[
+                {id:10, amount:20, owner:"aaa", name:"bbbb"},
+                {id:11, amount:30, owner:"baa", name:"bbba"}
+            ]
+        },
+        methods: {
+            append: function (row, event) {
+
+                var checkNotExist = function (checkId) {
+
+                    return function (item) {
+                        return !(item.id == checkId);
+                    };
+                }(row.id);
+
+                this.items = this.items.filter(checkNotExist);
+                this.items.push({
+                    id: row.id,
+                    name: row.name,
+                    owner: row.owner,
+                    amount: event.target.value
+                });
             }
-        });
+        }
+    });
 
-    </script>
+</script>
 
 </body>
-
-
 
 </html>
