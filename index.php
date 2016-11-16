@@ -15,7 +15,7 @@
 
             $query_rows[] = $row;
         }
-        $json_data = json_encode($query_rows or []);
+        $json_data = json_encode($query_rows) or "[]";
 
         $xoopsTpl->assign('json_data', $json_data);
     }
