@@ -15,10 +15,8 @@
 
             $query_rows[] = $row;
         }
-        $json_data = json_encode($query_rows) == [];
-
-        $xoopsTpl->assign('json_data', $json_data);
+        $json_data = json_encode($query_rows);
     }
-
+    $xoopsTpl->assign('json_data', $json_data);
     include_once XOOPS_ROOT_PATH."/footer.php";
 ?>
