@@ -59,7 +59,7 @@
         </tbody>
 
     </table>
-    
+
     <button data-toggle="modal"
             data-target="#submitModal"
             @click="modal_data={};modal_op='新增';operation='append'"
@@ -116,30 +116,35 @@
                             {{ modal_op }}確認
                         </h4>
                     </div>
+
                     <div class="modal-body">
 
                         <input type="hidden"
                                name="update_id"
                                v-model="modal_data.id">
-                        <label for="data_name">
-                            名稱：
-                        </label>
-                        <input type="text"
-                               id="data_name"
-                               name="name"
-                               pattern="[^-*.,!;'><\[\]=\+?/\\]+"
-                               v-model="modal_data.name"
-                               required />
-
-                        <label for="data_amount">
-                            數量：
-                        </label>
-                        <input 	type="number"
-                                  id="data_amount"
-                                  name="amount"
-                                  v-model="modal_data.amount"
-                                  required />
+                        <div class="form-group">
+                            <label for="data_name">
+                                名稱：
+                            </label>
+                            <input type="text"
+                                   id="data_name"
+                                   name="name"
+                                   pattern="[^-*.,!;'><\[\]=\+?/\\]+"
+                                   v-model="modal_data.name"
+                                   required />
+                        </div>
+                        <div class="form-group">
+                            <label for="data_amount">
+                                數量：
+                            </label>
+                            <input 	type="number"
+                                      id="data_amount"
+                                      name="amount"
+                                      v-model="modal_data.amount"
+                                      required />
+                        </div>
                     </div>
+
                     <div class="modal-footer">
                         <input type="submit"
                                :value="'確認' + modal_op" />
