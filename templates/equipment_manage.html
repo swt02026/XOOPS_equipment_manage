@@ -40,6 +40,8 @@
             <td>
                 <input type="button"
                        value="刪除"
+                       data-toggle="modal"
+                       data-target="#deleteModal"
                        @click="delete_id = row.id;modal_data=row;">
                 <button
                         type="button"
