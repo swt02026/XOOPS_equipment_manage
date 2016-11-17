@@ -3,8 +3,10 @@
     include '../../../include/cp_header.php';
     xoops_cp_header();
 
-    $sql = sprintf("SELECT  `name`, `owner`, `amount`, `id` FROM `%s` WHERE `owner`='%s'",
-        $xoopsDB->prefix('equipment_desc'), $xoopsUser->uname());
+    $owner = $xoopsUser->uname();
+
+    $sql = sprintf("SELECT `name`, `owner`, `amount`, `id`  FROM `%s` WHERE `owner`={$owner}",
+        $xoopsDB->prefix('equipment_desc'));
 
     $query = $xoopsDB->query($sql);
 
