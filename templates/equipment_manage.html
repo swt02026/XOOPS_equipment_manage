@@ -59,7 +59,13 @@
         </tbody>
 
     </table>
-
+    
+    <button data-toggle="modal"
+            data-target="#submitModal"
+            @click="modal_data={};modal_op='新增';operation='append'"
+    >
+        新增資料
+    </button>
 
     <div class="modal fade" id="deleteModal" role="dialog">
         <form action="crud/delete.php"
@@ -84,8 +90,7 @@
                     <div class="modal-footer">
                         <input type="submit"
                                value="確認刪除" />
-                        <button data-dismiss="modal"
-                                class="btn btn-primary">
+                        <button data-dismiss="modal">
                             取消
                         </button>
                     </div>
@@ -94,14 +99,6 @@
 
         </form>
     </div>
-
-    <button data-toggle="modal"
-            data-target="#submitModal"
-            @click="modal_data={};modal_op='新增';operation='append'"
-    >
-        新增資料
-    </button>
-
 
     <div class="modal fade" id="submitModal" role="dialog">
 
@@ -146,8 +143,7 @@
                     <div class="modal-footer">
                         <input type="submit"
                                :value="'確認' + modal_op" />
-                        <button data-dismiss="modal"
-                                class="btn btn-primary">
+                        <button data-dismiss="modal">
                             取消
                         </button>
                     </div>
