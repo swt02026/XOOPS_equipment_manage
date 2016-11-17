@@ -94,12 +94,14 @@
                 }(row.id);
 
                 this.items = this.items.filter(checkNotExist);
-                this.items.push({
-                    id: row.id,
-                    name: row.name,
-                    owner: row.owner,
-                    amount: event.target.value
-                });
+                if(event.target.value) {
+                    this.items.push({
+                        id: row.id,
+                        name: row.name,
+                        owner: row.owner,
+                        amount: event.target.value
+                    });
+                }
             }
         }
     });
