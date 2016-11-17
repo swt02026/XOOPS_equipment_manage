@@ -5,7 +5,7 @@
 
     $owner = $xoopsUser->uname();
 
-    $sql = sprintf("SELECT `name`, `owner`, `amount`, `id`  FROM `%s` WHERE `owner`={$owner}",
+    $sql = sprintf("SELECT `name`, `owner`, `amount`, `id`  FROM `%s`",
         $xoopsDB->prefix('equipment_desc'));
 
     $query = $xoopsDB->query($sql);
