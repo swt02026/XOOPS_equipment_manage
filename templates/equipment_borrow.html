@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.js"></script>
 </head>
 
 <body>
 
 <div id="selected-list">
+
     <div v-if="query_rows.length > 0">
         <form action="admin/crud/borrow.php" method="post">
             <div v-for="row in query_rows">
@@ -41,9 +42,9 @@
                     </div>
                 </div>
             </div>
-
-            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
-
+            <div v-if="item.length > 0">
+                <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
+            </div>
             <div class="modal fade" id="submitModal" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -70,7 +71,9 @@
             </div>
         </form>
     </div>
+
 </div>
+
 <script>
     var sel_list = new Vue({
         el: '#selected-list',
