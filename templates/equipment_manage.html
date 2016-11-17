@@ -28,6 +28,7 @@
         <tbody>
 
             <tr v-for="row in query_rows">
+                <div v-if="query_rows.length > 0">
                     <td>
                         {{ row.name }}
                     </td>
@@ -52,6 +53,7 @@
                             修改
                         </button>
                     </td>
+                </div>
             </tr>
 
         </tbody>
