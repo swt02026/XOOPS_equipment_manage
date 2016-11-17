@@ -26,35 +26,38 @@
         </tr>
         </thead>
         <tbody>
-        <div v-if="query_rows.length > 0">
+
             <tr v-for="row in query_rows">
-                <td>
-                    {{ row.name }}
-                </td>
-                <td>
-                    {{ row.owner }}
-                </td>
-                <td>
-                    {{ row.amount }}
-                </td>
-                <td>
-                    <input type="button"
-                           value="刪除"
-                           data-toggle="modal"
-                           data-target="#deleteModal"
-                           @click="delete_id = row.id;modal_data=row;">
-                    <button
-                            type="button"
-                            data-toggle="modal"
-                            data-target="#submitModal"
-                            @click="modal_data=row;modal_op='修改';operation='update'"
-                    >
-                        修改
-                    </button>
-                </td>
+                <div v-if="query_rows.length > 0">
+                    <td>
+                        {{ row.name }}
+                    </td>
+                    <td>
+                        {{ row.owner }}
+                    </td>
+                    <td>
+                        {{ row.amount }}
+                    </td>
+                    <td>
+                        <input type="button"
+                               value="刪除"
+                               data-toggle="modal"
+                               data-target="#deleteModal"
+                               @click="delete_id = row.id;modal_data=row;">
+                        <button
+                                type="button"
+                                data-toggle="modal"
+                                data-target="#submitModal"
+                                @click="modal_data=row;modal_op='修改';operation='update'"
+                        >
+                            修改
+                        </button>
+                    </td>
+                </div>
             </tr>
-        </div>
+
         </tbody>
+
     </table>
 
 
