@@ -15,7 +15,8 @@
         while ($row = $xoopsDB->fetchArray($query)){
             $query_rows[] = $row;
         }
-        $xoopsTpl->assign('query_rows', $query_rows);
+        $json_data = json_encode($query_rows);
+        $xoopsTpl->assign('json_data', $json_data);
     }
 
     $xoopsTpl->display('db:equipment_manage.html');
