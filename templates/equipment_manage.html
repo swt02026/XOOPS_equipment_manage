@@ -39,10 +39,9 @@
                 </td>
                 <td>
                     <input type="submit"
-                           class="btn btn-info"
                            value="刪除"
                            @click="delete_id = row.id">
-                    <button class="btn btn-info"
+                    <button
                             type="button"
                             data-toggle="modal"
                             data-target="#submitModal"
@@ -58,7 +57,6 @@
 
     <button data-toggle="modal"
             data-target="#submitModal"
-            class="btn btn-info"
             @click="modal_data={};modal_op='新增';operation='append'"
     >
         新增資料
@@ -109,7 +107,6 @@
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               class="btn btn-primary"
                                :value="'確認' + modal_op" />
                         <button data-dismiss="modal"
                                 class="btn btn-primary">
