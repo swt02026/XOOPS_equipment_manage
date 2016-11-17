@@ -16,44 +16,78 @@
 </head>
 <body>
 <div id="manage_table">
-    <form action="crud/delete.php" method="post" enctype="multipart/form-data" >
-        <input type="hidden" name="delete_id" v-model="delete_id"/>
-        <table class="table" >
-            <thead>
-            <tr>
-                <td v-for="row_name in row_names">
-                    {{ row_name }}
-                </td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="row in query_rows">
-                <td>
-                    {{ row.name }}
-                </td>
-                <td>
-                    {{ row.owner }}
-                </td>
-                <td>
-                    {{ row.amount }}
-                </td>
-                <td>
-                    <input type="button"
-                           value="刪除"
-                           @click="delete_id = row.id">
-                    <button
-                            type="button"
-                            data-toggle="modal"
-                            data-target="#submitModal"
-                            @click="modal_data=row;modal_op='修改';operation='update'"
-                    >
-                        修改
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
+
+
+    <table class="table" >
+        <thead>
+        <tr>
+            <td v-for="row_name in row_names">
+                {{ row_name }}
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="row in query_rows">
+            <td>
+                {{ row.name }}
+            </td>
+            <td>
+                {{ row.owner }}
+            </td>
+            <td>
+                {{ row.amount }}
+            </td>
+            <td>
+                <input type="button"
+                       value="刪除"
+                       @click="delete_id = row.id;modal_data=row;">
+                <button
+                        type="button"
+                        data-toggle="modal"
+                        data-target="#submitModal"
+                        @click="modal_data=row;modal_op='修改';operation='update'"
+                >
+                    修改
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <div class="modal fade" id="deleteModal" role="dialog">
+        <form action="crud/delete.php"
+              method="post"
+              enctype="multipart/form-data" >
+            <input type="hidden" name="delete_id" v-model="delete_id"/>
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                        <h4 class="modal-title">
+                            刪除確認
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        名稱：{{ modal_data.name }}
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit"
+                               :value="確認刪除" />
+                        <button data-dismiss="modal"
+                                class="btn btn-primary">
+                            取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
 
     <button data-toggle="modal"
             data-target="#submitModal"
