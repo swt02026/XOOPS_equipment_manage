@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <meta charset="UTF-8">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -12,109 +13,138 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
 </head>
 <body>
-    <form action="crud/delete.php" method="post" enctype="multipart/form-data">
-        <table class="table">
+<div id="manage_table">
+    <form action="crud/delete.php" method="post" enctype="multipart/form-data" >
+        <input type="hidden" name="delete_id" v-model="delete_id"/>
+        <table class="table" >
             <thead>
-                <tr>
-                    <td>名稱</td>
-                    <td>持有者</td>
-                    <td>數量</td>
-                    <td>操作</td>
-                </tr>
+            <tr>
+                <td v-for="row_name in row_names">
+                    {{ row_name }}
+                </td>
+            </tr>
             </thead>
             <tbody>
-                <{foreach from=$query_rows item=row name=ito}>
-                    <tr>
-                        <{foreach from=$row item=elem name=it}>
-                            <td>
-                                <{if $smarty.foreach.it.index != 3}>
-                                    <{$elem}>
-                                <{else}>
-                                    <input type="submit" value="刪除"
-                                           onclick="$('#delete_id').val(<{$elem}>);" />
-                                    <input value="修改" type="button" data-bind="click:update_data({name:'<{$row.name}>', amount:<{$row.amount}>, id:<{$elem}>})">
-                                    <button data-bind="click:update_data({name:'', amount:0, id: 0 })" hidden></button>
-                                <{/if}>
-                            </td>
-                        <{/foreach}>
-                    </tr>
-                <{/foreach}>
-            </tbody>
-        </table>
-        <input type="hidden" id="delete_id" name="delete_id"/>
-    </form>
-
-    <button onclick="$('#add_form').toggle(); $('#update_form').hide();">新增資料</button>
-    <form action="crud/append.php" METHOD="post" enctype="multipart/form-data">
-        <table id="add_form" style="display: none;">
-            <tbody>
-                <tr>
-                    <td>
-                        名稱
-                        <input type="text" name="name" pattern="[^-*.,!;'><\[\]=\+?/\\]+">
-                    </td>
-                    <td>
-                        數量
-                        <input type="text" name="amount" pattern="[1-9]\d*">
-                    </td>
-                    <td>
-                        <input type="submit" value="確認新增" data-bind="click">
-                    </td>
-                </tr>
+            <tr v-for="row in query_rows">
+                <td>
+                    {{ row.name }}
+                </td>
+                <td>
+                    {{ row.owner }}
+                </td>
+                <td>
+                    {{ row.amount }}
+                </td>
+                <td>
+                    <input type="submit"
+                           class="btn btn-info"
+                           value="刪除"
+                           @click="delete_id = row.id">
+                    <button class="btn btn-info"
+                            type="button"
+                            data-toggle="modal"
+                            data-target="#submitModal"
+                            @click="modal_data=row;modal_op='修改';operation='update'"
+                    >
+                        修改
+                    </button>
+                </td>
+            </tr>
             </tbody>
         </table>
     </form>
 
-    <form action="crud/update.php" METHOD="post" enctype="multipart/form-data">
-        <input type="hidden" name="update_id" data-bind="value: data.id">
-        <table id="update_form" style="display: none;">
-            <tbody>
-                <tr>
-                    <td>
-                        名稱
-                        <input type="text" name="name" data-bind="textInput: data.name" pattern="[^-*.,!;'><\[\]=\+?/\\]+">
-                    </td>
-                    <td>
-                        數量
-                        <input type="text" name="amount" data-bind="textInput: data.amount" pattern="[1-9]\d*">
-                    </td>
-                    <td>
-                        <input type="submit" value="確認修改">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
+    <button data-toggle="modal"
+            data-target="#submitModal"
+            class="btn btn-info"
+            @click="modal_data={};modal_op='新增';operation='append'"
+    >
+        新增資料
+    </button>
 
+
+    <div class="modal fade" id="submitModal" role="dialog">
+
+        <form :action="'crud/' + operation + '.php'"
+              method="post"
+              enctype="multipart/form-data">
+
+            <input type="hidden" name="update_id" >
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                        <h4 class="modal-title">
+                            {{ modal_op }}確認
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <input type="hidden"
+                               name="update_id"
+                               v-model="modal_data.id">
+                        <label for="data_name">
+                            名稱：
+                        </label>
+                        <input type="text"
+                               id="data_name"
+                               name="name"
+                               pattern="[^-*.,!;'><\[\]=\+?/\\]+"
+                               v-model="modal_data.name"
+                               required />
+
+                        <label for="data_amount">
+                            數量：
+                        </label>
+                        <input 	type="number"
+                                  id="data_amount"
+                                  name="amount"
+                                  v-model="modal_data.amount"
+                                  required />
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit"
+                               class="btn btn-primary"
+                               :value="'確認' + modal_op" />
+                        <button data-dismiss="modal"
+                                class="btn btn-primary">
+                            取消
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var vm = new Vue({
+
+            el:"#manage_table",
+            data:{
+                delete_id : 0,
+                modal_op : "",
+                operation : "",
+                modal_data : {
+
+                },
+                row_names : [
+                    "名稱",
+                    "持有者",
+                    "數量",
+                    "操作"
+                ],
+                query_rows : [
+                    {id:1, name:"aaaa", owner:"bbb", amount:10}
+                ]
+            },
+
+        });
+    </script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-<script
-        src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-<script>
-    var vm = {
-
-        data:{
-            name: ko.observable(''),
-            amount: ko.observable(0),
-            id: ko.observable(0)
-        },
-        update_data:function (val) {
-            this.data.name(val.name);
-            this.data.amount(val.amount);
-            this.data.id(val.id);
-
-            $('#update_form').show();
-            if(val.id==0)
-                $('#update_form').hide();
-            $('#add_form').hide();
-        }
-
-    };
-    ko.applyBindings(vm);
-</script>
 </html>

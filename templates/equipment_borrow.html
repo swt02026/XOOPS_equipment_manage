@@ -11,7 +11,7 @@
 <div id="selected-list">
 
     <div v-if="query_rows.length > 0">
-        <form action="admin/crud/borrow.php" method="post">
+        <form action="admin/crud/borrow.php" method="post" enctype="multipart/form-data">
             <div v-for="row in query_rows">
                 <div class="col-md-4 col-sm-4">
                     <div class="well well-sm">
