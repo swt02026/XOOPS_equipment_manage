@@ -93,14 +93,23 @@
                     };
                 }(row.id);
 
-                this.items = this.items.filter(checkNotExist);
                 if(event.target.value) {
+
+                    this.items = this.items.filter(checkNotExist);
+
                     this.items.push({
                         id: row.id,
                         name: row.name,
                         owner: row.owner,
                         amount: event.target.value
                     });
+                }
+                else {
+                    var checkExist = function (checkId) {
+
+                        return !checkNotExist(checkId);
+                    }
+                    this.items = this.items.filter(checkExist);
                 }
             }
         }
