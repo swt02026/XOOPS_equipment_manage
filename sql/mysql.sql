@@ -9,4 +9,10 @@ CREATE TABLE `equipment_desc` (
   COLLATE='utf8_general_ci'
   ENGINE=InnoDB;
 
-
+CREATE TABLE `equipment_borrow` (
+  `id` SMALLINT UNSIGNED NOT NULL ,
+  `owner` VARCHAR(10) NOT NULL,
+  `amount` INT UNSIGNED NOT NULL
+)
+  COLLATE='utf8_general_ci'
+  ENGINE=InnoDB;

@@ -31,9 +31,8 @@
     $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 
     $modversion['tables'] = [
-        "equipment_desc"
-        //"equipment_amount",
-        //"equipment_borrower"
+        "equipment_desc",
+        "equipment_borrower"
     ];
 
 ?>
