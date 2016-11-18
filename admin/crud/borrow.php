@@ -15,6 +15,7 @@
 
         $borrower = $xoopsUser->uname();
         foreach ($borrow_data as $id => $amount){
+
             $id = intval($id);
             $amount = intval($amount);
             $sql_amount_dec = sprintf("UPDATE `%s` 
