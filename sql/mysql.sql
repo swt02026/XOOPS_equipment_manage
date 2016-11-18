@@ -11,7 +11,7 @@ CREATE TABLE `equipment_desc` (
 
 CREATE TABLE `equipment_borrow` (
   `id` SMALLINT UNSIGNED NOT NULL ,
-  `owner` VARCHAR(10) NOT NULL,
+  `borrower` VARCHAR(10) NOT NULL,
   `amount` INT UNSIGNED NOT NULL
 )
   COLLATE='utf8_general_ci'
