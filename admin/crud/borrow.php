@@ -33,3 +33,5 @@
 
         }
     }
+
+    header("location: ../borrow_manage.php");
