@@ -21,7 +21,7 @@
         $update_amount = $update_data["amount"];
         $update_id = $update_data['update_id'];
         $owner = $xoopsUser->uname();
-        $sql = sprintf("UPDATE `%s` SET `name`='{$update_name}', `amount`={$update_amount} WHERE `id`={$update_id} and `owner`={$owner}" ,
+        $sql = sprintf("UPDATE `%s` SET `name`='{$update_name}', `amount`={$update_amount} WHERE `id`={$update_id} and `owner`='{$owner}'" ,
             $xoopsDB->prefix('equipment_desc')
         );
         $xoopsDB->queryF($sql);
