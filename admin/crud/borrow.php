@@ -5,7 +5,7 @@
  * Date: 2016/11/7
  * Time: 下午 02:40
  */
-
+    include '../../../mainfile.php';
     $borrow_data = array_filter(
         array_map("intval", $_POST["borrow_number"]), function ($val){
         return $val > 0;
