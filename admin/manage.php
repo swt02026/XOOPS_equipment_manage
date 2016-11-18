@@ -14,6 +14,7 @@
     if($xoopsDB->getRowsNum($query) > 0){
 
         while ($row = $xoopsDB->fetchArray($query)){
+            $row['permission'] = ($row['owner'] == $owner);
             $query_rows[] = $row;
         }
     }
