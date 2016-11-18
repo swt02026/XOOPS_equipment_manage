@@ -10,8 +10,16 @@
         array_map("intval", $_POST["borrow_number"]), function ($val){
         return $val > 0;
     });
+
     if(sizeof($borrow_data) > 0){
 
+        $borrower = $xoopsUser->uname();
+        foreach ($borrow_data as $id => $amount){
+            $sql = sprintf("INSERT INTO `%s` (`id`, `amount`, `owner`) 
+                            VALUES ({id}, {amount}, '{owner}') 
+                            ON DUPLICATE KEY UPDATE `amount`=`amount`+{amount}");
+            echo $sql;
 
+        }
     }
     var_dump($borrow_data);
