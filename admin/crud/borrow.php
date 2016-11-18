@@ -10,4 +10,8 @@
         array_map("intval", $_POST["borrow_number"]), function ($val){
         return $val > 0;
     });
+    if(sizeof($borrow_data) > 0){
+
+
+    }
     var_dump($borrow_data);
