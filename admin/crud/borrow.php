@@ -16,8 +16,8 @@
         $borrower = $xoopsUser->uname();
         foreach ($borrow_data as $id => $amount){
             $sql = sprintf("INSERT INTO `%s` (`id`, `amount`, `owner`) 
-                            VALUES ({id}, {amount}, '{owner}') 
-                            ON DUPLICATE KEY UPDATE `amount`=`amount`+{amount}", $xoopsDB->prefix('equipment_borrow'));
+                            VALUES ({$id}, {$amount}, '{$owner}') 
+                            ON DUPLICATE KEY UPDATE `amount`=`amount`+{$amount}", $xoopsDB->prefix('equipment_borrow'));
             echo $sql;
 
         }
