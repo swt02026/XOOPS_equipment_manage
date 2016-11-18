@@ -23,9 +23,10 @@
                                 名稱：{{ row.name }}<br />
                                 持有人:{{ row.owner }}<br />
                                 數量：{{ row.amount }}<br />
-                                <div class="form-group">
-                                    <label :for="'a' + row.id" >借用數量：</label>
-                                    <div v-if="row.amount > 0">
+                                <div v-if="row.amount > 0">
+                                    <div class="form-group">
+                                        <label :for="'a' + row.id" >借用數量：</label>
+
                                         <input :id="'a' + row.id"
                                                class="form-control"
                                                type="number"
@@ -35,6 +36,7 @@
                                                :placeholder="'借用數量(1~' + row.amount + ')'"
                                                @change="append(row, $event)"
                                         />
+
                                     </div>
                                 </div>
                                 <input type="hidden" :id="row.id">
