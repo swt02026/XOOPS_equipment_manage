@@ -16,13 +16,18 @@
         $borrower = $xoopsUser->uname();
         foreach ($borrow_data as $id => $amount){
 
-            $sql_amount_dec = sprintf("UPDATE `%s` SET `amount`=`amount`-{$amount} WHERE `id`={$id} and `amount`>={$amount}");
+            $sql_amount_dec = sprintf("UPDATE `%s` 
+                                        SET `amount`=`amount`-{$amount} 
+                                        WHERE `id`={$id} and `amount`>={$amount}",
+                                    $xoopsDB->prefix('equipment_desc'));
 
             $xoopsDB->queryF($sql_amount_dec);
 
             $sql = sprintf("INSERT INTO `%s` (`id`, `amount`, `borrower`) 
                             VALUES ({$id}, {$amount}, '{$borrower}') 
-                            ON DUPLICATE KEY UPDATE `amount`=`amount`+{$amount}", $xoopsDB->prefix('equipment_borrow'));
+                            ON DUPLICATE KEY UPDATE `amount`=`amount`+{$amount}",
+                        $xoopsDB->prefix('equipment_borrow'));
+            
             $xoopsDB->queryF($sql);
 
         }
