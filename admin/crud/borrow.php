@@ -22,4 +22,3 @@
 
         }
     }
-    var_dump($borrow_data);
