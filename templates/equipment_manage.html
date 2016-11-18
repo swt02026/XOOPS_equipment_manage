@@ -42,19 +42,21 @@
                         {{ row.permission }}
                     </td>
                     <td>
-                        <input type="button"
-                               value="刪除"
-                               data-toggle="modal"
-                               data-target="#deleteModal"
-                               @click="delete_id = row.id;modal_data=row;">
-                        <button
-                                type="button"
-                                data-toggle="modal"
-                                data-target="#submitModal"
-                                @click="modal_data=JSON.parse(JSON.stringify(row));modal_op='修改';operation='update'"
-                        >
-                            修改
-                        </button>
+                        <div v-if="row.permission">
+                            <input type="button"
+                                   value="刪除"
+                                   data-toggle="modal"
+                                   data-target="#deleteModal"
+                                   @click="delete_id = row.id;modal_data=row;">
+                            <button
+                                    type="button"
+                                    data-toggle="modal"
+                                    data-target="#submitModal"
+                                    @click="modal_data=JSON.parse(JSON.stringify(row));modal_op='修改';operation='update'"
+                            >
+                                修改
+                            </button>
+                        </div>
                     </td>
                 </div>
             </tr>
