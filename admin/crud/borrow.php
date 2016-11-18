@@ -35,4 +35,4 @@
         }
     }
 
-    header("location: ../borrow_manage.php");
+    header("location: ../../index.php");

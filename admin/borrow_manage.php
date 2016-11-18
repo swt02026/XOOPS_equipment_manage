@@ -19,7 +19,7 @@
     }
 
     echo $json_data = json_encode($query_rows);
-    /*$xoopsTpl->assign('json_data', $json_data);
-    $xoopsTpl->display('db:equipment_manage.html');*/
+    $xoopsTpl->assign('json_data', $json_data);
+    $xoopsTpl->display('db:equipment_borrow_list.html');
     xoops_cp_footer();
 ?>

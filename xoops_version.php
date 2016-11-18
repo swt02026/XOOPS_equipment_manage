@@ -23,8 +23,16 @@
             'description' => 'equipment_manage.html'
         ],
         [
+            'file' => 'equipment_borrow_list.html',
+            'description' => 'equipment_borrow_list.html'
+        ],
+        [
             'file' => 'equipment_borrow.html',
             'description' => 'equipment_borrow.html'
+        ],
+        [
+            'file' => 'equipment_about.html',
+            'description' => 'equipment_about.html'
         ]
     ];
 
