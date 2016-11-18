@@ -32,7 +32,7 @@
 
     $modversion['tables'] = [
         "equipment_desc",
-        "equipment_borrower"
+        "equipment_borrow"
     ];
 
 ?>
