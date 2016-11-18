@@ -12,7 +12,8 @@ CREATE TABLE `equipment_desc` (
 CREATE TABLE `equipment_borrow` (
   `id` SMALLINT UNSIGNED NOT NULL ,
   `borrower` VARCHAR(10) NOT NULL,
-  `amount` INT UNSIGNED NOT NULL
+  `amount` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`, `borrower`)
 )
   COLLATE='utf8_general_ci'
   ENGINE=InnoDB;
