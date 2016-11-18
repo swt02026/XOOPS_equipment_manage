@@ -15,7 +15,8 @@
 
         $borrower = $xoopsUser->uname();
         foreach ($borrow_data as $id => $amount){
-
+            $id = intval($id);
+            $amount = intval($amount);
             $sql_amount_dec = sprintf("UPDATE `%s` 
                                         SET `amount`=`amount`-{$amount} 
                                         WHERE `id`={$id} and `amount`>={$amount}",
@@ -27,7 +28,7 @@
                             VALUES ({$id}, {$amount}, '{$borrower}') 
                             ON DUPLICATE KEY UPDATE `amount`=`amount`+{$amount}",
                         $xoopsDB->prefix('equipment_borrow'));
-            
+
             $xoopsDB->queryF($sql);
 
         }
