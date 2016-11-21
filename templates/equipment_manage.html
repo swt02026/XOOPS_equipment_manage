@@ -52,7 +52,7 @@
                                     type="button"
                                     data-toggle="modal"
                                     data-target="#submitModal"
-                                    @click="modal_data=JSON.parse(JSON.stringify(row));modal_op='修改';operation='update'"
+                                    @click="setUpdateModal(row)"
                             >
                                 修改
                             </button>
@@ -171,6 +171,7 @@
                 modal_op : "",
                 operation : "",
                 amount_diff : 0,
+                old_amount:0,
                 modal_data : {
 
                 },
@@ -185,8 +186,15 @@
             },
             methods:{
                 setAmountDiff:function (event) {
-                    console.log(event.target.value);
-                    this.amount_diff += 1;
+
+                    this.amount_diff = this.old_amount - event.target.value;
+
+                },
+                setUpdateModal:function(row){
+                    this.modal_data=JSON.parse(JSON.stringify(row));
+                    this.modal_op='修改';
+                    this.operation='update';
+                    this.old_amount = row.amount
                 }
             }
 
