@@ -187,7 +187,7 @@
             methods:{
                 setAmountDiff:function (event) {
 
-                    this.amount_diff = this.old_amount - event.target.value;
+                    this.amount_diff = event.target.value - this.old_amount;
 
                 },
                 setUpdateModal:function(row){
