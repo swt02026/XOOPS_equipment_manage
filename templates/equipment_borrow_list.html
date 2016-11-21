@@ -36,33 +36,99 @@
                     </td>
                     <td>
                         <button type="button"
-                                data-toggle="modal" data-target="#"
-                                @click="">
+                                data-toggle="modal"
+                                data-target="#submitModal"
+                                @click="setReturnAll(false, record)">
                             部分歸還
                         </button>
                         <button type="button"
-                                data-toggle="modal" data-target="#"
-                                @click="">
+                                data-toggle="modal"
+                                data-target="#submitModal"
+                                @click="setReturnAll(true, record)">
                             全部歸還
                         </button>
                     </td>
                 </tr>
             </tbody>
         </table>
+
+        <div class="modal" id="submitModal" tabindex='-1'>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">
+                            歸還確認
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <h4>名稱：{{ operating_record.name }}</h4>
+                        <h4>借用人：{{ operating_record.borrower }}</h4>
+
+                        <div v-if="return_all">
+                            <h4>數量：{{ operating_record.amount }}</h4>
+                            <input type="hidden"
+                                   name="return_amount"
+                                   v-model="operating_record.amount">
+                        </div>
+                        <div v-else>
+                            <h4>數量：
+                            <input type="number"
+                                   name="return_amount"
+                                   min="1"
+                                   :max="max_amount"
+                                   v-model="operating_record.amount"
+                                    />
+                            </h4>
+                        </div>
+                        <input type="hidden"
+                               name="id"
+                               v-model="operating_record.id"/>
+                        <input type="hidden"
+                               name="borrower"
+                               v-model="operating_record.borrower"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"
+                                @click="">
+                            確認
+                        </button>
+                        <button type="button"
+                                data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    .modal
+
     <script>
         var vm = new Vue({
 
             el:'#show_record',
             data:{
-                operation_record:{
+                operating_record:{
                     name:"", amount:0, borrower:"", id:0
                 },
+                return_all: false,
+                max_amount : 0,
                 records:[
-                    {name:"aaaaa", amount:10, borrower:"bbb"},
-                    {name:"aaaa", amount:11, borrower:"bb"}
+                    {id:1, name:"aaaaa", amount:10, borrower:"bbb"},
+                    {id:2, name:"aaaa", amount:11, borrower:"bb"}
                 ]
+            },
+            methods:{
+                setReturnAll:function(return_all, record){
+                    this.return_all = return_all;
+                    this.operating_record = JSON.parse(JSON.stringify(record));
+                    this.max_amount = this.operating_record.amount;
+                }
             }
         });
 
