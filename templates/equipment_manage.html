@@ -147,7 +147,9 @@
                                   v-model="modal_data.totalAmount"
                                   @change="setAmountDiff"
                                   required />
-                        <input type="hidden" v-model="amount_diff"/>
+                        <input type="hidden"
+                               name="amount_diff"
+                               v-model="amount_diff"/>
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
@@ -188,7 +190,6 @@
                 setAmountDiff:function (event) {
 
                     this.amount_diff = event.target.value - this.old_amount;
-
                 },
                 setUpdateModal:function(row){
                     this.modal_data=JSON.parse(JSON.stringify(row));
