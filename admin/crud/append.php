@@ -16,8 +16,10 @@
         $post_data_name = $append_data["name"];
         $post_data_amount = intval($append_data["amount"]);
         $owner = $xoopsUser->uname();
+        $totalAmount = $post_data_amount;
 
-        $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`) VALUES('{$post_data_name}', '{$owner}', {$post_data_amount});"
+        $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`, `totalAmount`) 
+                        VALUES('{$post_data_name}', '{$owner}', {$post_data_amount}, {$post_data_amount});"
             , $xoopsDB->prefix('equipment_desc'));
 
         $xoopsDB->queryF($sql);
