@@ -67,7 +67,7 @@
 
     <button data-toggle="modal"
             data-target="#submitModal"
-            @click="modal_data={};modal_op='新增';operation='append'"
+            @click="setAppendModal(row)"
     >
         新增資料
     </button>
@@ -195,6 +195,11 @@
                     this.modal_op='修改';
                     this.operation='update';
                     this.old_amount = row.amount
+                },
+                setAppendModal:function (row) {
+                    this.modal_data = {};
+                    this.modal_op = '新增';
+                    this.operation='append';
                 }
             }
 
