@@ -39,7 +39,7 @@
                         {{ row.amount }}
                     </td>
                     <td>
-                        {{ row.totalAmount }}
+                        {{ row.total }}
                     </td>
                     <td>
                         <div v-if="row.permission">
@@ -144,7 +144,7 @@
                                   id="data_amount"
                                   name="amount"
                                   min="1"
-                                  v-model="modal_data.totalAmount"
+                                  v-model="modal_data.total"
                                   @change="setAmountDiff"
                                   required />
                         <input type="hidden"
@@ -195,7 +195,7 @@
                     this.modal_data=JSON.parse(JSON.stringify(row));
                     this.modal_op='修改';
                     this.operation='update';
-                    this.old_amount = row.totalAmount
+                    this.old_amount = row.total;
                 },
                 setAppendModal:function (row) {
                     this.modal_data = {};

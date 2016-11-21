@@ -18,7 +18,7 @@
         $owner = $xoopsUser->uname();
         $totalAmount = $post_data_amount;
 
-        $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`, `totalAmount`) 
+        $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`, `total`) 
                         VALUES('{$post_data_name}', '{$owner}', {$post_data_amount}, {$post_data_amount});"
             , $xoopsDB->prefix('equipment_desc'));
 

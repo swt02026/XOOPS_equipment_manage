@@ -3,7 +3,7 @@ CREATE TABLE `equipment_desc` (
   `owner` VARCHAR (10) NOT NULL DEFAULT '',
   `name` VARCHAR (30) NOT NULL DEFAULT '',
   `amount` INT UNSIGNED NOT NULL ,
-  `totalAmount` INT UNSIGNED NOT NULL ,
+  `total` INT UNSIGNED NOT NULL ,
   PRIMARY KEY (`id`),
   CONSTRAINT uq UNIQUE (owner, name)
 )
