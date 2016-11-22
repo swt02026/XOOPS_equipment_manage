@@ -54,60 +54,63 @@
             </tbody>
         </table>
 
-        <div class="modal" id="submitModal" tabindex='-1'>
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button"
-                                class="close"
-                                data-dismiss="modal"
-                                aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title">
-                            歸還確認
-                        </h4>
-                    </div>
-                    <div class="modal-body">
-                        <h4>名稱：{{ operating_record.name }}</h4>
-                        <h4>借用人：{{ operating_record.borrower }}</h4>
-
-                        <div v-if="return_all">
-                            <h4>歸還數量：{{ operating_record.amount }}</h4>
-                            <input type="hidden"
-                                   name="return_amount"
-                                   v-model="operating_record.amount">
-                        </div>
-                        <div v-else>
-                            <h4>歸還數量：
-                            <input type="number"
-                                   name="return_amount"
-                                   min="1"
-                                   :max="max_amount"
-                                   value="1"
-                                    />
+        <div class="modal" id="submitModal" role="dialog" tabindex='-1'>
+            <form method="post" enctype="multipart/form-data" action="crud/return.php">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button"
+                                    class="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title">
+                                歸還確認
                             </h4>
                         </div>
-                        <input type="hidden"
-                               name="id"
-                               v-model="operating_record.id"/>
-                        <input type="hidden"
-                               name="borrower"
-                               v-model="operating_record.borrower"/>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button"
-                                @click="">
-                            確認
-                        </button>
-                        <button type="button"
-                                data-dismiss="modal">
-                            Close
-                        </button>
+                        <div class="modal-body">
+                            <h4>名稱：{{ operating_record.name }}</h4>
+                            <h4>借用人：{{ operating_record.borrower }}</h4>
+
+                            <div v-if="return_all">
+                                <h4>歸還數量：{{ operating_record.amount }}</h4>
+                                <input type="hidden"
+                                       name="return_amount"
+                                       v-model="operating_record.amount">
+                            </div>
+                            <div v-else>
+                                <h4>歸還數量：
+                                <input type="number"
+                                       name="return_amount"
+                                       min="1"
+                                       :max="max_amount"
+                                       value="1"
+                                        />
+                                </h4>
+                            </div>
+                            <input type="hidden"
+                                   name="id"
+                                   v-model="operating_record.id"/>
+                            <input type="hidden"
+                                   name="borrower"
+                                   v-model="operating_record.borrower"/>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit"
+                                   value="確認"/>
+
+
+                            <button type="button"
+                                    data-dismiss="modal">
+                                取消
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
+
     </div>
 
     <script>
