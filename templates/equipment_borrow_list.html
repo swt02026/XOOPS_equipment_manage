@@ -34,8 +34,8 @@
                     <td>
                         {{ record.borrower }}
                     </td>
-                    <div v-if="record.permission">
                         <td>
+                            <div v-if="record.permission">
                             <button type="button"
                                     data-toggle="modal"
                                     data-target="#submitModal"
@@ -48,8 +48,8 @@
                                     @click="setReturnAll(true, record)">
                                 全部歸還
                             </button>
-                        </td>
-                    </div>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
