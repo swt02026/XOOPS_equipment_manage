@@ -22,5 +22,9 @@
 
         $xoopsDB->queryF($sql);
 
+        $borrow_db_name = $xoopsDB->prefix('equipment_borrow');
+
+        $sql_borrow = "DELETE FROM `{$borrow_db_name}` WHERE `id`={$delete_id};";
+
     }
     header('location:../manage.php');

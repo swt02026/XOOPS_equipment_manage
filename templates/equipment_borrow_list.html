@@ -73,18 +73,17 @@
                         <h4>借用人：{{ operating_record.borrower }}</h4>
 
                         <div v-if="return_all">
-                            <h4>數量：{{ operating_record.amount }}</h4>
+                            <h4>歸還數量：{{ operating_record.amount }}</h4>
                             <input type="hidden"
                                    name="return_amount"
                                    v-model="operating_record.amount">
                         </div>
                         <div v-else>
-                            <h4>數量：
+                            <h4>歸還數量：
                             <input type="number"
                                    name="return_amount"
                                    min="1"
                                    :max="max_amount"
-                                   v-model="operating_record.amount"
                                     />
                             </h4>
                         </div>
