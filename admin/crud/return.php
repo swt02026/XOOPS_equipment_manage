@@ -7,9 +7,7 @@
  */
     include '../../../../mainfile.php';
 
-    function getChangeAmountSQL($table_name, $return_amount, $id, $borrower){
-        return ;
-    }
+
 
     $return_data = array_map("addslashes",
         array_map("htmlspecialchars", $_POST));
