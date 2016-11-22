@@ -24,13 +24,13 @@
                               WHERE `id`={$id} AND `borrower`='{$borrower}'",
                             $xoopsDB->prefix('equipment_borrow')
                         );
-        $xoopsDB->queryF($sql_borrow);
+        $xoopsDB->queryF($sql_borrow_update);
 
-        $sql_borrow_update = sprintf("DELETE FROM `%s` 
+        $sql_borrow_delete = sprintf("DELETE FROM `%s` 
                                       WHERE `id`={$id} AND `borrower`='{$borrower}' AND `amount`=0",
                             $xoopsDB->prefix('equipment_borrow')
                         );
-        $xoopsDB->queryF($sql_borrow);
+        $xoopsDB->queryF($sql_borrow_delete);
 
         $sql_desc_update = sprintf("UPDATE `%s` 
                                     SET `amount`=`amount` + {$return_amount} 
