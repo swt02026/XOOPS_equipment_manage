@@ -7,8 +7,6 @@
  */
     include '../../../../mainfile.php';
 
-
-
     $return_data = array_map("addslashes",
         array_map("htmlspecialchars", $_POST));
 
