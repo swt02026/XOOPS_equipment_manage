@@ -123,7 +123,11 @@
                         </h4>
                     </div>
                     <div class="modal-body">
-
+                        <div>
+                            相片：
+                            <input type="file" accept="image/*" @change="loadImage"/>
+                            <img alt="無圖檔" :src="imageURL">
+                        </div>
                         <input type="hidden"
                                name="update_id"
                                v-model="modal_data.id">
@@ -140,7 +144,7 @@
                         <label for="data_amount">
                             數量：
                         </label>
-                        <input 	type="number"
+                        <input type="number"
                                   id="data_amount"
                                   name="amount"
                                   min="1"
@@ -150,6 +154,8 @@
                         <input type="hidden"
                                name="amount_diff"
                                v-model="amount_diff"/>
+
+
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
@@ -170,6 +176,7 @@
             el:"#manage_table",
             data:{
                 delete_id : 0,
+                imageURL : "",
                 modal_op : "",
                 operation : "",
                 amount_diff : 0,
@@ -201,6 +208,9 @@
                     this.modal_data = {};
                     this.modal_op = '新增';
                     this.operation='append';
+                },
+                loadImage:function (event) {
+                    this.imageURL = URL.readAsDataURL(event.target.files[0]);
                 }
             }
 
