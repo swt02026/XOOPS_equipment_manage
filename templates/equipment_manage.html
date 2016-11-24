@@ -214,9 +214,10 @@
                     var reader = new FileReader();
                     reader.onload = function () {
                         imageURL = reader.result;
+                        console.log(reader.result)
                     }
 
-                    reader.readAsDataURL(event.target.value);
+                    reader.readAsDataURL(event.target.file[0]);
                 }
             }
 
