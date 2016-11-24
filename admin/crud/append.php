@@ -9,7 +9,7 @@
 
     $append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
 
-    if(strlen( $append_data["name"]) &&
+    /*if(strlen( $append_data["name"]) &&
         strlen($append_data["amount"]) &&
         intval($append_data["amount"]) > 0) {
 
@@ -23,7 +23,7 @@
             , $xoopsDB->prefix('equipment_desc'));
 
         $xoopsDB->queryF($sql);
-    }
+    }*/
 
 
     //echo "<script>window.location.href='../manage.php';</script>";
