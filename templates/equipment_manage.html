@@ -67,7 +67,7 @@
 
     <button data-toggle="modal"
             data-target="#submitModal"
-            @click="setAppendModal()"
+            @click="setAppendModal"
     >
         新增資料
     </button>
@@ -106,16 +106,19 @@
         </form>
     </div>
 
-    <div class="modal fade" id="submitModal" role="dialog" tabindex='-1'>
+    <div class="modal fade" id="submitModal" role="dialog">
 
         <form :action="'crud/' + operation + '.php'"
+              id="modal_AU_form"
               method="post"
               enctype="multipart/form-data">
 
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button class="close" data-dismiss="modal">
+                        <button class="close"
+                                data-dismiss="modal"
+                                @click="clearUpload();">
                             &times;
                         </button>
                         <h4 class="modal-title">
@@ -124,9 +127,14 @@
                     </div>
                     <div class="modal-body">
                         <div>
-                            相片：
-                            <input type="file" accept="image/*" @change="loadImage"/>
-                            <img alt="無圖檔" :src="imageURL">
+                            <label for="data_image">相片：</label>
+                            <input id="data_image"
+                                   name="image"
+                                   type="file"
+                                   accept="image/*"
+                                   @change="loadImage" />
+                            <img alt="無圖檔"
+                                 :src="image_URL" />
                         </div>
                         <input type="hidden"
                                name="update_id"
@@ -145,12 +153,12 @@
                             數量：
                         </label>
                         <input type="number"
-                                  id="data_amount"
-                                  name="amount"
-                                  min="1"
-                                  v-model="modal_data.total"
-                                  @change="setAmountDiff"
-                                  required />
+                               id="data_amount"
+                               name="amount"
+                               min="1"
+                               v-model="modal_data.total"
+                               @change="setAmountDiff"
+                              required />
                         <input type="hidden"
                                name="amount_diff"
                                v-model="amount_diff"/>
@@ -160,7 +168,8 @@
                     <div class="modal-footer">
                         <input type="submit"
                                :value="'確認' + modal_op" />
-                        <button data-dismiss="modal">
+                        <button data-dismiss="modal"
+                                @click="clearUpload();">
                             取消
                         </button>
                     </div>
@@ -176,11 +185,12 @@
             el:"#manage_table",
             data:{
                 delete_id : 0,
-                imageURL : "",
+                image_URL : "",
                 modal_op : "",
                 operation : "",
                 amount_diff : 0,
                 old_amount:0,
+                check_image:false,
                 modal_data : {
 
                 },
@@ -191,6 +201,7 @@
                     "總數",
                     "操作"
                 ],
+                //query_rows :[]
                 query_rows : <{$json_data}>
             },
             methods:{
@@ -199,25 +210,34 @@
                     this.amount_diff = event.target.value - this.old_amount;
                 },
                 setUpdateModal:function(row){
-                    this.modal_data=JSON.parse(JSON.stringify(row));
-                    this.modal_op='修改';
-                    this.operation='update';
+                    this.modal_data = JSON.parse(JSON.stringify(row));
+                    this.modal_op = '修改';
+                    this.operation ='update';
                     this.old_amount = row.total;
                 },
                 setAppendModal:function () {
                     this.modal_data = {};
                     this.modal_op = '新增';
-                    this.operation='append';
+                    this.operation ='append';
                 },
                 loadImage:function (event) {
 
                     var reader = new FileReader();
-                    reader.onload = function () {
-                        imageURL = reader.result;
-                        console.log(reader.result)
+                    var vm = this;
+                    reader.onload = function (e) {
+                        vm.image_URL = this.result;
                     };
-
                     reader.readAsDataURL(event.target.files[0]);
+                    this.check_image = true;
+                },
+                clearUpload:function () {
+                    this.image_URL = '';
+                    document.querySelector('#modal_AU_form').reset();
+                },
+                clearImage:function(){
+                    this.image_URL = '';
+                    document.querySelector("input[type='file']").value = '';
+
                 }
             }
 

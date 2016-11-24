@@ -26,5 +26,5 @@
     }
 
 
-    echo "<script>window.location.href='../manage.php';</script>";
+    //echo "<script>window.location.href='../manage.php';</script>";
 
