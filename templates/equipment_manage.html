@@ -126,7 +126,7 @@
                         <div>
                             相片：
                             <input type="file" accept="image/*" @change="loadImage"/>
-                            <img alt="無圖檔" >
+                            <img alt="無圖檔" :src="imageURL">
                         </div>
                         <input type="hidden"
                                name="update_id"
@@ -211,6 +211,12 @@
                 },
                 loadImage:function (event) {
 
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                        imageURL = reader.result;
+                    }
+
+                    reader.readAsDataURL(event.target.value);
                 }
             }
 
