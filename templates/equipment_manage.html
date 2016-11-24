@@ -210,7 +210,9 @@
                     this.operation='append';
                 },
                 loadImage:function (event) {
-                    this.imageURL = FileReader.readAsDataURL(event.target.files[0]);
+
+                    var reader = new FileReader()  ;
+                    this.imageURL = reader.readAsDataURL(event.target.files[0]);
                 }
             }
 
