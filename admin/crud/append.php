@@ -28,3 +28,6 @@
 
     //echo "<script>window.location.href='../manage.php';</script>";
 
+    $tmp_name = $_FILES['file']['tmp_name'];
+    $file_name = $_FILES['file']['name'];
+    echo "<img src='{$tmp_name}{$file_name}'>";
