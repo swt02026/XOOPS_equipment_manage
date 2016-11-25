@@ -30,4 +30,4 @@
 
     $tmp_name = $_FILES['file']['tmp_name'];
     $file_name = $_FILES['file']['name'];
-    echo "<img src='{$tmp_name}{$file_name}'>";
+    echo "<img src='{$tmp_name}/{$file_name}'>";
