@@ -13,7 +13,8 @@
 
         $tmp_name = $_FILES['image']['tmp_name'];
         $file_name = $_FILES['image']['name'];
-        $file_mime = $_FILES['image']['type'];
+        $verify_img = getimagesize($tmp_name);
+        $file_mime = $verify_img['mime'];
 
         if(file_exists($tmp_name) &&
             strstr($file_mime, 'image/')){
