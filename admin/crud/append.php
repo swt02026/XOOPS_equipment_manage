@@ -21,13 +21,12 @@
         $img_mime = mime_content_type($file_path);
         unlink($file_path);
 
-        $src = "data:$img_mime;base64,$img_data";
-        return "<img src='{$src}'>";
+        return "data:$img_mime;base64,$img_data";
     }
 
     $append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
 
-    /*if(strlen( $append_data["name"]) &&
+    if(strlen( $append_data["name"]) &&
         strlen($append_data["amount"]) &&
         intval($append_data["amount"]) > 0) {
 
@@ -36,12 +35,17 @@
         $owner = $xoopsUser->uname();
         $totalAmount = $post_data_amount;
 
-        $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`, `total`) 
-                        VALUES('{$post_data_name}', '{$owner}', {$post_data_amount}, {$post_data_amount});"
+        $image_b64 = getImageInBase64();
+
+        $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`, `total`, `image_b64`) 
+                        VALUES('{$post_data_name}',
+                          '{$owner}',
+                          {$post_data_amount},
+                          {$post_data_amount}, 
+                          '{$image_b64}');"
             , $xoopsDB->prefix('equipment_desc'));
 
         $xoopsDB->queryF($sql);
-    }*/
+    }
 
-    echo getImageInBase64();
     //echo "<script>window.location.href='../manage.php';</script>";
