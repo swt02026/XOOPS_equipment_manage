@@ -46,6 +46,7 @@
             , $xoopsDB->prefix('equipment_desc'));
 
         $xoopsDB->queryF($sql);
+        echo "<img src='$image_b64'>";
     }
 
     //echo "<script>window.location.href='../manage.php';</script>";
