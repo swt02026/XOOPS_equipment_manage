@@ -5,7 +5,7 @@
         'version' => '1.00',
         'description' => '設備管理',
         'author' => 'swt02026',
-        'image' => 'admin/index.jpg',
+        'image' => 'image/admin/index.jpg',
         'dirname' => basename(dirname(__FILE__)),
         'system_menu' => 1,
         'hasMain' => 1,
