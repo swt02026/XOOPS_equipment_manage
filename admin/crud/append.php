@@ -8,6 +8,23 @@
     include '../../../../mainfile.php';
     include '../../../../class/uploader.php';
 
+
+    function getImageInBase64(){
+
+        $tmp_name = $_FILES['image']['tmp_name'];
+        $file_name = $_FILES['image']['name'];
+
+        $file_path = '../../../../uploads/$filename';
+        move_uploaded_file($tmp_name, $file_path);
+
+        $img_data = base64_encode(file_get_contents($file_path));
+        $img_mime = mime_content_type($file_path);
+        unlink($file_path);
+
+        $src = "data:$img_mime;base64,$img_data";
+        return "<img src='{$src}'>";
+    }
+
     $append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
 
     /*if(strlen( $append_data["name"]) &&
@@ -26,17 +43,5 @@
         $xoopsDB->queryF($sql);
     }*/
 
-
+    echo getImageInBase64();
     //echo "<script>window.location.href='../manage.php';</script>";
-    $img_data = '';
-    $tmp_name = $_FILES['image']['tmp_name'];
-    $file_name = $_FILES['image']['name'];
-
-    $file_path = '../../../../uploads/$filename';
-    move_uploaded_file($tmp_name, $file_path);
-
-    $img_data = base64_encode(file_get_contents($file_path));
-    unlink($file_path);
-    $img_mime = mime_content_type($file_path);
-    $src = "data:$img_mime;base64,$img_data";
-    echo "<img src={$src}>";
