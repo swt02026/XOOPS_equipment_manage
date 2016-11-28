@@ -33,6 +33,7 @@
     $file_name = $_FILES['image']['name'];
     $img_path = "$tmp_name/$file_name";
     echo $img_path;
+    echo file_exists($img_path);
     $img_data = base64_encode(file_get_contents($img_path));
     $img_mime = mime_content_type($img_path);
     $src = "data:$img_mime;base64,$img_data";
