@@ -6,6 +6,7 @@
  * Time: 下午 02:29
  */
     include '../../../../mainfile.php';
+    include '../../../../class/uploader.php';
 
     $append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
 
@@ -27,7 +28,11 @@
 
 
     //echo "<script>window.location.href='../manage.php';</script>";
-
+    $img_data = '';
     $tmp_name = $_FILES['image']['tmp_name'];
     $file_name = $_FILES['image']['name'];
-    echo "<img src='{$tmp_name}/{$file_name}'>";
+    $img_path = '{$tmp_name}/{$file_name}';
+    $img_data = base64_encode(file_get_contents($img_path));
+    $img_mime = mime_content_type($img_path);
+    $src = "data:{$img_path};base64,{$img_data}";
+    echo "<img src={$src}>";
