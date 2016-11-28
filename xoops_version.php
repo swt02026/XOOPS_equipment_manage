@@ -19,17 +19,28 @@
     $modversion['templates'] = [
 
         [
-
+            'file' => 'equipment_manage.html',
+            'description' => 'equipment_manage.html'
+        ],
+        [
+            'file' => 'equipment_borrow_list.html',
+            'description' => 'equipment_borrow_list.html'
+        ],
+        [
+            'file' => 'equipment_borrow.html',
+            'description' => 'equipment_borrow.html'
+        ],
+        [
+            'file' => 'equipment_about.html',
+            'description' => 'equipment_about.html'
         ]
     ];
 
     $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 
     $modversion['tables'] = [
-        "equipment_owner",
-        "equipment_desc"
-        //"equipment_amount",
-        //"equipment_borrower"
+        "equipment_desc",
+        "equipment_borrow"
     ];
 
 ?>
