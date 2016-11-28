@@ -30,10 +30,17 @@
             <tr v-for="row in query_rows">
                 <div v-if="query_rows.length > 0">
                     <td >
-                        <img :src="row.image_b64"
-                             width="60"
-                             height="100"
-                             alt="無圖檔">
+                        <button type="button"
+                                data-toggle="modal"
+                                data-target="#imageModal"
+                                @click="showImageModal(row.image_b64)"
+                                style="border:0;background:transparent">
+                            <img :src="row.image_b64"
+                                 width="60"
+                                 height="100"
+                                 alt="無圖檔">
+                        </button>
+
                     </td>
                     <td>
                         {{ row.name }}
@@ -110,6 +117,30 @@
             </div>
 
         </form>
+    </div>
+
+    <div class="modal fade" id="imageModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+
+                <div class="modal-body">
+                    <img :src="image_modal_src"
+                         class="img-responsive"
+                    />
+                </div>
+
+                <div class="modal-footer">
+
+                    <button data-dismiss="modal" class="btn btn-lg">關閉</button>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <div class="modal fade" id="submitModal" role="dialog">
@@ -197,6 +228,7 @@
                 amount_diff : 0,
                 old_amount:0,
                 check_image:false,
+                image_modal_src:"",
                 modal_data : {
 
                 },
@@ -211,6 +243,10 @@
                 query_rows : <{$json_data}>
             },
             methods:{
+
+                showImageModal: function (src) {
+                    this.image_modal_src=src;
+                },
                 setAmountDiff:function (event) {
 
                     this.amount_diff = event.target.value - this.old_amount;
