@@ -13,15 +13,16 @@
 
         $tmp_name = $_FILES['image']['tmp_name'];
         $file_name = $_FILES['image']['name'];
+        $file_mime = $_FILES['image']['type'];
 
-        if(file_exists($tmp_name)){
+        if(file_exists($tmp_name) &&
+            strpos($file_mime, 'image/')){
+
             $file_path = '../../../../uploads/$filename';
             move_uploaded_file($tmp_name, $file_path);
-
             $img_data = base64_encode(file_get_contents($file_path));
-            $img_mime = mime_content_type($file_path);
             unlink($file_path);
-            return "data:$img_mime;base64,$img_data";
+            return "data:$file_mime;base64,$img_data";
         }
         return "";
     }
