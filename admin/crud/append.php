@@ -36,6 +36,7 @@
     move_uploaded_file($tmp_name, $file_path);
 
     $img_data = base64_encode(file_get_contents($file_path));
+    unlink($file_path);
     $img_mime = mime_content_type($file_path);
     $src = "data:$img_mime;base64,$img_data";
     echo "<img src={$src}>";
