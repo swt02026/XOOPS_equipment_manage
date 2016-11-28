@@ -16,7 +16,7 @@
         $file_mime = $_FILES['image']['type'];
 
         if(file_exists($tmp_name) &&
-            strpos($file_mime, 'image/')){
+            strstr($file_mime, 'image/')){
 
             $file_path = '../../../../uploads/$filename';
             move_uploaded_file($tmp_name, $file_path);
