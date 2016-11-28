@@ -17,9 +17,11 @@
                     <div class="well well-sm">
                         <div class="row">
                             <div class="col-md-4 col-sm-4 hidden-sm hidden-xs">
-                                <button type="button" data-toggle="modal" data-target="#imageModal">
+                                <button type="button"
+                                        data-toggle="modal"
+                                        data-target="#imageModal"
+                                        @click="showImageModal">
                                     <img :src="row.image_b64"
-                                         @click="showImageModal"
                                          alt="無圖檔"
                                          width="80"
                                          height="120" >
@@ -121,7 +123,7 @@
         methods: {
 
             showImageModal: function (event) {
-                image_modal_src = event.target.src;
+                this.image_modal_src = event.target.src;
             },
             append: function (row, event) {
 
