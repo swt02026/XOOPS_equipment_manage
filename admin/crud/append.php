@@ -53,4 +53,5 @@
 
     }
 
+    header('location:../manage.php');
     //echo "<script>window.location.href='../manage.php';</script>";
