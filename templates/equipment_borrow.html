@@ -17,10 +17,13 @@
                     <div class="well well-sm">
                         <div class="row">
                             <div class="col-md-4 col-sm-4 hidden-sm hidden-xs">
-                                <img :src="row.image_b64"
-                                     alt="無圖檔"
-                                     width="80"
-                                     height="120" >
+                                <button type="button" data-toggle="modal" data-target="#imageModal">
+                                    <img :src="row.image_b64"
+                                         @click="showImageModal"
+                                         alt="無圖檔"
+                                         width="80"
+                                         height="120" >
+                                </button>
                             </div>
                             <div class="col-md-8 col-sm-8">
                                 名稱：{{ row.name }}<br />
@@ -51,6 +54,7 @@
             <div v-if="items.length > 0">
                 <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
             </div>
+
             <div class="modal fade" id="submitModal" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -75,6 +79,31 @@
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="imageModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button data-dismiss="modal" class="close">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <img :src="image_modal_src"
+                                 class="img-responsive"
+                            />
+                        </div>
+
+                        <div class="modal-footer">
+
+                            <button data-dismiss="modal" class="btn btn-lg">關閉</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </form>
     </div>
 </div>
@@ -86,9 +115,14 @@
             items:[
 
             ],
+            image_modal_src:"",
             query_rows:<{$json_data}>
         },
         methods: {
+
+            showImageModal: function (event) {
+                image_modal_src = event.target.src;
+            },
             append: function (row, event) {
 
                 var checkNotExist = function (checkId) {
