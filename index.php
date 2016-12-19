@@ -3,21 +3,36 @@
     $xoopsOption['template_main'] = "equipment_borrow.html";
     include XOOPS_ROOT_PATH."/header.php";
 
+    function getQueryDataToJSON($sql){
+        global $xoopsDB;
+        $query = $xoopsDB->query($sql);
+        $query_rows = [];
+
+        if($xoopsDB->getRowsNum($query) > 0){
+
+            while ($row = $xoopsDB->fetchArray($query)){
+
+                $query_rows[] = $row;
+            }
+        }
+
+       return json_encode($query_rows);
+    }
+
     $sql = sprintf("SELECT `name`, `owner`, `amount`, `id`, `image_b64`  FROM `%s`",
         $xoopsDB->prefix('equipment_desc'));
 
-    $query = $xoopsDB->query($sql);
-    $query_rows = [];
+    $json_data = getQueryDataToJSON($sql);
 
-    if($xoopsDB->getRowsNum($query) > 0){
-
-        while ($row = $xoopsDB->fetchArray($query)){
-
-            $query_rows[] = $row;
-        }
-    }
-
-    $json_data = json_encode($query_rows);
     $xoopsTpl->assign('json_data', $json_data);
+
+    $user_name = $xoopsUser->uname();
+
+    $borrow_sql = sprintf("SELECT `%1$s`.`amount`, `name`, `owner`  
+                    FROM `%1$s` 
+                    INNER JOIN `%2$s` ON `%1$s`.`id`=`%2$s`.`id` WHERE `%1$s`='{$user_name}'",
+                $xoopsDB->prefix('equipment_borrow'), $xoopsDB->prefix('equipment_desc'));
+
+
     include_once XOOPS_ROOT_PATH."/footer.php";
 ?>
