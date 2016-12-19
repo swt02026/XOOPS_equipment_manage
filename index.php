@@ -28,9 +28,9 @@
 
     $user_name = $xoopsUser->uname();
 
-    $borrow_sql = sprintf("SELECT `%1$s`.`amount`, `name`, `owner`  
+    $borrow_sql = sprintf('SELECT `%1$s`.`amount`, `name`, `owner`  
                     FROM `%1$s` 
-                    INNER JOIN `%2$s` ON `%1$s`.`id`=`%2$s`.`id` WHERE `%1$s`.`borrower`='{$user_name}'",
+                    INNER JOIN `%2$s` ON `%1$s`.`id`=`%2$s`.`id` WHERE `%1$s`.`borrower`="{$user_name}"',
                 $xoopsDB->prefix('equipment_borrow'), $xoopsDB->prefix('equipment_desc'));
 
 
