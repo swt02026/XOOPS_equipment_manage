@@ -7,7 +7,7 @@
 </head>
 
 <body>
-
+<h1 style="text-align: center">設備借用</h1>
 <div id="selected-list">
 
     <div v-if="query_rows.length > 0">
@@ -111,6 +111,31 @@
     </div>
 </div>
 
+<hr />
+
+<h1 style="text-align: center">還有以下設備尚未歸還</h1>
+
+<div id="borrow-list">
+    <div v-if="borrow_rows.length > 0">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td v-for="row_name in row_names">
+                        {{ row_name }}
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="row in borrow_rows">
+                    <td>row.name</td>
+                    <td>row.owner</td>
+                    <td>row.amount</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <script>
     var sel_list = new Vue({
         el: '#selected-list',
@@ -147,6 +172,22 @@
                 }
             }
         }
+    });
+
+    var borrow_list = new Vue({
+        el:'#borrow-list',
+        data:{
+            row_names:[
+                    "名稱",
+                    "持有人",
+                    "借用數量"
+            ],
+            borrow_rows:[
+                {amount:0, name:"aaaa", owner:"bbb"},
+                {amount:1, name:"aaa", owner:"bbb"}
+            ]
+        }
+
     });
 
 </script>
