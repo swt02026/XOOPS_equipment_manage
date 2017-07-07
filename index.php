@@ -1,7 +1,7 @@
 <?php
     include '../../mainfile.php';
-    $xoopsOption['template_main'] = "equipment_borrow.html";
-    include XOOPS_ROOT_PATH."/header.php";
+    $xoopsOption['template_main'] = 'equipment_borrow.html';
+    include XOOPS_ROOT_PATH . '/header.php';
 
     function getQueryDataToJSON($sql){
         global $xoopsDB;
@@ -19,8 +19,8 @@
        return json_encode($query_rows);
     }
 
-    $sql = sprintf("SELECT `name`, `owner`, `amount`, `id`, `image_b64`  FROM `%s`",
-        $xoopsDB->prefix('equipment_desc'));
+    $sql = sprintf('SELECT `name`, `owner`, `amount`, `id`, `image_b64`  FROM `%s`',
+                   $xoopsDB->prefix('equipment_desc'));
 
     $json_data = getQueryDataToJSON($sql);
 
@@ -37,5 +37,5 @@
 
 
 
-    include_once XOOPS_ROOT_PATH."/footer.php";
+    include_once XOOPS_ROOT_PATH . '/footer.php';
 ?>

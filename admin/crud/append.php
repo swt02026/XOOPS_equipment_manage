@@ -25,17 +25,17 @@
             unlink($file_path);
             return "data:$file_mime;base64,$img_data";
         }
-        return "";
+        return '';
     }
 
-    $append_data = array_map("htmlspecialchars" ,array_map("addslashes", $_POST));
+    $append_data = array_map('htmlspecialchars', array_map('addslashes', $_POST));
 
-    if(strlen( $append_data["name"]) &&
-        strlen($append_data["amount"]) &&
-        intval($append_data["amount"]) > 0) {
+    if(strlen($append_data['name']) &&
+       strlen($append_data['amount']) &&
+       intval($append_data['amount']) > 0) {
 
-        $post_data_name = $append_data["name"];
-        $post_data_amount = intval($append_data["amount"]);
+        $post_data_name = $append_data['name'];
+        $post_data_amount = intval($append_data['amount']);
         $owner = $xoopsUser->uname();
         $totalAmount = $post_data_amount;
 

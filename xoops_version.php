@@ -1,7 +1,7 @@
 <?php
 
     $modversion = [
-        'name' => "設備管理",
+        'name' => '設備管理',
         'version' => '1.00',
         'description' => '設備管理',
         'author' => 'swt02026',
@@ -39,8 +39,8 @@
     $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 
     $modversion['tables'] = [
-        "equipment_desc",
-        "equipment_borrow"
+        'equipment_desc',
+        'equipment_borrow'
     ];
 
 ?>

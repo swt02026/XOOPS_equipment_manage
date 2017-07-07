@@ -7,8 +7,8 @@
  */
     include '../../../../mainfile.php';
 
-    $return_data = array_map("addslashes",
-        array_map("htmlspecialchars", $_POST));
+    $return_data = array_map('addslashes',
+                             array_map('htmlspecialchars', $_POST));
 
     if(intval($return_data['id']) > 0 &&
         intval($return_data['return_amount']) > 0 &&
@@ -40,4 +40,4 @@
         $xoopsDB->queryF($sql_desc_update);
 
     }
-    header("location:../borrow_manage.php");
+    header('location:../borrow_manage.php');

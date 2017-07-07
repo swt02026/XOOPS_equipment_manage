@@ -4,7 +4,7 @@ CREATE TABLE `equipment_desc` (
   `name` VARCHAR (30) NOT NULL DEFAULT '',
   `amount` INT UNSIGNED NOT NULL ,
   `total` INT UNSIGNED NOT NULL ,
-  `image_b64` MEDIUMTEXT NOT NULL DEFAULT '',
+  `image_b64` MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT uq UNIQUE (owner, name)
 )

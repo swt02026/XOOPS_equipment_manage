@@ -7,12 +7,12 @@
  */
     include '../../../../mainfile.php';
 
-    $delete_data = array_map("addslashes",
-        array_map("htmlspecialchars", $_POST));
+    $delete_data = array_map('addslashes',
+                             array_map('htmlspecialchars', $_POST));
 
 
 
-    if(isset($delete_data["delete_id"]) &&
+    if(isset($delete_data['delete_id']) &&
         intval($delete_data['delete_id']) > 0){
         $delete_id = intval($delete_data['delete_id']);
         $db_name = $xoopsDB->prefix('equipment_desc');

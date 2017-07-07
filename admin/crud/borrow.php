@@ -8,7 +8,7 @@
     include '../../../../mainfile.php';
     if($xoopsUser){
         $borrow_data = array_filter(
-            array_map("intval", $_POST["borrow_number"]), function ($val){
+            array_map('intval', $_POST['borrow_number']), function ($val){
             return $val > 0;
         });
 
@@ -36,4 +36,4 @@
             }
         }
     }
-    header("location: ../../index.php");
+    header('location: ../../index.php');
