@@ -17,7 +17,7 @@
 <body>
 <div id="manage_table">
 
-    <table class="table" >
+    <table class="table">
         <thead>
         <tr>
             <td v-for="row_name in row_names">
@@ -27,52 +27,52 @@
         </thead>
         <tbody>
 
-            <tr v-for="row in query_rows">
-                <div v-if="query_rows.length > 0">
-                    <td >
-                        <button type="button"
-                                data-toggle="modal"
-                                data-target="#imageModal"
-                                @click="showImageModal(row.image_b64)"
-                                style="border:0;background:transparent">
-                            <img :src="row.image_b64"
-                                 width="80"
-                                 height="120"
-                                 alt="無圖檔">
-                        </button>
+        <tr v-for="row in query_rows">
+            <div v-if="query_rows.length > 0">
+                <td>
+                    <button type="button"
+                            data-toggle="modal"
+                            data-target="#imageModal"
+                            @click="showImageModal(row.image_b64)"
+                            style="border:0;background:transparent">
+                        <img :src="row.image_b64"
+                             width="80"
+                             height="120"
+                             alt="無圖檔">
+                    </button>
 
-                    </td>
-                    <td>
-                        {{ row.name }}
-                    </td>
-                    <td>
-                        {{ row.owner }}
-                    </td>
-                    <td>
-                        {{ row.amount }}
-                    </td>
-                    <td>
-                        {{ row.total }}
-                    </td>
-                    <td>
-                        <div v-if="row.permission">
-                            <input type="button"
-                                   value="刪除"
-                                   data-toggle="modal"
-                                   data-target="#deleteModal"
-                                   @click="delete_id = row.id;modal_data=row;">
-                            <button
-                                    type="button"
-                                    data-toggle="modal"
-                                    data-target="#submitModal"
-                                    @click="setUpdateModal(row)"
-                            >
-                                修改
-                            </button>
-                        </div>
-                    </td>
-                </div>
-            </tr>
+                </td>
+                <td>
+                    {{ row.name }}
+                </td>
+                <td>
+                    {{ row.owner }}
+                </td>
+                <td>
+                    {{ row.amount }}
+                </td>
+                <td>
+                    {{ row.total }}
+                </td>
+                <td>
+                    <div v-if="row.permission">
+                        <input type="button"
+                               value="刪除"
+                               data-toggle="modal"
+                               data-target="#deleteModal"
+                               @click="delete_id = row.id;modal_data=row;">
+                        <button
+                                type="button"
+                                data-toggle="modal"
+                                data-target="#submitModal"
+                                @click="setUpdateModal(row)"
+                        >
+                            修改
+                        </button>
+                    </div>
+                </td>
+            </div>
+        </tr>
 
         </tbody>
 
@@ -88,7 +88,7 @@
     <div class="modal fade" id="deleteModal" role="dialog" tabindex='-1'>
         <form action="crud/delete.php"
               method="post"
-              enctype="multipart/form-data" >
+              enctype="multipart/form-data">
 
             <input type="hidden" name="delete_id" v-model="delete_id"/>
 
@@ -108,7 +108,7 @@
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               value="確認刪除" />
+                               value="確認刪除"/>
                         <button data-dismiss="modal">
                             取消
                         </button>
@@ -169,9 +169,9 @@
                                    name="image"
                                    type="file"
                                    accept="image/*"
-                                   @change="loadImage" />
+                                   @change="loadImage"/>
                             <img alt="無圖檔"
-                                 :src="image_URL" />
+                                 :src="image_URL"/>
                         </div>
                         <input type="hidden"
                                name="update_id"
@@ -184,7 +184,7 @@
                                name="name"
                                pattern="[^-*`.,!;#%&|*'><\[\]=\+?/\\]+"
                                v-model="modal_data.name"
-                               required />
+                               required/>
 
                         <label for="data_amount">
                             數量：
@@ -195,7 +195,7 @@
                                min="1"
                                v-model="modal_data.total"
                                @change="setAmountDiff"
-                              required />
+                               required/>
                         <input type="hidden"
                                name="amount_diff"
                                v-model="amount_diff"/>
@@ -204,7 +204,7 @@
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               :value="'確認' + modal_op" />
+                               :value="'確認' + modal_op"/>
                         <button data-dismiss="modal"
                                 @click="clearUpload();">
                             取消
@@ -219,20 +219,18 @@
     <script>
         var vm = new Vue({
 
-            el:"#manage_table",
-            data:{
-                delete_id : 0,
-                image_URL : "",
-                modal_op : "",
-                operation : "",
-                amount_diff : 0,
-                old_amount:0,
-                check_image:false,
-                image_modal_src:"",
-                modal_data : {
-
-                },
-                row_names : [
+            el: "#manage_table",
+            data: {
+                delete_id: 0,
+                image_URL: "",
+                modal_op: "",
+                operation: "",
+                amount_diff: 0,
+                old_amount: 0,
+                check_image: false,
+                image_modal_src: "",
+                modal_data: {},
+                row_names: [
                     "相片",
                     "名稱",
                     "持有者",
@@ -241,29 +239,29 @@
                     "操作"
                 ],
                 //query_rows :[]
-                query_rows : <{$json_data}>
+                query_rows: <{$json_data}>
             },
-            methods:{
+            methods: {
 
                 showImageModal: function (src) {
-                    this.image_modal_src=src;
+                    this.image_modal_src = src;
                 },
-                setAmountDiff:function (event) {
+                setAmountDiff: function (event) {
 
                     this.amount_diff = event.target.value - this.old_amount;
                 },
-                setUpdateModal:function(row){
+                setUpdateModal: function (row) {
                     this.modal_data = JSON.parse(JSON.stringify(row));
                     this.modal_op = '修改';
-                    this.operation ='update';
+                    this.operation = 'update';
                     this.old_amount = row.total;
                 },
-                setAppendModal:function () {
+                setAppendModal: function () {
                     this.modal_data = {};
                     this.modal_op = '新增';
-                    this.operation ='append';
+                    this.operation = 'append';
                 },
-                loadImage:function (event) {
+                loadImage: function (event) {
 
                     var reader = new FileReader();
                     var vm = this;
@@ -273,11 +271,11 @@
                     reader.readAsDataURL(event.target.files[0]);
                     this.check_image = true;
                 },
-                clearUpload:function () {
+                clearUpload: function () {
                     this.image_URL = '';
                     document.querySelector('#modal_AU_form').reset();
                 },
-                clearImage:function(){
+                clearImage: function () {
                     this.image_URL = '';
                     document.querySelector("input[type='file']").value = '';
 

@@ -26,16 +26,16 @@
                                         <img :src="row.image_b64"
                                              alt="無圖檔"
                                              width="80"
-                                             height="120" >
+                                             height="120">
                                     </button>
                                 </div>
                                 <div class="col-md-8 col-sm-8">
-                                    名稱：{{ row.name }}<br />
-                                    持有人:{{ row.owner }}<br />
-                                    數量：{{ row.amount }}<br />
+                                    名稱：{{ row.name }}<br/>
+                                    持有人:{{ row.owner }}<br/>
+                                    數量：{{ row.amount }}<br/>
                                     <div v-if="row.amount > 0">
                                         <div class="form-group">
-                                            <label :for="'a' + row.id" >借用數量：</label>
+                                            <label :for="'a' + row.id">借用數量：</label>
 
                                             <input :id="'a' + row.id"
                                                    class="form-control"
@@ -70,7 +70,7 @@
 
                             <div class="modal-body">
                                 <div v-for="item in items">
-                                    <p>名稱：{{ item.name }}<br />借用數量:{{ item.amount }}<br /></p>
+                                    <p>名稱：{{ item.name }}<br/>借用數量:{{ item.amount }}<br/></p>
                                 </div>
                             </div>
 
@@ -112,7 +112,7 @@
         </div>
     </div>
 </div>
-<hr />
+<hr/>
 <div class="row">
 
     <div id="borrow-list">
@@ -120,18 +120,18 @@
             <h1 style="text-align: center">以下設備尚未歸還</h1>
             <table class="table" style="text-align: center">
                 <thead>
-                    <tr>
-                        <td v-for="row_name in row_names">
-                            {{ row_name }}
-                        </td>
-                    </tr>
+                <tr>
+                    <td v-for="row_name in row_names">
+                        {{ row_name }}
+                    </td>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="row in borrow_rows">
-                        <td>{{ row.name }}</td>
-                        <td>{{ row.owner }}</td>
-                        <td>{{ row.amount }}</td>
-                    </tr>
+                <tr v-for="row in borrow_rows">
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.owner }}</td>
+                    <td>{{ row.amount }}</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -141,16 +141,14 @@
     var sel_list = new Vue({
         el: '#selected-list',
         data: {
-            items:[
-
-            ],
-            image_modal_src:"",
+            items: [],
+            image_modal_src: "",
             query_rows:<{$json_data}>
         },
         methods: {
 
             showImageModal: function (src) {
-                this.image_modal_src=src;
+                this.image_modal_src = src;
             },
             append: function (row, event) {
 
@@ -163,7 +161,7 @@
 
                 this.items = this.items.filter(checkNotExist);
 
-                if(event.target.value != "" && event.target.value != 0) {
+                if (event.target.value != "" && event.target.value != 0) {
                     this.items.push({
                         id: row.id,
                         name: row.name,
@@ -176,12 +174,12 @@
     });
 
     var borrow_list = new Vue({
-        el:'#borrow-list',
-        data:{
-            row_names:[
-                    "名稱",
-                    "持有人",
-                    "借用數量"
+        el: '#borrow-list',
+        data: {
+            row_names: [
+                "名稱",
+                "持有人",
+                "借用數量"
             ],
             borrow_rows: <{$borrow_data}>
         }
