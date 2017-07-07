@@ -19,20 +19,20 @@
     $modversion['templates'] = [
 
         [
-            'file' => 'equipment_manage.html',
-            'description' => 'equipment_manage.html'
+            'file' => 'equipment_manage.tpl',
+            'description' => 'equipment_manage.tpl'
         ],
         [
-            'file' => 'equipment_borrow_list.html',
-            'description' => 'equipment_borrow_list.html'
+            'file' => 'equipment_borrow_list.tpl',
+            'description' => 'equipment_borrow_list.tpl'
         ],
         [
-            'file' => 'equipment_borrow.html',
-            'description' => 'equipment_borrow.html'
+            'file' => 'equipment_borrow.tpl',
+            'description' => 'equipment_borrow.tpl'
         ],
         [
-            'file' => 'equipment_about.html',
-            'description' => 'equipment_about.html'
+            'file' => 'equipment_about.tpl',
+            'description' => 'equipment_about.tpl'
         ]
     ];
 

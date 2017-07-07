@@ -21,6 +21,6 @@
 
     $json_data = json_encode($query_rows);
     $xoopsTpl->assign('json_data', $json_data);
-    $xoopsTpl->display('db:equipment_manage.html');
+    $xoopsTpl->display('db:equipment_manage.tpl');
     xoops_cp_footer();
 ?>

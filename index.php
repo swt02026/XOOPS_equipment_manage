@@ -1,6 +1,6 @@
 <?php
     include '../../mainfile.php';
-    $xoopsOption['template_main'] = 'equipment_borrow.html';
+    $xoopsOption['template_main'] = 'equipment_borrow.tpl';
     include XOOPS_ROOT_PATH . '/header.php';
 
     function getQueryDataToJSON($sql){

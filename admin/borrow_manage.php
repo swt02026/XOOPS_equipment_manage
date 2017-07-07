@@ -23,6 +23,6 @@
 
     $json_data = json_encode($query_rows);
     $xoopsTpl->assign('json_data', $json_data);
-    $xoopsTpl->display('db:equipment_borrow_list.html');
+    $xoopsTpl->display('db:equipment_borrow_list.tpl');
     xoops_cp_footer();
 ?>
