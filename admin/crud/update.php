@@ -13,14 +13,12 @@
     if (isset($update_data['update_id']) &&
         strlen($update_data['name']) &&
        strlen($update_data['amount']) &&
-       intval($update_data['amount']) > 0 &&
-       intval($update_data['amount']) > 0 &&
-       intval($update_data['amount_diff'])
-    ) {
+        (int)$update_data['amount'] > 0 &&
+        (int)$update_data['amount'] > 0 && (int)$update_data['amount_diff']) {
         $update_name = $update_data['name'];
         $update_amount = $update_data['amount'];
         $update_id = $update_data['update_id'];
-        $amount_diff = intval($update_data['amount_diff']);
+        $amount_diff = (int)$update_data['amount_diff'];
 
         $owner = $xoopsUser->uname();
         $sql = sprintf("UPDATE `%s` 

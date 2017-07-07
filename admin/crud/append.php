@@ -31,9 +31,9 @@
 
     if (strlen($append_data['name']) &&
        strlen($append_data['amount']) &&
-       intval($append_data['amount']) > 0) {
+        (int)$append_data['amount'] > 0) {
         $post_data_name = $append_data['name'];
-        $post_data_amount = intval($append_data['amount']);
+        $post_data_amount = (int)$append_data['amount'];
         $owner = $xoopsUser->uname();
         $totalAmount = $post_data_amount;
 

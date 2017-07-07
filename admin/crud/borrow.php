@@ -15,8 +15,8 @@
         if (sizeof($borrow_data) > 0) {
             $borrower = $xoopsUser->uname();
             foreach ($borrow_data as $id => $amount) {
-                $id = intval($id);
-                $amount = intval($amount);
+                $id = (int)$id;
+                $amount = (int)$amount;
                 $sql_amount_dec = sprintf("UPDATE `%s` 
                                             SET `amount`=`amount`-{$amount} 
                                             WHERE `id`={$id} and `amount`>={$amount}",

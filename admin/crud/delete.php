@@ -13,8 +13,8 @@
 
 
     if (isset($delete_data['delete_id']) &&
-        intval($delete_data['delete_id']) > 0) {
-        $delete_id = intval($delete_data['delete_id']);
+        (int)$delete_data['delete_id'] > 0) {
+        $delete_id = (int)$delete_data['delete_id'];
         $db_name = $xoopsDB->prefix('equipment_desc');
         $owner = $xoopsUser->uname();
 
