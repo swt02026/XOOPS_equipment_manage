@@ -6,7 +6,7 @@
         'description' => '設備管理',
         'author' => 'swt02026',
         'image' => 'image/index.jpg',
-        'dirname' => basename(dirname(__FILE__)),
+        'dirname' => basename(__DIR__),
         'system_menu' => 1,
         'hasMain' => 1,
         'hasAdmin' => 1,
