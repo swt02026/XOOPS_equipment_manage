@@ -3,20 +3,19 @@
     $xoopsOption['template_main'] = 'equipment_borrow.tpl';
     include XOOPS_ROOT_PATH . '/header.php';
 
-    function getQueryDataToJSON($sql){
+    function getQueryDataToJSON($sql)
+    {
         global $xoopsDB;
         $query = $xoopsDB->query($sql);
         $query_rows = [];
 
-        if($xoopsDB->getRowsNum($query) > 0){
-
-            while ($row = $xoopsDB->fetchArray($query)){
-
+        if ($xoopsDB->getRowsNum($query) > 0) {
+            while ($row = $xoopsDB->fetchArray($query)) {
                 $query_rows[] = $row;
             }
         }
 
-       return json_encode($query_rows);
+        return json_encode($query_rows);
     }
 
     $sql = sprintf('SELECT `name`, `owner`, `amount`, `id`, `image_b64`  FROM `%s`',
@@ -38,4 +37,3 @@
 
 
     include_once XOOPS_ROOT_PATH . '/footer.php';
-?>

@@ -10,11 +10,10 @@
     $return_data = array_map('addslashes',
                              array_map('htmlspecialchars', $_POST));
 
-    if(intval($return_data['id']) > 0 &&
+    if (intval($return_data['id']) > 0 &&
         intval($return_data['return_amount']) > 0 &&
         sizeof($return_data['borrower']) > 0
-        ){
-
+        ) {
         $id = intval($return_data['id']);
         $return_amount = intval($return_data['return_amount']);
         $borrower = $return_data['borrower'];
@@ -38,6 +37,5 @@
                                     $xoopsDB->prefix('equipment_desc')
                                 );
         $xoopsDB->queryF($sql_desc_update);
-
     }
     header('location:../borrow_manage.php');

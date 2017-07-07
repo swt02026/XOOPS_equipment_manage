@@ -6,17 +6,15 @@
  * Time: 下午 02:40
  */
     include '../../../../mainfile.php';
-    if($xoopsUser){
+    if ($xoopsUser) {
         $borrow_data = array_filter(
-            array_map('intval', $_POST['borrow_number']), function ($val){
-            return $val > 0;
-        });
+            array_map('intval', $_POST['borrow_number']), function ($val) {
+                return $val > 0;
+            });
 
-        if(sizeof($borrow_data) > 0){
-
+        if (sizeof($borrow_data) > 0) {
             $borrower = $xoopsUser->uname();
-            foreach ($borrow_data as $id => $amount){
-
+            foreach ($borrow_data as $id => $amount) {
                 $id = intval($id);
                 $amount = intval($amount);
                 $sql_amount_dec = sprintf("UPDATE `%s` 
@@ -32,7 +30,6 @@
                             $xoopsDB->prefix('equipment_borrow'));
 
                 $xoopsDB->queryF($sql);
-
             }
         }
     }

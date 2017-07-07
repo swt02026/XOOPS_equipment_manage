@@ -9,16 +9,15 @@
     include '../../../../class/uploader.php';
 
 
-    function getImageInBase64(){
-
+    function getImageInBase64()
+    {
         $tmp_name = $_FILES['image']['tmp_name'];
         $file_name = $_FILES['image']['name'];
         $verify_img = getimagesize($tmp_name);
         $file_mime = $verify_img['mime'];
 
-        if(file_exists($tmp_name) &&
-            strstr($file_mime, 'image/')){
-
+        if (file_exists($tmp_name) &&
+            strstr($file_mime, 'image/')) {
             $file_path = '../../../../uploads/$filename';
             move_uploaded_file($tmp_name, $file_path);
             $img_data = base64_encode(file_get_contents($file_path));
@@ -30,10 +29,9 @@
 
     $append_data = array_map('htmlspecialchars', array_map('addslashes', $_POST));
 
-    if(strlen($append_data['name']) &&
+    if (strlen($append_data['name']) &&
        strlen($append_data['amount']) &&
        intval($append_data['amount']) > 0) {
-
         $post_data_name = $append_data['name'];
         $post_data_amount = intval($append_data['amount']);
         $owner = $xoopsUser->uname();
@@ -46,11 +44,9 @@
                           '{$owner}',
                           {$post_data_amount},
                           {$post_data_amount}, 
-                          '{$image_b64}');"
-            , $xoopsDB->prefix('equipment_desc'));
+                          '{$image_b64}');", $xoopsDB->prefix('equipment_desc'));
 
         $xoopsDB->queryF($sql);
-
     }
 
     header('location:../manage.php');

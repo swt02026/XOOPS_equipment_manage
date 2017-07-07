@@ -42,5 +42,3 @@
         'equipment_desc',
         'equipment_borrow'
     ];
-
-?>

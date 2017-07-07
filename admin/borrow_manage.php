@@ -13,9 +13,8 @@
     $query = $xoopsDB->query($sql);
 
     $query_rows = [];
-    if($xoopsDB->getRowsNum($query) > 0){
-
-        while ($row = $xoopsDB->fetchArray($query)){
+    if ($xoopsDB->getRowsNum($query) > 0) {
+        while ($row = $xoopsDB->fetchArray($query)) {
             $row['permission'] = ($row['owner'] == $owner);
             $query_rows[] = $row;
         }
@@ -25,4 +24,3 @@
     $xoopsTpl->assign('json_data', $json_data);
     $xoopsTpl->display('db:equipment_borrow_list.tpl');
     xoops_cp_footer();
-?>

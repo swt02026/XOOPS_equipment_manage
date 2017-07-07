@@ -12,8 +12,8 @@
 
 
 
-    if(isset($delete_data['delete_id']) &&
-        intval($delete_data['delete_id']) > 0){
+    if (isset($delete_data['delete_id']) &&
+        intval($delete_data['delete_id']) > 0) {
         $delete_id = intval($delete_data['delete_id']);
         $db_name = $xoopsDB->prefix('equipment_desc');
         $owner = $xoopsUser->uname();
@@ -25,6 +25,5 @@
         $borrow_db_name = $xoopsDB->prefix('equipment_borrow');
 
         $sql_borrow = "DELETE FROM `{$borrow_db_name}` WHERE `id`={$delete_id};";
-
     }
     header('location:../manage.php');
