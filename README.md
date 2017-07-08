@@ -3,11 +3,11 @@
 [![XOOPS CMS Module](https://img.shields.io/badge/XOOPS%20CMS-Module-blue.svg)](http://xoops.org)
 [![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat)](LICENSE)
 
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/XoopsModules25x/XOOPS_equipment_manage.svg?style=flat)](https://scrutinizer-ci.com/g/mambax7/XOOPS_equipment_manage/?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/95b12220e0ac4056b9af52af708379c9)](https://www.codacy.com/app/mambax7/XOOPS_equipment_manage/s)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mambax7/XOOPS_equipment_manage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mambax7/XOOPS_equipment_manage/?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/95b12220e0ac4056b9af52af708379c9)](https://www.codacy.com/app/mambax7/XOOPS_equipment_manage/dashboard)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/e48042e5-304c-49da-b3b3-a44cd7361510/mini.png)](https://insight.sensiolabs.com/projects/e48042e5-304c-49da-b3b3-a44cd7361510)
-[![Latest Pre-Release](https://img.shields.io/github/tag/XoopsModules25x/XOOPS_equipment_manage.svg?style=flat)](https://github.com/XoopsModules25x/XOOPS_equipment_manage/tags/)
-[![Latest Version](https://img.shields.io/github/release/XoopsModules25x/XOOPS_equipment_manage.svg?style=flat)](https://github.com/XoopsModules25x/XOOPS_equipment_manage/releases/)
+[![Latest Pre-Release](https://img.shields.io/github/tag/XoopsModules25x/XOOPS_equipment_manage.svg?style=flat)](https://github.com/mambax7/XOOPS_equipment_manage/tags/)
+[![Latest Version](https://img.shields.io/github/release/XoopsModules25x/XOOPS_equipment_manage.svg?style=flat)](https://github.com/mambax7/XOOPS_equipment_manage/releases/)
 
 Equipment module for [XOOPS CMS](http://xoops.org) to manage basic Equipment Rental Inventory. It was originally a test study. 
 
