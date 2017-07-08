@@ -16,7 +16,7 @@ function getImageInBase64()
     $file_mime  = $verify_img['mime'];
 
     if (file_exists($tmp_name)
-        && strstr($file_mime, 'image/')) {
+        && false !== strpos($file_mime, 'image/')) {
         $file_path = '../../../../uploads/$filename';
         move_uploaded_file($tmp_name, $file_path);
         $img_data = base64_encode(file_get_contents($file_path));
