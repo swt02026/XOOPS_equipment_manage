@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.js"></script>
+    <{*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*}>
+    <{*<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.js"></script>*}>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <{*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">*}>
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <{*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">*}>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <{*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>*}>
 </head>
 <body>
 <div id="show_record">
     <table class="table">
         <thead>
         <tr>
-            <td>物品名稱</td>
-            <td>借用數量</td>
-            <td>借用人</td>
+            <td><{$smarty.const._MI_EQUIPMENT_ITEM_NAME}></td>
+            <td><{$smarty.const._MI_EQUIPMENT_BORROWED_QUANTITY}></td>
+            <td><{$smarty.const._MI_EQUIPMENT_BORROWER}></td>
         </tr>
         </thead>
         <tbody>
@@ -40,13 +41,13 @@
                             data-toggle="modal"
                             data-target="#submitModal"
                             @click="setReturnAll(false, record)">
-                        部分歸還
+                        <{$smarty.const._MI_EQUIPMENT_PART_OF_THE_RETURN}>
                     </button>
                     <button type="button"
                             data-toggle="modal"
                             data-target="#submitModal"
                             @click="setReturnAll(true, record)">
-                        全部歸還
+                        <{$smarty.const._MI_EQUIPMENT_ALL_RETURNED}>
                     </button>
                 </div>
             </td>
@@ -66,21 +67,21 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <h4 class="modal-title">
-                            歸還確認
+                            <{$smarty.const._MI_EQUIPMENT_RETURN_CONFIRMATION}>
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <h4>名稱：{{ operating_record.name }}</h4>
-                        <h4>借用人：{{ operating_record.borrower }}</h4>
+                        <h4><{$smarty.const._MI_EQUIPMENT_NAME}>：{{ operating_record.name }}</h4>
+                        <h4><{$smarty.const._MI_EQUIPMENT_BORROWER}>：{{ operating_record.borrower }}</h4>
 
                         <div v-if="return_all">
-                            <h4>歸還數量：{{ operating_record.amount }}</h4>
+                            <h4> <{$smarty.const._MI_EQUIPMENT_NUMBER_OF_RETURNS}>：{{ operating_record.amount }}</h4>
                             <input type="hidden"
                                    name="return_amount"
                                    v-model="operating_record.amount">
                         </div>
                         <div v-else>
-                            <h4>歸還數量：
+                            <h4><{$smarty.const._MI_EQUIPMENT_NUMBER_OF_RETURNS}>：
                                 <input type="number"
                                        name="return_amount"
                                        min="1"
@@ -98,12 +99,12 @@
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               value="確認"/>
+                               value="<{$smarty.const._MI_EQUIPMENT_CONFIRM}>"/>
 
 
                         <button type="button"
                                 data-dismiss="modal">
-                            取消
+                            <{$smarty.const._MI_EQUIPMENT_CANCEL}>
                         </button>
                     </div>
                 </div>

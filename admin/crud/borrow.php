@@ -11,7 +11,7 @@ if ($xoopsUser) {
         return $val > 0;
     });
 
-    if (sizeof($borrow_data) > 0) {
+    if (count($borrow_data) > 0) {
         $borrower = $xoopsUser->uname();
         foreach ($borrow_data as $id => $amount) {
             $id             = (int)$id;

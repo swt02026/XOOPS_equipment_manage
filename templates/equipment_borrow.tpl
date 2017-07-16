@@ -2,13 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.js"></script>
+    <{*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*}>
+    <{*<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.js"></script>*}>
+    <{*<{$xoTheme->addScript("https://unpkg.com/vue/dist/vue.min.js")}>*}>
+    <{*<{$xoTheme->addScript("https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.js")}>*}>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 </head>
 
 <body>
 <div class="row">
-    <h1 style="text-align: center">設備借用</h1>
+    <h1 style="text-align: center"><{$smarty.const._MI_EQUIPMENT_EQUIPMENT_BORROWING}></h1>
     <div id="selected-list">
 
         <div v-if="query_rows.length > 0">
@@ -24,18 +27,18 @@
                                             @click="showImageModal(row.image_b64)"
                                             style="border:0;background:transparent">
                                         <img :src="row.image_b64"
-                                             alt="無圖檔"
+                                             alt="<{$smarty.const._MI_EQUIPMENT_NO_PICTURE}>"
                                              width="80"
                                              height="120">
                                     </button>
                                 </div>
                                 <div class="col-md-8 col-sm-8">
-                                    名稱：{{ row.name }}<br/>
-                                    持有人:{{ row.owner }}<br/>
-                                    數量：{{ row.amount }}<br/>
+                                    <{$smarty.const._MI_EQUIPMENT_NAME}>：{{ row.name }}<br/>
+                                    <{$smarty.const._MI_EQUIPMENT_HOLDER}>:{{ row.owner }}<br/>
+                                    <{$smarty.const._MI_EQUIPMENT_QUANTITY}>：{{ row.amount }}<br/>
                                     <div v-if="row.amount > 0">
                                         <div class="form-group">
-                                            <label :for="'a' + row.id">借用數量：</label>
+                                            <label :for="'a' + row.id"><{$smarty.const._MI_EQUIPMENT_BORROWED_QUANTITY}>：</label>
 
                                             <input :id="'a' + row.id"
                                                    class="form-control"
@@ -43,7 +46,7 @@
                                                    :name="'borrow_number[' + row.id + ']'"
                                                    min="0"
                                                    :max="row.amount"
-                                                   :placeholder="'借用數量(1~' + row.amount + ')'"
+                                                   :placeholder="'<{$smarty.const._MI_EQUIPMENT_BORROWED_QUANTITY}>(1~' + row.amount + ')'"
                                                    @change="append(row, $event)"
                                             />
 
@@ -56,7 +59,7 @@
                     </div>
                 </div>
                 <div v-if="items.length > 0">
-                    <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal">送出</button>
+                    <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal"><{$smarty.const._MI_EQUIPMENT_SENT_OUT}></button>
                 </div>
 
                 <div class="modal fade" id="submitModal" role="dialog">
@@ -65,19 +68,19 @@
 
                             <div class="modal-header">
                                 <button data-dismiss="modal" class="close">&times;</button>
-                                <h4 class="modal-title">借用確認</h4>
+                                <h4 class="modal-title"><{$smarty.const._MI_EQUIPMENT_BORROWING_CONFIRMATION}></h4>
                             </div>
 
                             <div class="modal-body">
                                 <div v-for="item in items">
-                                    <p>名稱：{{ item.name }}<br/>借用數量:{{ item.amount }}<br/></p>
+                                    <p><{$smarty.const._MI_EQUIPMENT_NAME}>：{{ item.name }}<br/><{$smarty.const._MI_EQUIPMENT_BORROWED_QUANTITY}>:{{ item.amount }}<br/></p>
                                 </div>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-lg">確認送出</button>
+                                <button type="submit" class="btn btn-lg"><{$smarty.const._MI_EQUIPMENT_CONFIRM_DELIVERY}></button>
 
-                                <button data-dismiss="modal" class="btn btn-lg">取消</button>
+                                <button data-dismiss="modal" class="btn btn-lg"><{$smarty.const._MI_EQUIPMENT_CANCEL}></button>
                             </div>
 
                         </div>
@@ -101,7 +104,7 @@
 
                             <div class="modal-footer">
 
-                                <button data-dismiss="modal" class="btn btn-lg">關閉</button>
+                                <button data-dismiss="modal" class="btn btn-lg"><{$smarty.const._MI_EQUIPMENT_SHUT_DOWN}></button>
                             </div>
 
                         </div>
@@ -117,13 +120,15 @@
 
     <div id="borrow-list">
         <div v-if="borrow_rows.length > 0">
-            <h1 style="text-align: center">以下設備尚未歸還</h1>
+            <h1 style="text-align: center"><{$smarty.const._MI_EQUIPMENT_EQUIPMENT_NOT_RETURNED}></h1>
             <table class="table" style="text-align: center">
                 <thead>
                 <tr>
+
                     <td v-for="row_name in row_names">
-                        {{ row_name }}
+                          {{ row_name }}
                     </td>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -137,6 +142,7 @@
         </div>
     </div>
 </div>
+
 <script>
     var sel_list = new Vue({
         el: '#selected-list',
@@ -177,9 +183,9 @@
         el: '#borrow-list',
         data: {
             row_names: [
-                "名稱",
-                "持有人",
-                "借用數量"
+               "<{$smarty.const._MI_EQUIPMENT_NAME}>",
+                "<{$smarty.const._MI_EQUIPMENT_HOLDER}>",
+                "<{$smarty.const._MI_EQUIPMENT_QUANTITY}>"
             ],
             borrow_rows: <{$borrow_data}>
         }

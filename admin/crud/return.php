@@ -11,7 +11,7 @@ $return_data = array_map('addslashes', array_map('htmlspecialchars', $_POST));
 
 if ((int)$return_data['id'] > 0
     && (int)$return_data['return_amount'] > 0
-    && sizeof($return_data['borrower']) > 0) {
+    && count($return_data['borrower']) > 0) {
     $id            = (int)$return_data['id'];
     $return_amount = (int)$return_data['return_amount'];
     $borrower      = $return_data['borrower'];
@@ -31,3 +31,4 @@ if ((int)$return_data['id'] > 0
     $xoopsDB->queryF($sql_desc_update);
 }
 header('location:../borrow_manage.php');
+

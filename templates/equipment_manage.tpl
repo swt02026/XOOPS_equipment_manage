@@ -2,16 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.7/vue.js"></script>
+    <{*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*}>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <{*<{$xoTheme->addScript("https://unpkg.com/vue")}>*}>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <{*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">*}>
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <{*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">*}>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <{*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>*}>
 
 </head>
 <body>
@@ -38,7 +39,7 @@
                         <img :src="row.image_b64"
                              width="80"
                              height="120"
-                             alt="無圖檔">
+                             alt="<{$smarty.const._MI_EQUIPMENT_NO_PICTURE}>">
                     </button>
 
                 </td>
@@ -57,7 +58,7 @@
                 <td>
                     <div v-if="row.permission">
                         <input type="button"
-                               value="刪除"
+                               value="<{$smarty.const._MI_EQUIPMENT_DELETE}>"
                                data-toggle="modal"
                                data-target="#deleteModal"
                                @click="delete_id = row.id;modal_data=row;">
@@ -67,7 +68,7 @@
                                 data-target="#submitModal"
                                 @click="setUpdateModal(row)"
                         >
-                            修改
+                            <{$smarty.const._MI_EQUIPMENT_MODIFY}>
                         </button>
                     </div>
                 </td>
@@ -82,7 +83,7 @@
             data-target="#submitModal"
             @click="setAppendModal"
     >
-        新增資料
+        <{$smarty.const._MI_EQUIPMENT_ADD_INFORMATION}>
     </button>
 
     <div class="modal fade" id="deleteModal" role="dialog" tabindex='-1'>
@@ -99,18 +100,18 @@
                             &times;
                         </button>
                         <h4 class="modal-title">
-                            刪除確認
+                            <{$smarty.const._MI_EQUIPMENT_DELETE}>
                         </h4>
                     </div>
                     <div class="modal-body">
-                        名稱：{{ modal_data.name }}
+                        <{$smarty.const._MI_EQUIPMENT_NAME}>：{{ modal_data.name }}
 
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               value="確認刪除"/>
+                               value="<{$smarty.const._MI_EQUIPMENT_DELETE}>"/>
                         <button data-dismiss="modal">
-                            取消
+                            <{$smarty.const._MI_EQUIPMENT_CANCEL}>
                         </button>
                     </div>
                 </div>
@@ -136,7 +137,7 @@
 
                 <div class="modal-footer">
 
-                    <button data-dismiss="modal" class="btn btn-lg">關閉</button>
+                    <button data-dismiss="modal" class="btn btn-lg"><{$smarty.const._MI_EQUIPMENT_SHUT_DOWN}></button>
                 </div>
 
             </div>
@@ -159,25 +160,25 @@
                             &times;
                         </button>
                         <h4 class="modal-title">
-                            {{ modal_op }}確認
+                            {{ modal_op }}<{$smarty.const._MI_EQUIPMENT_CONFIRM}>
                         </h4>
                     </div>
                     <div class="modal-body">
                         <div>
-                            <label for="data_image">相片：</label>
+                            <label for="data_image"><{$smarty.const._MI_EQUIPMENT_PHOTO}>：</label>
                             <input id="data_image"
                                    name="image"
                                    type="file"
                                    accept="image/*"
                                    @change="loadImage"/>
-                            <img alt="無圖檔"
+                            <img alt="<{$smarty.const._MI_EQUIPMENT_NO_PICTURE}>"
                                  :src="image_URL"/>
                         </div>
                         <input type="hidden"
                                name="update_id"
                                v-model="modal_data.id">
                         <label for="data_name">
-                            名稱：
+                            <{$smarty.const._MI_EQUIPMENT_NAME}>：
                         </label>
                         <input type="text"
                                id="data_name"
@@ -187,7 +188,7 @@
                                required/>
 
                         <label for="data_amount">
-                            數量：
+                            <{$smarty.const._MI_EQUIPMENT_QUANTITY}>：
                         </label>
                         <input type="number"
                                id="data_amount"
@@ -204,10 +205,10 @@
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               :value="'確認' + modal_op"/>
+                               :value="'<{$smarty.const._MI_EQUIPMENT_CONFIRM}>' + modal_op"/>
                         <button data-dismiss="modal"
                                 @click="clearUpload();">
-                            取消
+                            <{$smarty.const._MI_EQUIPMENT_CANCEL}>
                         </button>
                     </div>
 
@@ -231,12 +232,12 @@
                 image_modal_src: "",
                 modal_data: {},
                 row_names: [
-                    "相片",
-                    "名稱",
-                    "持有者",
-                    "可借數量",
-                    "總數",
-                    "操作"
+                    "<{$smarty.const._MI_EQUIPMENT_PHOTO}>",
+                    "<{$smarty.const._MI_EQUIPMENT_NAME}>",
+                    "<{$smarty.const._MI_EQUIPMENT_THE_HOLDER}>",
+                    "<{$smarty.const._MI_EQUIPMENT_CAN_BE_BORROWED}>",
+                    "<{$smarty.const._MI_EQUIPMENT_TOTAL}>",
+                    "<{$smarty.const._MI_EQUIPMENT_OPERATING}>"
                 ],
                 //query_rows :[]
                 query_rows: <{$json_data}>
@@ -252,13 +253,13 @@
                 },
                 setUpdateModal: function (row) {
                     this.modal_data = JSON.parse(JSON.stringify(row));
-                    this.modal_op = '修改';
+                    this.modal_op = '<{$smarty.const._MI_EQUIPMENT_MODIFY}>';
                     this.operation = 'update';
                     this.old_amount = row.total;
                 },
                 setAppendModal: function () {
                     this.modal_data = {};
-                    this.modal_op = '新增';
+                    this.modal_op = '<{$smarty.const._MI_EQUIPMENT_ADDED}>';
                     this.operation = 'append';
                 },
                 loadImage: function (event) {

@@ -1,6 +1,5 @@
 Credits
 ===============
 
-Originally developed by
+Originally developed by swt02026 (https://github.com/swt02026/)
 
-Version 2.3 was updated to XOOPS 2.5.6 Standard GUI by Michael Beck (Mamba)

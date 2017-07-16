@@ -1,81 +1,12 @@
----------------------------------------
-2.xx Beta 1  2017-04-02
-
-- XOOPS 2.5.9, PHP 7 (mamba)
-- Converted to XOOPS 2.5.8 Admin GUI (Mamba)
-- removed @version (mamba)
-- PSR-2 code cosmetics (mamba)
-- addNavigation(basename(__FILE__))  (mamba)
-- dirname(__FILE__) to __DIR__ (mamba)
-- replaced < br /> with < br > (mamba)
+<h5> 1.0 Beta 1  [2017-07-07]</h5>
+<hr>
+- Type unsafe comparison (mamba)
+- add __DIR__ (mamba)
+- Type casting (mamba)
+- php-cs-fixer (mamba)
+- templates extension (mamba)
 - Unnecessary double quotes (mamba)
-- reference mismatch (mamba)
-- Hardening to type safe (mamba)
-- update Help (mamba)
-- changed _handler to Handler (mamba)
-- added 'true' for tokens in forms (mamba)
-- removed '/' from void HTML elements (&lt;br&gt;, &lt;img&gt;, etc) (mamba)
-- HTML 5: removed 'selected' and 'checked' (mamba)
-- updated file headers for consistency (mamba)
-- renamed several $indexAdmin with $adminObject for consistency (mamba)
-- Updates for PayPal changes (zyspec)
-- added Contributing.md (mamba)
-- added debug_backtrace (mamba)
-- replaced $xoopsGTicket with $XoopsSecurity (Mamba)
-- added tokens to forms (mamba)
 
-
-- added install checks for PHP 5.5 and XOOPS 2.5.8 (mamba)
-- added auto-creation of upload folders (mamba)
-
-- moved functions to Utility class (mamba)
-
-- moved all images, CSS, and JS files to /assets (mamba)
-- renamed .html Smarty templates to .tpl (mamba)
-
-
-- started conversion to XMF (mamba)
-    &nbsp;&nbsp;- updated addInfoBoxLine entries (mamba)
-    &nbsp;&nbsp;- displayNavigation(basename(__FILE__))  (mamba)
-    &nbsp;&nbsp;- changed to ->displayButton('left') (mamba)
-
-- short array syntax (mamba)
-
-- full XMF Conversion (mamba)
-- added namespaces (mamba)
-- with PSR-4 Autoloading (mamba)
-
-- replaced each() with foreach() for PHP 7.2 (mamba)
-
-
-Zyspec changes
--------------------------
-
-- added breadcrumb display to top of index page
-- added display of number of offline/online/waiting quotes in Admin index
-- added significant security improvements for all vars passed from forms
-- added module search capability
-- added support for XOOPS Tag module
-- added date quote was added to database
-- changed to allow HTML in quote entry (XoopsRequest::getText) in admin
-- changed install/update/unistall scripts
-- changed hard coded language strings from templates to language files
-- changed to improved index.tpl rendering
-- changed to improved PSRx naming nomenclature
-- changed phpDocumentor copyright, license, & link elements
-- changed to clean up phpdocumentor comments
-- fixed typo in block text length calculation
-- fixed bug where 'item_tag' wasn't correctly assigned to template in /class/quotes.php
-- fixed bug in install script PHP version checking
-- fixed bug in install script XOOPS version checking
-- fixed bug where language file wasn't being loaded in install script
-- fixed typo in ./docs/licencs file name to license.txt
-- general code cleanup
-- removed deprecated cleanVarsRandomquote, replaced with XoopsRequest
-- removed '/' from void HTML elements (&lt;br&gt;, &lt;img&gt;, etc)
-- removed need for ./include/config.php
-- removed need for ./include/action.module.php
-- removed @version from phpDocumentor form page-level blocks
-- removed unused admin templates
-- fixed PHP version check (mamba)
-- fixed uninstall (mamba)
+<h5> 1.0 Alpha 1  [2016-10-26]</h5>
+<hr>
+- Initial commit (swt02026)

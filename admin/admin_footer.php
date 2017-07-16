@@ -17,17 +17,13 @@
  * @author     XOOPS Development Team
  */
 
-require_once __DIR__ . '/admin_header.php';
-xoops_cp_header();
+$pathIcon32      = Xmf\Module\Admin::iconUrl('', 32);
 
-$adminObject->displayNavigation(basename(__FILE__));
-$adminObject->setPaypal('xoopsfoundation@gmail.com');
-$adminObject->displayAbout(false);
+echo "<div class='adminfooter'>\n"
+     ."  <div style='text-align: center;'>\n"
+     ."    <a href='http://www.xoops.org' rel='external'><img src='{$pathIcon32}/xoopsmicrobutton.gif' alt='XOOPS' title='XOOPS'></a>\n"
+     ."  </div>\n"
+     .'  ' . _AM_MODULEADMIN_ADMIN_FOOTER . "\n"
+     .'</div>';
 
-require_once __DIR__ . '/admin_footer.php';
-
-
-//include __DIR__ . '/../../../include/cp_header.php';
-//xoops_cp_header();
-//$xoopsTpl->display('db:equipment_about.tpl');
-//xoops_cp_footer();
+xoops_cp_footer();
