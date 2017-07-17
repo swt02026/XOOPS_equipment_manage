@@ -17,7 +17,7 @@
  * @author     XOOPS Development Team
  */
 
-require_once __DIR__ . '/admin_header.php';
+require __DIR__ . '/admin_header.php';
 xoops_cp_header();
 
 $adminObject->displayNavigation(basename(__FILE__));
@@ -25,9 +25,3 @@ $adminObject->setPaypal('xoopsfoundation@gmail.com');
 $adminObject->displayAbout(false);
 
 require_once __DIR__ . '/admin_footer.php';
-
-
-//include __DIR__ . '/../../../include/cp_header.php';
-//xoops_cp_header();
-//$xoopsTpl->display('db:equipment_about.tpl');
-//xoops_cp_footer();

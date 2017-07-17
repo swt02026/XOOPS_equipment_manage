@@ -31,7 +31,7 @@ $adminmenu = [
         'title' => _MI_EQUIPMENT_MENU1,
         'link'  => 'admin/manage.php',
         'desc'  => _MI_EQUIPMENT_MENU1_DESC,
-        'icon'  => $pathIcon32 . '/manage.png'
+        'icon'  => $pathIcon32 . '/delivery.png'
     ],
     [
         'title' => _MI_EQUIPMENT_MENU2,
@@ -44,6 +44,24 @@ $adminmenu = [
         'link'  => 'index.php',
         'desc'  => _MI_EQUIPMENT_MENU3_DESC,
         'icon'  => $pathIcon32 . '/cart_add.png'
+    ],
+    [
+        'title' => MI_EQUIPMENT_ADMENU5,
+        'link'  => 'admin/desc.php',
+        'desc'  => MI_EQUIPMENT_ADMENU5_DESC,
+        'icon'  => $pathIcon32 . '/cart_add.png'
+    ],
+    [
+        'title' => MI_EQUIPMENT_ADMENU6,
+        'link' => 'admin/borrow.php',
+        'desc'  => MI_EQUIPMENT_ADMENU6_DESC,
+        'icon'  => $pathIcon32 . '/user-icon.png'
+    ],
+    [
+        'title' => MI_EQUIPMENT_ADMENU7,
+        'link' => 'admin/permissions.php',
+        'desc'  => MI_EQUIPMENT_ADMENU7_DESC,
+        'icon'  => $pathIcon32 . '/permissions.png'
     ],
     [
         'title' => _MI_EQUIPMENT_MENU4,

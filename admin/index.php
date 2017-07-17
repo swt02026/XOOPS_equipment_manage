@@ -20,12 +20,26 @@
 require_once __DIR__ . '/admin_header.php';
 // Display Admin header
 xoops_cp_header();
-$adminObject = \Xmf\Module\Admin::getInstance();
+//$adminObject = \Xmf\Module\Admin::getInstance();
 
+//count "total Desc"
+/** @var XoopsPersistableObjectHandler $descHandler */
+$totalDesc = $descHandler->getCount();
+//count "total Borrow"
+/** @var XoopsPersistableObjectHandler $borrowHandler */
+$totalBorrow = $borrowHandler->getCount();
+// InfoBox Statistics
+$adminObject->addInfoBox(AM_EQUIPMENT_STATISTICS);
+
+// InfoBox desc
+$adminObject->addInfoBoxLine(sprintf(AM_EQUIPMENT_THEREARE_EQUIPMENT, $totalDesc));
+
+// InfoBox borrow
+$adminObject->addInfoBoxLine(sprintf(AM_EQUIPMENT_THEREARE_CUSTOMERS, $totalBorrow));
 
 // or
-
-$adminObject->addInfoBox(_AM_EQUIPMENT_SUMMARY);
+/*
+$adminObject->addInfoBox(AM_EQUIPMENT_SUMMARY);
 $adminObject->addInfoBoxLine(sprintf(_AM_EQUIPMENT_TOTALENTRIES2, '<span class="green">' . $summary['publishedEntries'] . '</span>'), '', 'green');
 $adminObject->addInfoBoxLine(sprintf(_AM_EQUIPMENT_TOTALCATS2, '<span class="green">' .$summary['availableCategories']. '</span>'), '', 'green');
 $adminObject->addInfoBoxLine(sprintf(_AM_EQUIPMENT_TOTALSUBM2, '<span class="red">' .$summary['submittedEntries']. '</span>'), '', 'red');
@@ -59,7 +73,7 @@ if ($totsub > 0) {
 } else {
     $adminObject->addInfoBoxLine(sprintf('<infolabel>' . _AM_EQUIPMENT_NEED_APPROVAL . '</infolabel>', '<span class="green">' . $totsub . '</span>'), '', 'green');
 }
-
+*/
 //-------------------------------------
 
 $adminObject->displayNavigation(basename(__FILE__));

@@ -17,12 +17,11 @@
  * @author     XOOPS Development Team
  */
 
-require_once __DIR__ . '/../../../include/cp_header.php';
-//require_once __DIR__ . '/../../../class/xoopsformloader.php';
+$path = dirname(dirname(dirname(__DIR__)));
+require_once $path . '/include/cp_header.php';
+require_once $path . '/class/xoopsformloader.php';
 
-//require __DIR__ . '/../class/util.php';
-//require_once __DIR__ . '/../include/common.php';
-
+require __DIR__ . '/../class/utility.php';
 
 $moduleDirName = basename(dirname(__DIR__));
 
@@ -31,18 +30,22 @@ if (false !== ($moduleHelper = Xmf\Module\Helper::getHelper($moduleDirName))) {
     $moduleHelper = Xmf\Module\Helper::getHelper('system');
 }
 /** @var Xmf\Module\Admin $adminObject */
-$adminObject = Xmf\Module\Admin::getInstance();
+$adminObject = \Xmf\Module\Admin::getInstance();
+
+$pathIcon16    = \Xmf\Module\Admin::iconUrl('', 16);
+$pathIcon32    = \Xmf\Module\Admin::iconUrl('', 32);
+$pathModIcon32 = $moduleHelper->getModule()->getInfo('modicons32');
+
+/** @var XoopsObjectHandler $descHandler */
+$descHandler = xoops_getModuleHandler('desc', $moduleDirName);
+/** @var XoopsObjectHandler $borrowHandler */
+$borrowHandler = xoops_getModuleHandler('borrow', $moduleDirName);
 
 $myts = MyTextSanitizer::getInstance();
-
-if (!isset($GLOBALS['xoopsTpl']) || !($GLOBALS['xoopsTpl'] instanceof XoopsTpl)) {
-    require_once $GLOBALS['xoops']->path('class/template.php');
+if (!isset($xoopsTpl) || !is_object($xoopsTpl)) {
+    require_once XOOPS_ROOT_PATH . '/class/template.php';
     $xoopsTpl = new XoopsTpl();
 }
-
-$pathIcon16      = Xmf\Module\Admin::iconUrl('', 16);
-$pathIcon32      = Xmf\Module\Admin::iconUrl('', 32);
-$pathModIcon32 = $moduleHelper->getModule()->getInfo('modicons32');
 
 // Local icons path
 $xoopsTpl->assign('pathModIcon16', $pathIcon16);
@@ -52,13 +55,4 @@ $xoopsTpl->assign('pathModIcon32', $pathIcon32);
 $moduleHelper->loadLanguage('admin');
 $moduleHelper->loadLanguage('modinfo');
 $moduleHelper->loadLanguage('main');
-
-//Module specific elements
-//require_once $GLOBALS['xoops']->path("modules/{$moduleDirName}/include/functions.php");
-//require_once $GLOBALS['xoops']->path("modules/{$moduleDirName}/include/config.php");
-
-//Handlers
-//$XXXHandler = xoops_getModuleHandler('XXX', $moduleDirName);
-
-//xoops_cp_header();
 

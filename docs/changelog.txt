@@ -6,6 +6,10 @@
 - php-cs-fixer (mamba)
 - templates extension (mamba)
 - Unnecessary double quotes (mamba)
+- added EquipmentBorrowHandler and EquipmentDescHandler classes (mamba)
+- moved getQueryDataToJSON to EquipmentUtility class (mamba)
+- moved getDataJson functions to EquipmentBorrowHandler and EquipmentDescHandler (mamba)
+
 
 <h5> 1.0 Alpha 1  [2016-10-26]</h5>
 <hr>
