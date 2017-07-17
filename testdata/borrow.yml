@@ -1,0 +1,10 @@
+---
+# borrow
+-
+  id: 1
+  borrower: "admin"
+  amount: 20
+-
+  id: 2
+  borrower: "admin"
+  amount: 44
