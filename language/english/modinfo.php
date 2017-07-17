@@ -14,7 +14,7 @@
  * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package
  * @since
- * @author     XOOPS Development Team
+ * @author       XOOPS Development Team
  */
 
 // The name of this module
@@ -24,7 +24,7 @@ define('_MI_EQUIPMENT_NAME_DESC', 'Module for Equipment Rental Management'); // 
 
 //Help
 define('_MI_EQUIPMENT_DIRNAME', basename(dirname(dirname(__DIR__))));
-define('_MI_EQUIPMENT_HELP_HEADER', __DIR__.'/help/helpheader.html');
+define('_MI_EQUIPMENT_HELP_HEADER', __DIR__ . '/help/helpheader.html');
 define('_MI_EQUIPMENT_BACK_2_ADMIN', 'Back to Administration of ');
 define('_MI_EQUIPMENT_OVERVIEW', 'Overview');
 
@@ -85,7 +85,6 @@ define('MI_EQUIPMENT_ADMENU6', 'Customers');
 define('MI_EQUIPMENT_ADMENU6_DESC', 'Customers Management');
 define('MI_EQUIPMENT_ADMENU7', 'Permissions');
 define('MI_EQUIPMENT_ADMENU7_DESC', 'Permissions Management');
-
 
 // Admin
 define('MI_EQUIPMENT_NAME', 'Equipment');
@@ -167,15 +166,13 @@ define('MI_EQUIPMENT_FILE_APPROVE_NOTIFY_SUBJECT', 'Allow Facebook comments in t
 
 // Help
 define('MI_EQUIPMENT_DIRNAME', basename(dirname(dirname(__DIR__))));
-define('MI_EQUIPMENT_HELP_HEADER', __DIR__.'/help/helpheader.html');
+define('MI_EQUIPMENT_HELP_HEADER', __DIR__ . '/help/helpheader.html');
 define('MI_EQUIPMENT_BACK_2_ADMIN', 'Back to Administration of ');
 define('MI_EQUIPMENT_OVERVIEW', 'Overview');
 // The name of this module
 //define('MI_EQUIPMENT_NAME', 'YYYYY Module Name');
 
-
 //define('MI_EQUIPMENT_HELP_DIR', __DIR__);
-
 
 //help multi-page
 define('MI_EQUIPMENT_DISCLAIMER', 'Disclaimer');

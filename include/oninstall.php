@@ -9,6 +9,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Equipment
  *
@@ -20,6 +21,7 @@
  * @link            https://xoops.org/
  * @since           1.0.0
  */
+
 use Xmf\Language;
 
 /**
@@ -48,8 +50,10 @@ function xoops_module_pre_install_equipment(XoopsModule $module)
     foreach ($mod_tables as $table) {
         $GLOBALS['xoopsDB']->queryF('DROP TABLE IF EXISTS ' . $GLOBALS['xoopsDB']->prefix($table) . ';');
     }
+
     return true;
 }
+
 /**
  *
  * Performs tasks required during installation of the module
@@ -64,13 +68,13 @@ function xoops_module_install_equipment(XoopsModule $module)
     $moduleDirName = basename(dirname(__DIR__));
     xoops_loadLanguage('admin', $moduleDirName);
     xoops_loadLanguage('modinfo', $moduleDirName);
-    $configurator   = include __DIR__ . '/config.php';
+    $configurator = include __DIR__ . '/config.php';
     $classUtility = ucfirst($moduleDirName) . 'Utility';
     if (!class_exists($classUtility)) {
         xoops_load('utility', $moduleDirName);
     }
     global $xoopsModule;
-     // default Permission Settings
+    // default Permission Settings
     $moduleId = $xoopsModule->getVar('mid');
     //$moduleName = $xoopsModule->getVar('name');
     //$moduleDirName = $xoopsModule->getVar('dirname');
@@ -82,7 +86,7 @@ function xoops_module_install_equipment(XoopsModule $module)
     $gpermHandler->addRight('equipment_view', 1, XOOPS_GROUP_ADMIN, $moduleId);
     $gpermHandler->addRight('equipment_view', 1, XOOPS_GROUP_USERS, $moduleId);
     $gpermHandler->addRight('equipment_view', 1, XOOPS_GROUP_ANONYMOUS, $moduleId);
-    
+
     //  ---  CREATE FOLDERS ---------------
     if (count($configurator['uploadFolders']) > 0) {
         //    foreach (array_keys($GLOBALS['uploadFolders']) as $i) {
@@ -98,5 +102,6 @@ function xoops_module_install_equipment(XoopsModule $module)
             $classUtility::copyFile($file, $dest);
         }
     }
+
     return true;
 }

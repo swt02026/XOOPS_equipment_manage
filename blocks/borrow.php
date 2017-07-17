@@ -33,14 +33,14 @@ function showEquipmentBorrow($options)
     $moduleDirName = basename(dirname(__DIR__));
     //$myts = MyTextSanitizer::getInstance();
 
-    $block = array();
-    $blockType = $options[0];
+    $block       = array();
+    $blockType   = $options[0];
     $borrowCount = $options[1];
     //$titleLenght = $options[2];
 
     /** @var XoopsObjectHandler $borrowHandler */
     $borrowHandler = xoops_getModuleHandler('borrow', $moduleDirName);
-    $criteria = new CriteriaCompo();
+    $criteria      = new CriteriaCompo();
     array_shift($options);
     array_shift($options);
     array_shift($options);
@@ -58,6 +58,7 @@ function showEquipmentBorrow($options)
 
     return $block;
 }
+
 /**
  * @param $options
  *
@@ -69,13 +70,13 @@ function editEquipmentBorrow($options)
     $moduleDirName = basename(dirname(__DIR__));
 
     $form = MB_EQUIPMENT_DISPLAY;
-    $form .= "<input type='hidden' name='options[0]' value='".$options[0]."' />";
-    $form .= "<input name='options[1]' size='5' maxlength='255' value='".$options[1]."' type='text' />&nbsp;<br>";
-    $form .= MB_EQUIPMENT_TITLELENGTH." : <input name='options[2]' size='5' maxlength='255' value='".$options[2]."' type='text' /><br><br>";
-    
+    $form .= "<input type='hidden' name='options[0]' value='" . $options[0] . "' />";
+    $form .= "<input name='options[1]' size='5' maxlength='255' value='" . $options[1] . "' type='text' />&nbsp;<br>";
+    $form .= MB_EQUIPMENT_TITLELENGTH . " : <input name='options[2]' size='5' maxlength='255' value='" . $options[2] . "' type='text' /><br><br>";
+
     /** @var XoopsObjectHandler $'. borrow . 'Handler */
     $borrowHandler = xoops_getModuleHandler('borrow', $moduleDirName);
-    $criteria = new CriteriaCompo();
+    $criteria      = new CriteriaCompo();
     array_shift($options);
     array_shift($options);
     array_shift($options);
@@ -83,11 +84,11 @@ function editEquipmentBorrow($options)
     $criteria->setSort('id');
     $criteria->setOrder('ASC');
     $borrowArray = $borrowHandler->getAll($criteria);
-    $form .= MB_EQUIPMENT_CATTODISPLAY."<br><select name='options[]' multiple='multiple' size='5'>";
-    $form .= "<option value='0' " . (in_array(0, $options) === false ? '' : "selected='selected'") . '>' .MB_EQUIPMENT_ALLCAT . '</option>';
+    $form        .= MB_EQUIPMENT_CATTODISPLAY . "<br><select name='options[]' multiple='multiple' size='5'>";
+    $form        .= "<option value='0' " . (in_array(0, $options) === false ? '' : "selected='selected'") . '>' . MB_EQUIPMENT_ALLCAT . '</option>';
     foreach (array_keys($borrowArray) as $i) {
-        $id = $borrowArray[$i]->getVar('id');
-        $form .= "<option value='" . $id . "' " . (in_array($id, $options) === false ? '' : "selected='selected'") . '>'.$borrowArray[$i]->getVar('borrower').'</option>';
+        $id   = $borrowArray[$i]->getVar('id');
+        $form .= "<option value='" . $id . "' " . (in_array($id, $options) === false ? '' : "selected='selected'") . '>' . $borrowArray[$i]->getVar('borrower') . '</option>';
     }
     $form .= '</select>';
 

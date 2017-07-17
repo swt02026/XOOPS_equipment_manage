@@ -9,6 +9,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Equipment
  *
@@ -26,21 +27,19 @@ use Xmf\Module\Helper;
 
 //require_once dirname(dirname(__DIR__)) . '/mainfile.php';
 
-
 $path = (dirname(dirname(__DIR__)));
 require_once $path . '/include/cp_header.php';
 require_once XOOPS_ROOT_PATH . '/header.php';
 
-    $moduleDirName = basename(__DIR__);
+$moduleDirName = basename(__DIR__);
 
 $moduleHelper = Helper::getHelper($moduleDirName);
 
-$modulePath = XOOPS_ROOT_PATH. '/modules/'.$moduleDirName;
+$modulePath = XOOPS_ROOT_PATH . '/modules/' . $moduleDirName;
 require_once __DIR__ . '/include/config.php';
 require_once __DIR__ . '/class/utility.php';
 
-
-$myts = MyTextSanitizer::getInstance();
+$myts       = MyTextSanitizer::getInstance();
 $stylesheet = "modules/{$moduleDirName}/assets/css/style.css";
 if (file_exists($GLOBALS['xoops']->path($stylesheet))) {
     $GLOBALS['xoTheme']->addStylesheet($GLOBALS['xoops']->url("www/{$stylesheet}"));

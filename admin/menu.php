@@ -1,6 +1,6 @@
 <?php
 
-$icon_dir  = substr(XOOPS_VERSION, 6, 3) === '2.6' ? '' : 'images/';
+$icon_dir = substr(XOOPS_VERSION, 6, 3) === '2.6' ? '' : 'images/';
 
 $moduleDirName = basename(dirname(__DIR__));
 
@@ -17,7 +17,6 @@ $pathModIcon32 = $moduleHelper->getModule()->getInfo('modicons32');
 $moduleHelper->loadLanguage('admin');
 $moduleHelper->loadLanguage('modinfo');
 $moduleHelper->loadLanguage('main');
-
 
 $adminmenu = [
     [
@@ -53,13 +52,13 @@ $adminmenu = [
     ],
     [
         'title' => MI_EQUIPMENT_ADMENU6,
-        'link' => 'admin/borrow.php',
+        'link'  => 'admin/borrow.php',
         'desc'  => MI_EQUIPMENT_ADMENU6_DESC,
         'icon'  => $pathIcon32 . '/user-icon.png'
     ],
     [
         'title' => MI_EQUIPMENT_ADMENU7,
-        'link' => 'admin/permissions.php',
+        'link'  => 'admin/permissions.php',
         'desc'  => MI_EQUIPMENT_ADMENU7_DESC,
         'icon'  => $pathIcon32 . '/permissions.png'
     ],

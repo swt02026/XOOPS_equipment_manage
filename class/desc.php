@@ -9,6 +9,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Equipment
  *
@@ -20,12 +21,12 @@
  * @link            https://xoops.org/
  * @since           1.0.0
  */
+
 use Xmf\Module\Helper\Permission;
 
 $moduleDirName = basename(dirname(__DIR__));
 
 $permHelper = new Permission($moduleDirName);
-
 
 /**
  * Class EquipmentDesc
@@ -59,15 +60,17 @@ class EquipmentDesc extends XoopsObject
         require_once XOOPS_ROOT_PATH . '/modules/equipment/class/form/desc.php';
 
         $form = new EquipmentDescForm($this);
+
         return $form;
     }
-    
-        /**
+
+    /**
      * @return array|null
      */
     public function getGroupsRead()
     {
         global $permHelper;
+
         //return $this->publisher->getHandler('permission')->getGrantedGroupsById('desc_read', id);
         return $permHelper->getGroupsForItem('sbcolumns_read', $this->getVar('id'));
     }
@@ -78,8 +81,9 @@ class EquipmentDesc extends XoopsObject
     public function getGroupsSubmit()
     {
         global $permHelper;
-//        return $this->publisher->getHandler('permission')->getGrantedGroupsById('desc_submit', id);
-          return $permHelper->getGroupsForItem('sbcolumns_submit', $this->getVar('id'));
+
+        //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('desc_submit', id);
+        return $permHelper->getGroupsForItem('sbcolumns_submit', $this->getVar('id'));
     }
 
     /**
@@ -88,14 +92,15 @@ class EquipmentDesc extends XoopsObject
     public function getGroupsModeration()
     {
         global $permHelper;
-//        return $this->publisher->getHandler('permission')->getGrantedGroupsById('desc_moderation', id);
+
+        //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('desc_moderation', id);
         return $permHelper->getGroupsForItem('sbcolumns_moderation', $this->getVar('id'));
     }
 }
 
-        /**
-         * Class EquipmentDescHandler
-         */
+/**
+ * Class EquipmentDescHandler
+ */
 class EquipmentDescHandler extends XoopsPersistableObjectHandler
 {
     /**

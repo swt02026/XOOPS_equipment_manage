@@ -1,6 +1,5 @@
 <?php
 
-
 define('_MD_EQUIPMENT_NAME', 'Name');
 
 define('MD_EQUIPMENT_ADMIN', 'Admin');

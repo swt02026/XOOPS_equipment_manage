@@ -33,14 +33,14 @@ function showEquipmentDesc($options)
     $moduleDirName = basename(dirname(__DIR__));
     //$myts = MyTextSanitizer::getInstance();
 
-    $block = array();
+    $block     = array();
     $blockType = $options[0];
     $descCount = $options[1];
     //$titleLenght = $options[2];
 
     /** @var XoopsObjectHandler $descHandler */
     $descHandler = xoops_getModuleHandler('desc', $moduleDirName);
-    $criteria = new CriteriaCompo();
+    $criteria    = new CriteriaCompo();
     array_shift($options);
     array_shift($options);
     array_shift($options);
@@ -54,11 +54,12 @@ function showEquipmentDesc($options)
     $descArray = $descHandler->getAll($criteria);
     foreach (array_keys($descArray) as $i) {
         $block[$i]['owner'] = $descArray[$i]->getVar('owner');
-        $block[$i]['name'] = $descArray[$i]->getVar('name');
+        $block[$i]['name']  = $descArray[$i]->getVar('name');
     }
 
     return $block;
 }
+
 /**
  * @param $options
  *
@@ -70,13 +71,13 @@ function editEquipmentDesc($options)
     $moduleDirName = basename(dirname(__DIR__));
 
     $form = MB_EQUIPMENT_DISPLAY;
-    $form .= "<input type='hidden' name='options[0]' value='".$options[0]."' />";
-    $form .= "<input name='options[1]' size='5' maxlength='255' value='".$options[1]."' type='text' />&nbsp;<br>";
-    $form .= MB_EQUIPMENT_TITLELENGTH." : <input name='options[2]' size='5' maxlength='255' value='".$options[2]."' type='text' /><br><br>";
-    
+    $form .= "<input type='hidden' name='options[0]' value='" . $options[0] . "' />";
+    $form .= "<input name='options[1]' size='5' maxlength='255' value='" . $options[1] . "' type='text' />&nbsp;<br>";
+    $form .= MB_EQUIPMENT_TITLELENGTH . " : <input name='options[2]' size='5' maxlength='255' value='" . $options[2] . "' type='text' /><br><br>";
+
     /** @var XoopsObjectHandler $'. desc . 'Handler */
     $descHandler = xoops_getModuleHandler('desc', $moduleDirName);
-    $criteria = new CriteriaCompo();
+    $criteria    = new CriteriaCompo();
     array_shift($options);
     array_shift($options);
     array_shift($options);
@@ -84,11 +85,11 @@ function editEquipmentDesc($options)
     $criteria->setSort('id');
     $criteria->setOrder('ASC');
     $descArray = $descHandler->getAll($criteria);
-    $form .= MB_EQUIPMENT_CATTODISPLAY."<br><select name='options[]' multiple='multiple' size='5'>";
-    $form .= "<option value='0' " . (in_array(0, $options) === false ? '' : "selected='selected'") . '>' .MB_EQUIPMENT_ALLCAT . '</option>';
+    $form      .= MB_EQUIPMENT_CATTODISPLAY . "<br><select name='options[]' multiple='multiple' size='5'>";
+    $form      .= "<option value='0' " . (in_array(0, $options) === false ? '' : "selected='selected'") . '>' . MB_EQUIPMENT_ALLCAT . '</option>';
     foreach (array_keys($descArray) as $i) {
-        $id = $descArray[$i]->getVar('id');
-        $form .= "<option value='" . $id . "' " . (in_array($id, $options) === false ? '' : "selected='selected'") . '>'.$descArray[$i]->getVar('id').'</option>';
+        $id   = $descArray[$i]->getVar('id');
+        $form .= "<option value='" . $id . "' " . (in_array($id, $options) === false ? '' : "selected='selected'") . '>' . $descArray[$i]->getVar('id') . '</option>';
     }
     $form .= '</select>';
 

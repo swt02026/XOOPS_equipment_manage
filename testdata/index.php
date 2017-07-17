@@ -17,7 +17,6 @@
 
 require_once __DIR__ . '/../../../mainfile.php';
 
-
 $op = \Xmf\Request::getCmd('op', '');
 
 switch ($op) {

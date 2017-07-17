@@ -32,7 +32,6 @@ defined('XOOPS_ROOT_PATH') || exit('Restricted access');
  * work correctly if trying to upgrade if these values have been changed.
  *
  **/
-
 interface EquipmentConstants
 {
 }

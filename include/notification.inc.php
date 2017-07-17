@@ -9,6 +9,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Equipment
  *
@@ -33,14 +34,14 @@ use Xmf\Language;
 function equipment_notify_iteminfo($category, $item_id)
 {
     $moduleDirName = basename(dirname(__DIR__));
-    
+
     if (empty($GLOBALS['xoopsModule']) || $GLOBALS['xoopsModule']->getVar('dirname') !== 'equipment') {
         /** @var XoopsModuleHandler $moduleHandler */
         $moduleHandler = xoops_getHandler('module');
-        $module = $moduleHandler->getByDirname('equipment');
+        $module        = $moduleHandler->getByDirname('equipment');
         /** @var XoopsConfigHandler \$modConfigHandler */
         $configHandler = xoops_getHandler('config');
-        $config = $configHandler->getConfigsByCat(0, $module->getVar('mid'));
+        $config        = $configHandler->getConfigsByCat(0, $module->getVar('mid'));
     } else {
         $module = $GLOBALS['xoopsModule'];
         $config = $GLOBALS['xoopsModuleConfig'];
@@ -50,31 +51,32 @@ function equipment_notify_iteminfo($category, $item_id)
 
     if ('global' === $category) {
         $item['name'] = '';
-        $item['url'] = '';
+        $item['url']  = '';
 
         return $item;
     }
 
     if ('category' === $category) {
         // Assume we have a valid category id
-        $sql = 'SELECT _title FROM ' . $GLOBALS['xoopsDB']->prefix('equipment_cat') . ' WHERE _cid = '.$item_id;
-        $result = $GLOBALS['xoopsDB']->query($sql); // TODO: error check
+        $sql           = 'SELECT _title FROM ' . $GLOBALS['xoopsDB']->prefix('equipment_cat') . ' WHERE _cid = ' . $item_id;
+        $result        = $GLOBALS['xoopsDB']->query($sql); // TODO: error check
         $resultArrayay = $GLOBALS['xoopsDB']->fetchArray($result);
-        $item['name'] = $resultArrayay['_title'];
-        $item['url'] = XOOPS_URL . '/modules/' . $module->getVar('dirname') . '/cat_view.php?_cid=' . $item_id;
+        $item['name']  = $resultArrayay['_title'];
+        $item['url']   = XOOPS_URL . '/modules/' . $module->getVar('dirname') . '/cat_view.php?_cid=' . $item_id;
 
         return $item;
     }
 
     if ('' == $category) {
         // Assume we have a valid link id
-        $sql = 'SELECT _cid, _title FROM '.$GLOBALS['xoopsDB']->prefix('equipment_borrow') . ' WHERE _lid = ' . $item_id;
-        $result = $GLOBALS['xoopsDB']->query($sql); // TODO: error check
+        $sql           = 'SELECT _cid, _title FROM ' . $GLOBALS['xoopsDB']->prefix('equipment_borrow') . ' WHERE _lid = ' . $item_id;
+        $result        = $GLOBALS['xoopsDB']->query($sql); // TODO: error check
         $resultArrayay = $GLOBALS['xoopsDB']->fetchArray($result);
-        $item['name'] = $resultArrayay['title'];
-        $item['url'] = XOOPS_URL . '/modules/' . $module->getVar('dirname') . '/equipment_visit.php?_cid=' . $resultArrayay['_cid'] . '&amp;_lid=' . $item_id;
+        $item['name']  = $resultArrayay['title'];
+        $item['url']   = XOOPS_URL . '/modules/' . $module->getVar('dirname') . '/equipment_visit.php?_cid=' . $resultArrayay['_cid'] . '&amp;_lid=' . $item_id;
 
         return $item;
     }
+
     return null;
 }

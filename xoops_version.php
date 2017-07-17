@@ -1,6 +1,6 @@
 <?php
 $moduleDirName = basename(__DIR__);
-$modversion = [
+$modversion    = [
     'version'       => '1.01',
     'module_status' => 'Beta 1',
     'release_date'  => '2017/07/05',
@@ -29,7 +29,7 @@ $modversion = [
     'config'        => [],
     // ------------------- Install/Update -------------------
     'onInstall'     => 'include/oninstall.php',
-//    'onUpdate'      => 'include/onupdate.php',
+    //    'onUpdate'      => 'include/onupdate.php',
     //  'onUninstall'         => 'include/onuninstall.php',
     // ------------------- Mysql -----------------------------
     'sqlfile'       => ['mysql' => 'sql/mysql.sql'],
@@ -39,8 +39,6 @@ $modversion = [
         $moduleDirName . '_' . 'borrow',
     ],
 ];
-
-
 
 // ------------------- Help files ------------------- //
 $modversion['helpsection'] = array(

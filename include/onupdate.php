@@ -9,6 +9,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Equipment
  *
@@ -21,13 +22,10 @@
  * @since           1.0.0
  */
 
-
-
 use Xmf\Language;
 
 if ((!defined('XOOPS_ROOT_PATH')) || !$GLOBALS['xoopsUser'] instanceof XoopsUser
-    || !$GLOBALS['xoopsUser']->IsAdmin()
-) {
+    || !$GLOBALS['xoopsUser']->IsAdmin()) {
     exit('Restricted access' . PHP_EOL);
 }
 
@@ -42,7 +40,6 @@ function tableExists($tablename)
 
     return ($GLOBALS['xoopsDB']->getRowsNum($result) > 0);
 }
-
 
 /**
  *
@@ -84,7 +81,7 @@ function xoops_module_update_equipment(XoopsModule $module, $previousVersion = n
 {
     //    global $xoopsDB;
     $moduleDirName = basename(dirname(__DIR__));
-    $capsDirName = strtoupper($moduleDirName);
+    $capsDirName   = strtoupper($moduleDirName);
 
     if ($previousVersion < 240) {
         $configurator = include __DIR__ . '/config.php';
@@ -92,7 +89,6 @@ function xoops_module_update_equipment(XoopsModule $module, $previousVersion = n
         if (!class_exists($classUtility)) {
             xoops_load('utility', $moduleDirName);
         }
-
 
         //delete old HTML templates
         if (count($configurator['templateFolders']) > 0) {
@@ -112,7 +108,6 @@ function xoops_module_update_equipment(XoopsModule $module, $previousVersion = n
             }
         }
 
-
         //  ---  DELETE OLD FILES ---------------
         if (count($configurator['oldFiles']) > 0) {
             //    foreach (array_keys($GLOBALS['uploadFolders']) as $i) {
@@ -131,7 +126,7 @@ function xoops_module_update_equipment(XoopsModule $module, $previousVersion = n
             foreach (array_keys($configurator['oldFolders']) as $i) {
                 $tempFolder = $GLOBALS['xoops']->path('modules/' . $moduleDirName . $configurator['oldFolders'][$i]);
                 /** @var XoopsObjectHandler $folderHandler */
-                $folderHandler   = XoopsFile::getHandler('folder', $tempFolder);
+                $folderHandler = XoopsFile::getHandler('folder', $tempFolder);
                 $folderHandler->delete($tempFolder);
             }
         }
@@ -154,10 +149,9 @@ function xoops_module_update_equipment(XoopsModule $module, $previousVersion = n
         }
 
         //delete .html entries from the tpl table
-        $sql = 'DELETE FROM ' . $GLOBALS['xoopsDB']->prefix('tplfile') . " WHERE `tpl_module` = '" . $module->getVar('dirname',
-                                                                                                          'n')
-               . "' AND `tpl_file` LIKE '%.html%'";
+        $sql = 'DELETE FROM ' . $GLOBALS['xoopsDB']->prefix('tplfile') . " WHERE `tpl_module` = '" . $module->getVar('dirname', 'n') . "' AND `tpl_file` LIKE '%.html%'";
         $GLOBALS['xoopsDB']->queryF($sql);
     }
+
     return true;
 }
