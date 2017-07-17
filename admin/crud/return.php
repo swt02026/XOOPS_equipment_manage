@@ -31,4 +31,3 @@ if ((int)$return_data['id'] > 0
     $xoopsDB->queryF($sql_desc_update);
 }
 header('location:../borrow_manage.php');
-

@@ -25,7 +25,6 @@ use Xmf\Request;
 use Xmf\Module\Helper;
 use Xmf\Module\Helper\Permission;
 
-
 require_once __DIR__ . '/../../include/config.php';
 
 $moduleDirName = basename(dirname(dirname(__DIR__)));
@@ -47,10 +46,10 @@ class EquipmentBorrowForm extends XoopsThemeForm
     public function __construct($target)
     {
         global $moduleHelper;
-      $this->targetObject = $target;
+        $this->targetObject = $target;
 
-       $title = $this->targetObject->isNew() ? sprintf(AM_EQUIPMENT_BORROW_ADD) : sprintf(AM_EQUIPMENT_BORROW_EDIT);
-        parent::__construct($title, 'form', xoops_getenv('PHP_SELF'),'post', true);
+        $title = $this->targetObject->isNew() ? sprintf(AM_EQUIPMENT_BORROW_ADD) : sprintf(AM_EQUIPMENT_BORROW_EDIT);
+        parent::__construct($title, 'form', xoops_getenv('PHP_SELF'), 'post', true);
         $this->setExtra('enctype="multipart/form-data"');
         
 
@@ -63,7 +62,7 @@ class EquipmentBorrowForm extends XoopsThemeForm
         unset($hidden);
         
 // Id
-            $this->addElement(new XoopsFormLabel(AM_EQUIPMENT_BORROW_ID, $this->targetObject->getVar('id'), 'id' ));
+            $this->addElement(new XoopsFormLabel(AM_EQUIPMENT_BORROW_ID, $this->targetObject->getVar('id'), 'id'));
             // Borrower
         $this->addElement(new XoopsFormText(AM_EQUIPMENT_BORROW_BORROWER, 'borrower', 50, 255, $this->targetObject->getVar('borrower')), false);
         // Amount

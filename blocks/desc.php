@@ -43,7 +43,7 @@ function showEquipmentDesc($options)
     $criteria = new CriteriaCompo();
     array_shift($options);
     array_shift($options);
-    array_shift($options);    
+    array_shift($options);
     if ($blockType) {
         $criteria->add(new Criteria('id', 0, '!='));
         $criteria->setSort('id');
@@ -54,7 +54,7 @@ function showEquipmentDesc($options)
     $descArray = $descHandler->getAll($criteria);
     foreach (array_keys($descArray) as $i) {
         $block[$i]['owner'] = $descArray[$i]->getVar('owner');
-        $block[$i]['name'] = $descArray[$i]->getVar('name');    
+        $block[$i]['name'] = $descArray[$i]->getVar('name');
     }
 
     return $block;
@@ -66,7 +66,7 @@ function showEquipmentDesc($options)
  */
 function editEquipmentDesc($options)
 {
-   require_once dirname(__DIR__) . '/class/desc.php';
+    require_once dirname(__DIR__) . '/class/desc.php';
     $moduleDirName = basename(dirname(__DIR__));
 
     $form = MB_EQUIPMENT_DISPLAY;

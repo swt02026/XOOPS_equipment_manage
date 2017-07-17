@@ -87,4 +87,3 @@ define('AM_EQUIPMENT_SAMPLEDATA_SUCCESS', 'Sample Date uploaded successfully');
 //Error NoFrameworks
 define('_AM_ERROR_NOFRAMEWORKS', 'Error: You don&#39;t use the Frameworks \'admin module\'. Please install this Frameworks');
 define('AM_EQUIPMENT_MAINTAINEDBY', 'is maintained by the');
-

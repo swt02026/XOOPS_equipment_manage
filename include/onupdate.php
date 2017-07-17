@@ -82,7 +82,7 @@ function xoops_module_pre_update_equipment(XoopsModule $module)
 
 function xoops_module_update_equipment(XoopsModule $module, $previousVersion = null)
 {
-//    global $xoopsDB;
+    //    global $xoopsDB;
     $moduleDirName = basename(dirname(__DIR__));
     $capsDirName = strtoupper($moduleDirName);
 

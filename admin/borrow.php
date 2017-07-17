@@ -56,7 +56,7 @@ switch ($op) {
         $borrowTempRows = $borrowHandler->getCount();
         $borrowTempArray = $borrowHandler->getAll($criteria);/*
 //
-// 
+//
                     <th class='center width5'>".AM_EQUIPMENT_FORM_ACTION."</th>
 //                    </tr>";
 //            $class = "odd";
@@ -66,9 +66,9 @@ switch ($op) {
         if ($borrowTempRows > $borrowPaginationLimit) {
             require_once XOOPS_ROOT_PATH . '/class/pagenav.php';
 
-            $pagenav = new XoopsPageNav($borrowTempRows, $borrowPaginationLimit, $start, 'start', 
-            'op=list' . '&sort=' . $sort . '&order=' . $order 
-		    . '');
+            $pagenav = new XoopsPageNav($borrowTempRows, $borrowPaginationLimit, $start, 'start',
+            'op=list' . '&sort=' . $sort . '&order=' . $order
+            . '');
             $GLOBALS['xoopsTpl']->assign('pagenav', null === $pagenav ? $pagenav->renderNav() : '');
         }
 
@@ -98,32 +98,32 @@ $borrowTempArray = $borrowHandler->getAll($criteria);
 //        $field = explode(':', $fields[$i]);
 
 $selectorid = EquipmentUtility::selectSorting(AM_EQUIPMENT_BORROW_ID, 'id');
-$GLOBALS['xoopsTpl']->assign('selectorid', $selectorid);
- $borrowArray['id'] = $borrowTempArray[$i]->getVar('id');
+         $GLOBALS['xoopsTpl']->assign('selectorid', $selectorid);
+         $borrowArray['id'] = $borrowTempArray[$i]->getVar('id');
 
-$selectorborrower = EquipmentUtility::selectSorting(AM_EQUIPMENT_BORROW_BORROWER, 'borrower');
-$GLOBALS['xoopsTpl']->assign('selectorborrower', $selectorborrower);
- $borrowArray['borrower'] = $borrowTempArray[$i]->getVar('borrower');
+         $selectorborrower = EquipmentUtility::selectSorting(AM_EQUIPMENT_BORROW_BORROWER, 'borrower');
+         $GLOBALS['xoopsTpl']->assign('selectorborrower', $selectorborrower);
+         $borrowArray['borrower'] = $borrowTempArray[$i]->getVar('borrower');
 
-$selectoramount = EquipmentUtility::selectSorting(AM_EQUIPMENT_BORROW_AMOUNT, 'amount');
-$GLOBALS['xoopsTpl']->assign('selectoramount', $selectoramount);
- $borrowArray['amount'] = $borrowTempArray[$i]->getVar('amount');
-            $borrowArray['edit_delete'] =
+         $selectoramount = EquipmentUtility::selectSorting(AM_EQUIPMENT_BORROW_AMOUNT, 'amount');
+         $GLOBALS['xoopsTpl']->assign('selectoramount', $selectoramount);
+         $borrowArray['amount'] = $borrowTempArray[$i]->getVar('amount');
+         $borrowArray['edit_delete'] =
               "<a href='borrow.php?op=edit&id=" . $i . "'><img src=" . $pathIcon16 . "/edit.png alt='" . _EDIT . "' title='" . _EDIT . "'></a>
                <a href='borrow.php?op=delete&id=" . $i . "'><img src=" . $pathIcon16 . "/delete.png alt='" . _DELETE . "' title='" . _DELETE . "'></a>
                <a href='borrow.php?op=clone&id=" . $i . "'><img src=" . $pathIcon16 . "/editcopy.png alt='" . _CLONE . "' title='". _CLONE . "'></a>";
 
 
- $GLOBALS['xoopsTpl']->append_by_ref('borrowArrays', $borrowArray);
-unset($borrowArray);
-    }
-unset($borrowTempArray);
+         $GLOBALS['xoopsTpl']->append_by_ref('borrowArrays', $borrowArray);
+         unset($borrowArray);
+     }
+     unset($borrowTempArray);
     // Display Navigation
     if ($borrowCount > $borrowPaginationLimit) {
         require_once XOOPS_ROOT_PATH . '/class/pagenav.php';
-        $pagenav = new XoopsPageNav($borrowCount, $borrowPaginationLimit, $start, 'start', 
-        'op=list' . '&sort=' . $sort . '&order=' . $order 
-		. '');
+        $pagenav = new XoopsPageNav($borrowCount, $borrowPaginationLimit, $start, 'start',
+        'op=list' . '&sort=' . $sort . '&order=' . $order
+        . '');
         $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav(4));
     }
 
@@ -155,7 +155,7 @@ unset($borrowTempArray);
         echo $GLOBALS['xoopsTpl']->fetch(
             XOOPS_ROOT_PATH . '/modules/' . $GLOBALS['xoopsModule']->getVar('dirname') . '/templates/admin/equipment_admin_borrow.tpl'
         );
-}
+ }
 
     
     break;
@@ -170,19 +170,19 @@ unset($borrowTempArray);
         break;
 
     case 'save':
-        if ( !$GLOBALS['xoopsSecurity']->check() ) {
-           redirect_header('borrow.php', 3, implode(',', $GLOBALS['xoopsSecurity']->getErrors()));
+        if (!$GLOBALS['xoopsSecurity']->check()) {
+            redirect_header('borrow.php', 3, implode(',', $GLOBALS['xoopsSecurity']->getErrors()));
         }
         if (0 != Request::getInt('id', 0)) {
-           $borrowObject = $borrowHandler->get(Request::getInt('id', 0));
+            $borrowObject = $borrowHandler->get(Request::getInt('id', 0));
         } else {
-           $borrowObject = $borrowHandler->create();
+            $borrowObject = $borrowHandler->create();
         }
 // Form save fields
-        $borrowObject->setVar('borrower',  Request::getVar('borrower', ''));
-        $borrowObject->setVar('amount',  Request::getVar('amount', ''));
+        $borrowObject->setVar('borrower', Request::getVar('borrower', ''));
+        $borrowObject->setVar('amount', Request::getVar('amount', ''));
         if ($borrowHandler->insert($borrowObject)) {
-           redirect_header('borrow.php?op=list', 2, AM_EQUIPMENT_FORMOK);
+            redirect_header('borrow.php?op=list', 2, AM_EQUIPMENT_FORMOK);
         }
 
         echo $borrowObject->getHtmlErrors();
@@ -201,8 +201,8 @@ unset($borrowTempArray);
 
     case 'delete':
         $borrowObject = $borrowHandler->get(Request::getString('id', ''));
-        if (1 == Request::getInt('ok', 0))  {
-            if ( !$GLOBALS['xoopsSecurity']->check() ) {
+        if (1 == Request::getInt('ok', 0)) {
+            if (!$GLOBALS['xoopsSecurity']->check()) {
                 redirect_header('borrow.php', 3, implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
             }
             if ($borrowHandler->delete($borrowObject)) {
@@ -211,7 +211,7 @@ unset($borrowTempArray);
                 echo $borrowObject->getHtmlErrors();
             }
         } else {
-            xoops_confirm(array('ok' => 1, 'id' => Request::getString('id', ''), 'op' => 'delete'), Request::getCmd('REQUEST_URI','', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $borrowObject->getVar('borrower')));
+            xoops_confirm(array('ok' => 1, 'id' => Request::getString('id', ''), 'op' => 'delete'), Request::getCmd('REQUEST_URI', '', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $borrowObject->getVar('borrower')));
         }
     break;
 
@@ -219,8 +219,8 @@ unset($borrowTempArray);
 
         $id_field = Request::getString('id', '');
 
-        if (EquipmentUtility::cloneRecord('equipment_borrow', 'id', $id_field )) {
-        redirect_header('borrow.php', 3, AM_EQUIPMENT_CLONED_OK);
+        if (EquipmentUtility::cloneRecord('equipment_borrow', 'id', $id_field)) {
+            redirect_header('borrow.php', 3, AM_EQUIPMENT_CLONED_OK);
         } else {
             redirect_header('borrow.php', 3, AM_EQUIPMENT_CLONED_FAILED);
         }

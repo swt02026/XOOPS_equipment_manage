@@ -27,7 +27,7 @@ require_once __DIR__ . '/admin_header.php';
 xoops_cp_header();
 require_once XOOPS_ROOT_PATH.'/class/xoopsform/grouppermform.php';
 if ('' != Request::getString('submit', '')) {
-    redirect_header( XOOPS_URL.'/modules/'.$GLOBALS['xoopsModule']->dirname().'/admin/permissions.php', 1, AM_EQUIPMENT_PERMISSIONS__GPERMUPDATED );
+    redirect_header(XOOPS_URL.'/modules/'.$GLOBALS['xoopsModule']->dirname().'/admin/permissions.php', 1, AM_EQUIPMENT_PERMISSIONS__GPERMUPDATED);
 }
 // Check admin have access to this page
 /*$group = $GLOBALS['xoopsUser']->getGroups ();
@@ -37,7 +37,7 @@ if (count ( array_intersect ( $group, $groups ) ) <= 0) {
 }*/
 $adminObject->displayNavigation(basename(__FILE__));
 
-$permission = Request::getInt('permission',1,'POST');
+$permission = Request::getInt('permission', 1, 'POST');
 $selected = array('', '', '', '');
 $selected[$permission-1] = ' selected';
 
@@ -106,7 +106,7 @@ if (1 == $permission) {
         echo $permform->render();
         echo '<br><br>';
     } else {
-        redirect_header ( 'desc.php?op=new', 3, AM_EQUIPMENT_PERMISSIONS_NOPERMSSET );
+        redirect_header('desc.php?op=new', 3, AM_EQUIPMENT_PERMISSIONS_NOPERMSSET);
         //exit ();
     }
 }

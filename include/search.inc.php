@@ -22,7 +22,7 @@
  */
  /**
  *  equipment_search
- * 
+ *
  * @return array|bool
  */
 function equipment_search($queryarray, $andor, $limit, $offset, $userid)
@@ -33,7 +33,7 @@ function equipment_search($queryarray, $andor, $limit, $offset, $userid)
         $sql .= ' AND _submitter='.(int)$userid;
     }
 
-    if ( is_array($queryarray) && $count = count($queryarray) ) {
+    if (is_array($queryarray) && $count = count($queryarray)) {
         $sql .= ' AND ((borrower LIKE '%$queryarray[0]%')';
 
         for ($i=1;$i<$count;++$i) {
@@ -44,7 +44,7 @@ function equipment_search($queryarray, $andor, $limit, $offset, $userid)
     }
 
     $sql .= ' ORDER BY id DESC';
-    $result = $GLOBALS['xoopsDB']->query($sql,$limit,$offset);
+    $result = $GLOBALS['xoopsDB']->query($sql, $limit, $offset);
     $ret = array();
     $i = 0;
     while (false !== ($myrow = $GLOBALS['xoopsDB']->fetchArray($result))) {

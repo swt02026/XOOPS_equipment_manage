@@ -49,7 +49,7 @@ define($capsDirName . '_UPLOAD_PATH', XOOPS_UPLOAD_PATH . '/' . $moduleDirName);
 
 // module information
 //$copyright = "<a href='{$mod_a_w_url}' title='{$mod_a_w_name}' target='_blank'>
-//                     <img src='".{$stu_mn}_AUTHOR_LOGOIMG."' alt='{$mod_a_w_name}' /></a>";                     
+//                     <img src='".{$stu_mn}_AUTHOR_LOGOIMG."' alt='{$mod_a_w_name}' /></a>";
 $copyright = "<a href='https://xoops.org' title='XOOPS Project' target='_blank'>  
                       <img src='" .  constant($capsDirName . '_AUTHOR_LOGOIMG') . "' alt='XOOPS Project' /></a>";
                                        

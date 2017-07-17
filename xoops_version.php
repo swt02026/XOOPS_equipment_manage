@@ -158,8 +158,8 @@ $modversion['config'][] = array(
 );
 
 // -------------- Get Admin groups --------------
-$criteria = new CriteriaCompo ();
-$criteria->add(new Criteria ('group_type', 'Admin'));
+$criteria = new CriteriaCompo();
+$criteria->add(new Criteria('group_type', 'Admin'));
 /** @var XoopsMemberHandler $memberHandler */
 $memberHandler    = xoops_getHandler('member');
 $adminXoopsGroups = $memberHandler->getGroupList($criteria);

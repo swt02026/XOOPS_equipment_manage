@@ -86,5 +86,3 @@ $adminObject->displayButton('left', '');
 $adminObject->displayIndex();
 
 require_once __DIR__ . '/admin_footer.php';
-
-

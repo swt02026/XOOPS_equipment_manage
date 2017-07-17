@@ -22,7 +22,7 @@
  */
 use Xmf\Module\Helper\Permission;
 
-    $moduleDirName = basename(dirname(__DIR__));
+$moduleDirName = basename(dirname(__DIR__));
 
 $permHelper = new Permission($moduleDirName);
 
@@ -43,7 +43,7 @@ class EquipmentBorrow extends XoopsObject
         $this->initVar('id', XOBJ_DTYPE_INT);
         $this->initVar('borrower', XOBJ_DTYPE_TXTBOX);
         $this->initVar('amount', XOBJ_DTYPE_INT);
-     }
+    }
 
     /**
      * Get form
@@ -53,7 +53,7 @@ class EquipmentBorrow extends XoopsObject
      */
     public function getForm()
     {
-         require_once XOOPS_ROOT_PATH . '/modules/equipment/class/form/borrow.php';
+        require_once XOOPS_ROOT_PATH . '/modules/equipment/class/form/borrow.php';
 
         $form = new EquipmentBorrowForm($this);
         return $form;
@@ -74,7 +74,7 @@ class EquipmentBorrow extends XoopsObject
      */
     public function getGroupsSubmit()
     {
-          global $permHelper;
+        global $permHelper;
 //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('borrow_submit', id);
           return $permHelper->getGroupsForItem('sbcolumns_submit', $this->getVar('id'));
     }
@@ -84,7 +84,7 @@ class EquipmentBorrow extends XoopsObject
      */
     public function getGroupsModeration()
     {
-          global $permHelper;
+        global $permHelper;
 //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('borrow_moderation', id);
         return $permHelper->getGroupsForItem('sbcolumns_moderation', $this->getVar('id'));
     }
@@ -105,7 +105,8 @@ class EquipmentBorrowHandler extends XoopsPersistableObjectHandler
         parent::__construct($db, 'equipment_borrow', 'EquipmentBorrow', 'id', 'borrower');
     }
 
-    public function getDataJson(){
+    public function getDataJson()
+    {
         global $xoopsDB, $xoopsUser;
         $borrow_sql = sprintf('SELECT `%1$s`.`amount`, `name`, `owner`  
                     FROM `%1$s` 

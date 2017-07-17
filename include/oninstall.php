@@ -68,7 +68,7 @@ function xoops_module_install_equipment(XoopsModule $module)
     $classUtility = ucfirst($moduleDirName) . 'Utility';
     if (!class_exists($classUtility)) {
         xoops_load('utility', $moduleDirName);
-    }    
+    }
     global $xoopsModule;
      // default Permission Settings
     $moduleId = $xoopsModule->getVar('mid');

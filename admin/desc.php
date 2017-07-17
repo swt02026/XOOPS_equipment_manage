@@ -56,7 +56,7 @@ switch ($op) {
         $descTempRows = $descHandler->getCount();
         $descTempArray = $descHandler->getAll($criteria);/*
 //
-// 
+//
                     <th class='center width5'>".AM_EQUIPMENT_FORM_ACTION."</th>
 //                    </tr>";
 //            $class = "odd";
@@ -66,9 +66,9 @@ switch ($op) {
         if ($descTempRows > $descPaginationLimit) {
             require_once XOOPS_ROOT_PATH . '/class/pagenav.php';
 
-            $pagenav = new XoopsPageNav($descTempRows, $descPaginationLimit, $start, 'start', 
-            'op=list' . '&sort=' . $sort . '&order=' . $order 
-		    . '');
+            $pagenav = new XoopsPageNav($descTempRows, $descPaginationLimit, $start, 'start',
+            'op=list' . '&sort=' . $sort . '&order=' . $order
+            . '');
             $GLOBALS['xoopsTpl']->assign('pagenav', null === $pagenav ? $pagenav->renderNav() : '');
         }
 
@@ -98,44 +98,44 @@ $descTempArray = $descHandler->getAll($criteria);
 //        $field = explode(':', $fields[$i]);
 
 $selectorid = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_ID, 'id');
-$GLOBALS['xoopsTpl']->assign('selectorid', $selectorid);
- $descArray['id'] = $descTempArray[$i]->getVar('id');
+         $GLOBALS['xoopsTpl']->assign('selectorid', $selectorid);
+         $descArray['id'] = $descTempArray[$i]->getVar('id');
 
-$selectorowner = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_OWNER, 'owner');
-$GLOBALS['xoopsTpl']->assign('selectorowner', $selectorowner);
- $descArray['owner'] = $descTempArray[$i]->getVar('owner');
+         $selectorowner = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_OWNER, 'owner');
+         $GLOBALS['xoopsTpl']->assign('selectorowner', $selectorowner);
+         $descArray['owner'] = $descTempArray[$i]->getVar('owner');
 
-$selectorname = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_NAME, 'name');
-$GLOBALS['xoopsTpl']->assign('selectorname', $selectorname);
- $descArray['name'] = $descTempArray[$i]->getVar('name');
+         $selectorname = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_NAME, 'name');
+         $GLOBALS['xoopsTpl']->assign('selectorname', $selectorname);
+         $descArray['name'] = $descTempArray[$i]->getVar('name');
 
-$selectoramount = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_AMOUNT, 'amount');
-$GLOBALS['xoopsTpl']->assign('selectoramount', $selectoramount);
- $descArray['amount'] = $descTempArray[$i]->getVar('amount');
+         $selectoramount = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_AMOUNT, 'amount');
+         $GLOBALS['xoopsTpl']->assign('selectoramount', $selectoramount);
+         $descArray['amount'] = $descTempArray[$i]->getVar('amount');
 
-$selectortotal = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_TOTAL, 'total');
-$GLOBALS['xoopsTpl']->assign('selectortotal', $selectortotal);
- $descArray['total'] = $descTempArray[$i]->getVar('total');
+         $selectortotal = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_TOTAL, 'total');
+         $GLOBALS['xoopsTpl']->assign('selectortotal', $selectortotal);
+         $descArray['total'] = $descTempArray[$i]->getVar('total');
 
-$selectorimage_b64 = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_IMAGE_B64, 'image_b64');
-$GLOBALS['xoopsTpl']->assign('selectorimage_b64', $selectorimage_b64);
- $descArray['image_b64'] = $descTempArray[$i]->getVar('image_b64');
-            $descArray['edit_delete'] =
+         $selectorimage_b64 = EquipmentUtility::selectSorting(AM_EQUIPMENT_DESC_IMAGE_B64, 'image_b64');
+         $GLOBALS['xoopsTpl']->assign('selectorimage_b64', $selectorimage_b64);
+         $descArray['image_b64'] = $descTempArray[$i]->getVar('image_b64');
+         $descArray['edit_delete'] =
               "<a href='desc.php?op=edit&id=" . $i . "'><img src=" . $pathIcon16 . "/edit.png alt='" . _EDIT . "' title='" . _EDIT . "'></a>
                <a href='desc.php?op=delete&id=" . $i . "'><img src=" . $pathIcon16 . "/delete.png alt='" . _DELETE . "' title='" . _DELETE . "'></a>
                <a href='desc.php?op=clone&id=" . $i . "'><img src=" . $pathIcon16 . "/editcopy.png alt='" . _CLONE . "' title='". _CLONE . "'></a>";
 
 
- $GLOBALS['xoopsTpl']->append_by_ref('descArrays', $descArray);
-unset($descArray);
-    }
-unset($descTempArray);
+         $GLOBALS['xoopsTpl']->append_by_ref('descArrays', $descArray);
+         unset($descArray);
+     }
+     unset($descTempArray);
     // Display Navigation
     if ($descCount > $descPaginationLimit) {
         require_once XOOPS_ROOT_PATH . '/class/pagenav.php';
-        $pagenav = new XoopsPageNav($descCount, $descPaginationLimit, $start, 'start', 
-        'op=list' . '&sort=' . $sort . '&order=' . $order 
-		. '');
+        $pagenav = new XoopsPageNav($descCount, $descPaginationLimit, $start, 'start',
+        'op=list' . '&sort=' . $sort . '&order=' . $order
+        . '');
         $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav(4));
     }
 
@@ -167,7 +167,7 @@ unset($descTempArray);
         echo $GLOBALS['xoopsTpl']->fetch(
             XOOPS_ROOT_PATH . '/modules/' . $GLOBALS['xoopsModule']->getVar('dirname') . '/templates/admin/equipment_admin_desc.tpl'
         );
-}
+ }
 
     
     break;
@@ -182,19 +182,19 @@ unset($descTempArray);
         break;
 
     case 'save':
-        if ( !$GLOBALS['xoopsSecurity']->check() ) {
-           redirect_header('desc.php', 3, implode(',', $GLOBALS['xoopsSecurity']->getErrors()));
+        if (!$GLOBALS['xoopsSecurity']->check()) {
+            redirect_header('desc.php', 3, implode(',', $GLOBALS['xoopsSecurity']->getErrors()));
         }
         if (0 != Request::getInt('id', 0)) {
-           $descObject = $descHandler->get(Request::getInt('id', 0));
+            $descObject = $descHandler->get(Request::getInt('id', 0));
         } else {
-           $descObject = $descHandler->create();
+            $descObject = $descHandler->create();
         }
 // Form save fields
-        $descObject->setVar('owner',  Request::getVar('owner', ''));
-        $descObject->setVar('name',  Request::getVar('name', ''));
-        $descObject->setVar('amount',  Request::getVar('amount', ''));
-        $descObject->setVar('total',  Request::getVar('total', ''));
+        $descObject->setVar('owner', Request::getVar('owner', ''));
+        $descObject->setVar('name', Request::getVar('name', ''));
+        $descObject->setVar('amount', Request::getVar('amount', ''));
+        $descObject->setVar('total', Request::getVar('total', ''));
 
         require_once XOOPS_ROOT_PATH.'/class/uploader.php';
         $uploadDir = XOOPS_UPLOAD_PATH.'/equipment/images/';
@@ -202,7 +202,7 @@ unset($descTempArray);
                                                        xoops_getModuleOption('maxsize', 'equipment'), null, null);
         if ($uploader->fetchMedia(Request::getArray('xoops_upload_file', '', 'POST')[0])) {
         
-        	//$extension = preg_replace( '/^.+\.([^.]+)$/sU' , '' , $_FILES['attachedfile']['name']);
+            //$extension = preg_replace( '/^.+\.([^.]+)$/sU' , '' , $_FILES['attachedfile']['name']);
             //$imgName = str_replace(' ', '', $_POST['']).'.'.$extension;
         
             $uploader->setPrefix('image_b64_');
@@ -214,7 +214,7 @@ unset($descTempArray);
                 $descObject->setVar('image_b64', $uploader->getSavedFileName());
             }
         } else {
-            $descObject->setVar('image_b64',  Request::getVar('image_b64', ''));
+            $descObject->setVar('image_b64', Request::getVar('image_b64', ''));
         }
                 
  //Permissions
@@ -339,7 +339,7 @@ unset($descTempArray);
 //===============================================================
 
         if ($descHandler->insert($descObject)) {
-           redirect_header('desc.php?op=list', 2, AM_EQUIPMENT_FORMOK);
+            redirect_header('desc.php?op=list', 2, AM_EQUIPMENT_FORMOK);
         }
 
         echo $descObject->getHtmlErrors();
@@ -358,8 +358,8 @@ unset($descTempArray);
 
     case 'delete':
         $descObject = $descHandler->get(Request::getString('id', ''));
-        if (1 == Request::getInt('ok', 0))  {
-            if ( !$GLOBALS['xoopsSecurity']->check() ) {
+        if (1 == Request::getInt('ok', 0)) {
+            if (!$GLOBALS['xoopsSecurity']->check()) {
                 redirect_header('desc.php', 3, implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
             }
             if ($descHandler->delete($descObject)) {
@@ -368,7 +368,7 @@ unset($descTempArray);
                 echo $descObject->getHtmlErrors();
             }
         } else {
-            xoops_confirm(array('ok' => 1, 'id' => Request::getString('id', ''), 'op' => 'delete'), Request::getCmd('REQUEST_URI','', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $descObject->getVar('id')));
+            xoops_confirm(array('ok' => 1, 'id' => Request::getString('id', ''), 'op' => 'delete'), Request::getCmd('REQUEST_URI', '', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $descObject->getVar('id')));
         }
     break;
 
@@ -376,8 +376,8 @@ unset($descTempArray);
 
         $id_field = Request::getString('id', '');
 
-        if (EquipmentUtility::cloneRecord('equipment_desc', 'id', $id_field )) {
-        redirect_header('desc.php', 3, AM_EQUIPMENT_CLONED_OK);
+        if (EquipmentUtility::cloneRecord('equipment_desc', 'id', $id_field)) {
+            redirect_header('desc.php', 3, AM_EQUIPMENT_CLONED_OK);
         } else {
             redirect_header('desc.php', 3, AM_EQUIPMENT_CLONED_FAILED);
         }

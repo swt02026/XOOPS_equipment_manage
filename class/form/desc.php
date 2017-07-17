@@ -25,7 +25,6 @@ use Xmf\Request;
 use Xmf\Module\Helper;
 use Xmf\Module\Helper\Permission;
 
-
 require_once __DIR__ . '/../../include/config.php';
 
 $moduleDirName = basename(dirname(dirname(__DIR__)));
@@ -47,10 +46,10 @@ class EquipmentDescForm extends XoopsThemeForm
     public function __construct($target)
     {
         global $moduleHelper;
-      $this->targetObject = $target;
+        $this->targetObject = $target;
 
-       $title = $this->targetObject->isNew() ? sprintf(AM_EQUIPMENT_DESC_ADD) : sprintf(AM_EQUIPMENT_DESC_EDIT);
-        parent::__construct($title, 'form', xoops_getenv('PHP_SELF'),'post', true);
+        $title = $this->targetObject->isNew() ? sprintf(AM_EQUIPMENT_DESC_ADD) : sprintf(AM_EQUIPMENT_DESC_EDIT);
+        parent::__construct($title, 'form', xoops_getenv('PHP_SELF'), 'post', true);
         $this->setExtra('enctype="multipart/form-data"');
         
 
@@ -63,7 +62,7 @@ class EquipmentDescForm extends XoopsThemeForm
         unset($hidden);
         
 // Id
-            $this->addElement(new XoopsFormLabel(AM_EQUIPMENT_DESC_ID, $this->targetObject->getVar('id'), 'id' ));
+            $this->addElement(new XoopsFormLabel(AM_EQUIPMENT_DESC_ID, $this->targetObject->getVar('id'), 'id'));
             // Owner
         $this->addElement(new XoopsFormText(AM_EQUIPMENT_DESC_OWNER, 'owner', 50, 255, $this->targetObject->getVar('owner')), false);
         // Name
@@ -76,29 +75,29 @@ class EquipmentDescForm extends XoopsThemeForm
         $image_b64 = $this->targetObject->getVar('image_b64') ?: 'blank.png';
 
         $uploadDir = '/uploads/equipment/images/';
-        $imgtray = new XoopsFormElementTray(AM_EQUIPMENT_DESC_IMAGE_B64,'<br>');
+        $imgtray = new XoopsFormElementTray(AM_EQUIPMENT_DESC_IMAGE_B64, '<br>');
         $imgpath = sprintf(AM_EQUIPMENT_FORMIMAGE_PATH, $uploadDir);
         $imageselect = new XoopsFormSelect($imgpath, 'image_b64', $image_b64);
-        $imageArray = XoopsLists::getImgListAsArray( XOOPS_ROOT_PATH . $uploadDir );
+        $imageArray = XoopsLists::getImgListAsArray(XOOPS_ROOT_PATH . $uploadDir);
         foreach ($imageArray as $image) {
             $imageselect->addOption("$image", $image);
         }
-        $imageselect->setExtra( "onchange='showImgSelected(\"image_image_b64\", \"image_b64\", \"".$uploadDir.'", "", "'.XOOPS_URL."\")'" );
+        $imageselect->setExtra("onchange='showImgSelected(\"image_image_b64\", \"image_b64\", \"".$uploadDir.'", "", "'.XOOPS_URL."\")'");
         $imgtray->addElement($imageselect);
-        $imgtray->addElement( new XoopsFormLabel( '', "<br><img src='".XOOPS_URL.'/'.$uploadDir.'/'.$image_b64."' name='image_image_b64' id='image_image_b64' alt='' />" ) );
-        $fileseltray = new XoopsFormElementTray('','<br>');
-        $fileseltray->addElement(new XoopsFormFile(AM_EQUIPMENT_FORMUPLOAD , 'image_b64', xoops_getModuleOption('maxsize')));
+        $imgtray->addElement(new XoopsFormLabel('', "<br><img src='".XOOPS_URL.'/'.$uploadDir.'/'.$image_b64."' name='image_image_b64' id='image_image_b64' alt='' />"));
+        $fileseltray = new XoopsFormElementTray('', '<br>');
+        $fileseltray->addElement(new XoopsFormFile(AM_EQUIPMENT_FORMUPLOAD, 'image_b64', xoops_getModuleOption('maxsize')));
         $fileseltray->addElement(new XoopsFormLabel(''));
         $imgtray->addElement($fileseltray);
         $this->addElement($imgtray);
                 
         //permissions
         /** @var XoopsMemberHandler $memberHandler */
-        $memberHandler =  xoops_getHandler ('member');
+        $memberHandler =  xoops_getHandler('member');
         $groupList = $memberHandler->getGroupList();
         /** @var XoopsGroupPermHandler $gpermHandler */
-        $gpermHandler = xoops_getHandler ('groupperm');
-        $fullList = array_keys ($groupList);
+        $gpermHandler = xoops_getHandler('groupperm');
+        $fullList = array_keys($groupList);
 
 //========================================================================
 
@@ -116,7 +115,7 @@ class EquipmentDescForm extends XoopsThemeForm
 
         $selectPermAdmin = new XoopsFormCheckBox('', 'admin', XOOPS_GROUP_ADMIN);
         $selectPermAdmin->addOption($groupIdAdmin, $groupNameAdmin);
-        $selectPermAdmin->setExtra("disabled='disabled'"); //comment it out, if you want to allow to remove permissions for the admin 
+        $selectPermAdmin->setExtra("disabled='disabled'"); //comment it out, if you want to allow to remove permissions for the admin
 
         // ********************************************************
         // permission view items
@@ -200,7 +199,7 @@ class EquipmentDescForm extends XoopsThemeForm
         $this->addElement($permsTray, false);
         unset($permsTray, $selectPerm);
 
-//=========================================================================        
+//=========================================================================
         $this->addElement(new XoopsFormHidden('op', 'save'));
         $this->addElement(new XoopsFormButton('', 'submit', _SUBMIT, 'submit'));
     }

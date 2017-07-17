@@ -135,7 +135,7 @@ class EquipmentUtility
         $sql    = 'SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = "' . $table . '" AND COLUMN_NAME = "' . $columnName . '"';
         $result = $GLOBALS['xoopsDB']->query($sql);
         if (!$result) {
-            exit ($GLOBALS['xoopsDB']->error());
+            exit($GLOBALS['xoopsDB']->error());
         }
 
         $row      = $GLOBALS['xoopsDB']->fetchBoth($result);
@@ -160,7 +160,7 @@ class EquipmentUtility
         // set the auto-incremented id's value to blank.
         unset($tempTable[$id_field]);
         // insert cloned copy of the original  record 
-        $result = $GLOBALS['xoopsDB']->queryF("INSERT INTO $table (" . implode(', ', array_keys($tempTable)) . ") VALUES ('" . implode("', '", array_values($tempTable)) . "')") or exit ($GLOBALS['xoopsDB']->error());
+        $result = $GLOBALS['xoopsDB']->queryF("INSERT INTO $table (" . implode(', ', array_keys($tempTable)) . ") VALUES ('" . implode("', '", array_values($tempTable)) . "')") or exit($GLOBALS['xoopsDB']->error());
 
         if ($result) {
             // Return the new id
@@ -186,8 +186,7 @@ class EquipmentUtility
                 }
                 file_put_contents($folder . '/index.html', '<script>history.go(-1);</script>');
             }
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             echo 'Caught exception: ', $e->getMessage(), '', '<br>';
         }
     }

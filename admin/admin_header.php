@@ -55,4 +55,3 @@ $xoopsTpl->assign('pathModIcon32', $pathIcon32);
 $moduleHelper->loadLanguage('admin');
 $moduleHelper->loadLanguage('modinfo');
 $moduleHelper->loadLanguage('main');
-

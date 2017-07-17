@@ -29,10 +29,10 @@ use Xmf\Language;
  * @param $category
  * @param $item_id
  * @return null
- */ 
+ */
 function equipment_notify_iteminfo($category, $item_id)
 {
-        $moduleDirName = basename(dirname(__DIR__));
+    $moduleDirName = basename(dirname(__DIR__));
     
     if (empty($GLOBALS['xoopsModule']) || $GLOBALS['xoopsModule']->getVar('dirname') !== 'equipment') {
         /** @var XoopsModuleHandler $moduleHandler */
@@ -40,11 +40,11 @@ function equipment_notify_iteminfo($category, $item_id)
         $module = $moduleHandler->getByDirname('equipment');
         /** @var XoopsConfigHandler \$modConfigHandler */
         $configHandler = xoops_getHandler('config');
-        $config = $configHandler->getConfigsByCat(0,$module->getVar('mid'));
-        } else {
+        $config = $configHandler->getConfigsByCat(0, $module->getVar('mid'));
+    } else {
         $module = $GLOBALS['xoopsModule'];
         $config = $GLOBALS['xoopsModuleConfig'];
-        }
+    }
 
     Language::load('main', $moduleDirName);
 
@@ -53,7 +53,7 @@ function equipment_notify_iteminfo($category, $item_id)
         $item['url'] = '';
 
         return $item;
-        }
+    }
 
     if ('category' === $category) {
         // Assume we have a valid category id
@@ -64,7 +64,7 @@ function equipment_notify_iteminfo($category, $item_id)
         $item['url'] = XOOPS_URL . '/modules/' . $module->getVar('dirname') . '/cat_view.php?_cid=' . $item_id;
 
         return $item;
-        }
+    }
 
     if ('' == $category) {
         // Assume we have a valid link id
@@ -75,6 +75,6 @@ function equipment_notify_iteminfo($category, $item_id)
         $item['url'] = XOOPS_URL . '/modules/' . $module->getVar('dirname') . '/equipment_visit.php?_cid=' . $resultArrayay['_cid'] . '&amp;_lid=' . $item_id;
 
         return $item;
-        }
-        return null;
     }
+    return null;
+}

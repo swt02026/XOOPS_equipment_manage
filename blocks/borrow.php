@@ -43,7 +43,7 @@ function showEquipmentBorrow($options)
     $criteria = new CriteriaCompo();
     array_shift($options);
     array_shift($options);
-    array_shift($options);    
+    array_shift($options);
     if ($blockType) {
         $criteria->add(new Criteria('id', 0, '!='));
         $criteria->setSort('id');
@@ -53,7 +53,7 @@ function showEquipmentBorrow($options)
     $criteria->setLimit($borrowCount);
     $borrowArray = $borrowHandler->getAll($criteria);
     foreach (array_keys($borrowArray) as $i) {
-        $block[$i]['borrower'] = $borrowArray[$i]->getVar('borrower');    
+        $block[$i]['borrower'] = $borrowArray[$i]->getVar('borrower');
     }
 
     return $block;
@@ -65,7 +65,7 @@ function showEquipmentBorrow($options)
  */
 function editEquipmentBorrow($options)
 {
-   require_once dirname(__DIR__) . '/class/borrow.php';
+    require_once dirname(__DIR__) . '/class/borrow.php';
     $moduleDirName = basename(dirname(__DIR__));
 
     $form = MB_EQUIPMENT_DISPLAY;
