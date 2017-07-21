@@ -17,3 +17,5 @@ Equipment module for [XOOPS CMS](https://xoops.org) to manage basic Equipment Re
 Please visit us on https://xoops.org
 
 **The upcoming "next generation" version of XOOPS CMS is being crafted on GitHub at: https://github.com/XOOPS**
+
+![alt Equipment Rental](https://user-images.githubusercontent.com/613686/28452434-a55cd2be-6dc0-11e7-86ed-da0382eebc79.png)
