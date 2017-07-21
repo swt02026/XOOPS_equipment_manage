@@ -1,53 +1,97 @@
 <?php
+
+/*
+ You may not change or alter any portion of this comment or credits
+ of supporting developers from this source code or any supporting source code
+ which is considered copyrighted (c) material of the original comment or credit authors.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*/
+/**
+ * Module: Equipment
+ *
+ * @category        Module
+ * @package         equipment
+ * @author          swt02026 (https://github.com/swt02026/)
+ * @author          XOOPS Development Team <http://xoops.org>
+ * @copyright       {@link https://xoops.org/ XOOPS Project}
+ * @license         GPL 2.0 or later
+ * @link            https://xoops.org/
+ * @since           1.0.0
+ */
+
 $moduleDirName = basename(__DIR__);
-$modversion    = [
-    'version'       => '1.01',
-    'module_status' => 'Beta 1',
-    'release_date'  => '2017/07/05',
-    'name'          => _MI_EQUIPMENT_NAME,
-    'description'   => _MI_EQUIPMENT_NAME_DESC,
-    'author'        => 'swt02026',
-    'license'       => 'GPL 2.0 or later, and MIT',
-    'license_url'   => 'www.gnu.org/licenses/gpl-2.0.html/',
-    'help'          => 'page=help',
-    'image'         => 'assets/images/logoModule.png',
-    'dirname'       => basename(__DIR__),
-    'modicons16'    => 'assets/images/icons/16',
-    'modicons32'    => 'assets/images/icons/32',
-    // ------------------- Min Requirements -------------------
-    'min_php'       => '5.5',
-    'min_xoops'     => '2.5.8',
-    'min_admin'     => '1.2',
-    'min_db'        => ['mysql' => '5.1'],
-    // ------------------- Admin Menu -------------------
-    'system_menu'   => 1,
-    'hasAdmin'      => 1,
-    'adminindex'    => 'admin/index.php',
-    'adminmenu'     => 'admin/menu.php',
-    // ------------------- Main Menu -------------------
-    'hasMain'       => 1,
-    'config'        => [],
-    // ------------------- Install/Update -------------------
-    'onInstall'     => 'include/oninstall.php',
-    //    'onUpdate'      => 'include/onupdate.php',
-    //  'onUninstall'         => 'include/onuninstall.php',
-    // ------------------- Mysql -----------------------------
-    'sqlfile'       => ['mysql' => 'sql/mysql.sql'],
-    // ------------------- Tables ----------------------------
-    'tables'        => [
-        $moduleDirName . '_' . 'desc',
-        $moduleDirName . '_' . 'borrow',
+
+$modversion = array(
+    'version'             => 1.1,
+    'module_status'       => 'Beta 1',
+    'release_date'        => '2017/07/20',
+    'name'                => MI_EQUIPMENT_NAME,
+    'description'         => MI_EQUIPMENT_DESC,
+    'release'             => '2017-07-20',
+    'author'              => 'swt02026, XOOPS Development Team',
+    'author_mail'         => 'name@site.com',
+    'author_website_url'  => 'http://xoops.org',
+    'author_website_name' => 'XOOPS Project',
+    'credits'             => 'XOOPS Development Team',
+    //    'license' => 'GPL 2.0 or later',
+    'help'                => 'page=help',
+    'license'             => 'GPL 2.0 or later',
+    'license_url'         => 'www.gnu.org/licenses/gpl-2.0.html',
+
+    'release_info' => 'release_info',
+    'release_file' => XOOPS_URL . "/modules/{$moduleDirName}/docs/release_info file",
+
+    'manual'              => 'Installation.txt',
+    'manual_file'         => XOOPS_URL . "/modules/{$moduleDirName}/docs/link to manual file",
+    'min_php'             => '5.5',
+    'min_xoops'           => '2.5.8',
+    'min_admin'           => '1.2',
+    'min_db'              => array('mysql'  => '5.5'),
+    'image'               => 'assets/images/logoModule.png',
+    'dirname'             => $moduleDirName,
+    'modicons16'          => 'assets/images/icons/16',
+    'modicons32'          => 'assets/images/icons/32',
+    //About
+    'demo_site_url'       => 'http://www.xoops.org',
+    'demo_site_name'      => 'XOOPS Demo Site',
+    'support_url'         => 'http://xoops.org/modules/newbb',
+    'support_name'        => 'Support Forum',
+    'module_website_url'  => 'www.xoops.org',
+    'module_website_name' => 'XOOPS Project',
+    // Admin system menu
+    'system_menu'         => 1,
+    // Admin things
+    'hasAdmin'            => 1,
+    'adminindex'          => 'admin/index.php',
+    'adminmenu'           => 'admin/menu.php',
+    // Menu
+    'hasMain'             => 1,
+    'sub'                 => [
+        [
+            'name' => MI_EQUIPMENT_VIEW_INDEX,
+            'url'  => 'index.php'
+        ],
+        [
+            'name' => MI_EQUIPMENT_VIEW_INDEXVUE,
+            'url'  => 'indexvue.php'
+        ],
     ],
-];
-
-// ------------------- Help files ------------------- //
-$modversion['helpsection'] = array(
-    ['name' => _MI_EQUIPMENT_OVERVIEW, 'link' => 'page=help'],
-    ['name' => _MI_EQUIPMENT_DISCLAIMER, 'link' => 'page=disclaimer'],
-    ['name' => _MI_EQUIPMENT_LICENSE, 'link' => 'page=license'],
-    ['name' => _MI_EQUIPMENT_SUPPORT, 'link' => 'page=support'],
+    // Scripts to run upon installation or update
+    'onInstall'           => 'include/oninstall.php',
+    'onUpdate'            => 'include/onupdate.php',
+    'onUninstall'         => 'include/onuninstall.php',
+    // ------------------- Mysql -----------------------------
+    'sqlfile'             => array('mysql' => 'sql/mysql.sql'),
+    // ------------------- Tables ----------------------------
+    'tables'              => array(
+        $moduleDirName . '_' . 'equipment',
+        $moduleDirName . '_' . 'rentals',
+        $moduleDirName . '_' . 'customer',
+    ),
 );
-
 // ------------------- Search -----------------------------//
 $modversion['hasSearch']      = 1;
 $modversion['search']['file'] = 'include/search.inc.php';
@@ -61,58 +105,131 @@ $modversion['comments']['callbackFile']        = 'include/comment_functions.php'
 $modversion['comments']['callback']['approve'] = 'equipment_com_approve';
 $modversion['comments']['callback']['update']  = 'equipment_com_update';
 //  ------------------- Templates -----------------------------//
-$modversion['templates'][] = array('file' => 'equipment_header.tpl', 'description' => '');
-$modversion['templates'][] = array('file' => 'equipment_index.tpl', 'description' => '');
+$modversion['templates'][] = array(
+    'file'        => 'equipment_header.tpl',
+    'description' => ''
+);
+$modversion['templates'][] = array(
+    'file'        => 'equipment_index.tpl',
+    'description' => ''
+);
+$modversion['templates'][] = array(
+    'file'        => 'equipment_equipment.tpl',
+    'description' => ''
+);
+
+$modversion['templates'][] = array(
+    'file'        => 'equipment_equipment_list.tpl',
+    'description' => ''
+);
+$modversion['templates'][] = array(
+    'file'        => 'equipment_rentals.tpl',
+    'description' => ''
+);
+
+$modversion['templates'][] = array(
+    'file'        => 'equipment_rentals_list.tpl',
+    'description' => ''
+);
+$modversion['templates'][] = array(
+    'file'        => 'equipment_customer.tpl',
+    'description' => ''
+);
+
+$modversion['templates'][] = array(
+    'file'        => 'equipment_customer_list.tpl',
+    'description' => ''
+);
+$modversion['templates'][] = array(
+    'file'        => 'equipment_footer.tpl',
+    'description' => ''
+);
+
+$modversion['templates'][] = array(
+    'file'        => 'admin/equipment_admin_about.tpl',
+    'description' => ''
+);
+$modversion['templates'][] = array(
+    'file'        => 'admin/equipment_admin_help.tpl',
+    'description' => ''
+);
+$modversion['templates'][] = array(
+    'file'        => 'admin/equipment_admin_customer.tpl',
+    'description' => ''
+);
+
+
 $modversion['templates'][] = array('file' => 'equipment_desc.tpl', 'description' => '');
 
 $modversion['templates'][] = array('file' => 'equipment_desc_list.tpl', 'description' => '');
-$modversion['templates'][] = array('file' => 'equipment_borrow.tpl2', 'description' => '');
+$modversion['templates'][] = array('file' => 'equipment_borrow.tpl', 'description' => '');
 
-$modversion['templates'][] = array('file' => 'equipment_borrow_list2.tpl', 'description' => '');
-$modversion['templates'][] = array('file' => 'equipment_footer.tpl', 'description' => '');
+$modversion['templates'][] = array('file' => 'equipment_borrow_list.tpl', 'description' => '');
 
-$modversion['templates'][] = array('file' => 'admin/equipment_admin_about.tpl', 'description' => '');
-$modversion['templates'][] = array('file' => 'admin/equipment_admin_help.tpl', 'description' => '');
 $modversion['templates'][] = array('file' => 'admin/equipment_admin_borrow.tpl', 'description' => '');
 
-$modversion['templates'] = [
-    [
-        'file'        => 'equipment_manage.tpl',
-        'description' => 'equipment_manage.tpl'
-    ],
-    [
-        'file'        => 'equipment_borrow_list.tpl',
-        'description' => 'equipment_borrow_list.tpl'
-    ],
-    [
-        'file'        => 'equipment_borrow.tpl',
-        'description' => 'equipment_borrow.tpl'
-    ],
-    [
-        'file'        => 'equipment_about.tpl',
-        'description' => 'equipment_about.tpl'
-    ]
-];
+$modversion['templates'][] = array('file' => 'admin/equipment_admin_rentals_vue.tpl', 'description' => '');
+$modversion['templates'][] = array('file' => 'admin/equipment_admin_equipment_vue.tpl', 'description' => '');
+
+
+// ------------------- Help files ------------------- //
+$modversion['helpsection'] = array(
+    array(
+        'name' => MI_EQUIPMENT_OVERVIEW,
+        'link' => 'page=help'
+    ),
+    array(
+        'name' => MI_EQUIPMENT_DISCLAIMER,
+        'link' => 'page=disclaimer'
+    ),
+    array(
+        'name' => MI_EQUIPMENT_LICENSE,
+        'link' => 'page=license'
+    ),
+    array(
+        'name' => MI_EQUIPMENT_SUPPORT,
+        'link' => 'page=support'
+    ),
+
+    //    array('name' => MI_EQUIPMENT_HELP1, 'link' => 'page=help1'),
+    //    array('name' => MI_EQUIPMENT_HELP2, 'link' => 'page=help2'),
+    //    array('name' => MI_EQUIPMENT_HELP3, 'link' => 'page=help3'),
+    //    array('name' => MI_EQUIPMENT_HELP4, 'link' => 'page=help4'),
+    //    array('name' => MI_EQUIPMENT_HOWTO, 'link' => 'page=__howto'),
+    //    array('name' => MI_EQUIPMENT_REQUIREMENTS, 'link' => 'page=__requirements'),
+    //    array('name' => MI_EQUIPMENT_CREDITS, 'link' => 'page=__credits'),
+
+);
 
 // ------------------- Blocks -----------------------------//
 $modversion['blocks'][] = array(
-    'file'        => 'desc.php',
-    'name'        => 'MI_EQUIPMENT_DESC_BLOCK',
+    'file'        => 'equipment.php',
+    'name'        => MI_EQUIPMENT_EQUIPMENT_BLOCK,
     'description' => '',
-    'show_func'   => 'showEquipmentDesc',
-    'edit_func'   => 'editEquipmentDesc',
+    'show_func'   => 'showEquipmentEquipment',
+    'edit_func'   => 'editEquipmentEquipment',
     'options'     => '|5|25|0',
-    'template'    => 'equipment_desc_block.tpl'
+    'template'    => 'equipment_equipment_block.tpl'
 );
 
 $modversion['blocks'][] = array(
-    'file'        => 'borrow.php',
-    'name'        => 'MI_EQUIPMENT_BORROW_BLOCK',
+    'file'        => 'rentals.php',
+    'name'        => MI_EQUIPMENT_RENTALS_BLOCK,
     'description' => '',
-    'show_func'   => 'showEquipmentBorrow',
-    'edit_func'   => 'editEquipmentBorrow',
+    'show_func'   => 'showEquipmentRentals',
+    'edit_func'   => 'editEquipmentRentals',
     'options'     => '|5|25|0',
-    'template'    => 'equipment_borrow_block.tpl'
+    'template'    => 'equipment_rentals_block.tpl'
+);
+
+$modversion['blocks'][] = array(
+    'file'        => 'customer.php',
+    'name'        => MI_EQUIPMENT_CUSTOMER_BLOCK,
+    'description' => '',
+    'show_func'   => 'showEquipmentCustomer',
+    'edit_func'   => 'editEquipmentCustomer',
+    'options'     => '|5|25|0',
+    'template'    => 'equipment_customer_block.tpl'
 );
 
 // ------------------- Config Options -----------------------------//
@@ -156,8 +273,8 @@ $modversion['config'][] = array(
 );
 
 // -------------- Get Admin groups --------------
-$criteria = new CriteriaCompo();
-$criteria->add(new Criteria('group_type', 'Admin'));
+$criteria = new CriteriaCompo ();
+$criteria->add(new Criteria ('group_type', 'Admin'));
 /** @var XoopsMemberHandler $memberHandler */
 $memberHandler    = xoops_getHandler('member');
 $adminXoopsGroups = $memberHandler->getGroupList($criteria);
@@ -180,7 +297,7 @@ $modversion['config'][] = array(
     'description' => 'MI_EQUIPMENT_KEYWORDS_DESC',
     'formtype'    => 'textbox',
     'valuetype'   => 'text',
-    'default'     => 'equipment,desc, borrow'
+    'default'     => 'equipment,equipment, rentals, customer'
 );
 
 // --------------Uploads : maxsize of image --------------
@@ -200,7 +317,11 @@ $modversion['config'][] = array(
     'description' => 'MI_EQUIPMENT_MIMETYPES_DESC',
     'formtype'    => 'select_multi',
     'valuetype'   => 'array',
-    'default'     => array('image/gif', 'image/jpeg', 'image/png'),
+    'default'     => array(
+        'image/gif',
+        'image/jpeg',
+        'image/png'
+    ),
     'options'     => array(
         'bmp'   => 'image/bmp',
         'gif'   => 'image/gif',
@@ -266,14 +387,21 @@ $modversion['notification']['category'][] = array(
     'name'           => 'global',
     'title'          => MI_EQUIPMENT_GLOBAL_NOTIFY,
     'description'    => MI_EQUIPMENT_GLOBAL_NOTIFY_DESC,
-    'subscribe_from' => array('index.php', 'viewcat.php', 'singlefile.php')
+    'subscribe_from' => array(
+        'index.php',
+        'viewcat.php',
+        'singlefile.php'
+    )
 );
 
 $modversion['notification']['category'][] = array(
     'name'           => 'category',
     'title'          => MI_EQUIPMENT_CATEGORY_NOTIFY,
     'description'    => MI_EQUIPMENT_CATEGORY_NOTIFY_DESC,
-    'subscribe_from' => array('viewcat.php', 'singlefile.php'),
+    'subscribe_from' => array(
+        'viewcat.php',
+        'singlefile.php'
+    ),
     'item_name'      => 'cid',
     'allow_bookmark' => 1
 );

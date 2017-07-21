@@ -14,7 +14,8 @@
  *
  * @category        Module
  * @package         equipment
- * @author          XOOPS Development Team <name@site.com> - <http://xoops.org>
+ * @author          swt02026 (https://github.com/swt02026/)
+ * @author          XOOPS Development Team <http://xoops.org>
  * @copyright       {@link https://xoops.org/ XOOPS Project}
  * @license         GPL 2.0 or later
  * @link            https://xoops.org/
@@ -33,7 +34,17 @@ define('MB_EQUIPMENT_OWNER', 'Owner');
 define('MB_EQUIPMENT_NAME', 'Name');
 define('MB_EQUIPMENT_AMOUNT', 'Amount');
 define('MB_EQUIPMENT_TOTAL', 'Total');
-define('MB_EQUIPMENT_IMAGE_B64', 'Image b64');
-define('MB_EQUIPMENT_BORROWER_ID', 'Id');
-define('MB_EQUIPMENT_BORROWER', 'Borrower');
-define('MB_EQUIPMENT_BORROWER_AMOUNT', 'Amount');
+define('MB_EQUIPMENT_IMAGE', 'Image');
+//define('MB_EQUIPMENT_ID', 'Id');
+define('MB_EQUIPMENT_CUSTOMERID', 'Customerid');
+define('MB_EQUIPMENT_EQUIPMENTID', 'Equipmentid');
+define('MB_EQUIPMENT_QUANTITY', 'Quantity');
+define('MB_EQUIPMENT_DATEFROM', 'Datefrom');
+define('MB_EQUIPMENT_DATETO', 'Dateto');
+//define('MB_EQUIPMENT_ID', 'Id');
+define('MB_EQUIPMENT_FIRST', 'First');
+define('MB_EQUIPMENT_LAST', 'Last');
+define('MB_EQUIPMENT_ADDRESS', 'Address');
+define('MB_EQUIPMENT_CITY', 'City');
+define('MB_EQUIPMENT_COUNTRY', 'Country');
+define('MB_EQUIPMENT_CREATED', 'Created');

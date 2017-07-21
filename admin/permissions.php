@@ -97,20 +97,20 @@ if (1 == $permission) {
     echo '<br><br>';
 } else {
     $criteria = new CriteriaCompo();
-    $criteria->setSort('id');
+    $criteria->setSort('last');
     $criteria->setOrder('ASC');
-    $desc_count = $descHandler->getCount($criteria);
-    $descArray  = $descHandler->getObjects($criteria);
+    $customer_count = $customerHandler->getCount($criteria);
+    $customerArray  = $customerHandler->getObjects($criteria);
     unset($criteria);
-    foreach (array_keys($descArray) as $i) {
-        $permform->addItem($descArray[$i]->getVar('id'), $descArray[$i]->getVar('id'));
+    foreach (array_keys($customerArray) as $i) {
+        $permform->addItem($customerArray[$i]->getVar('id'), $customerArray[$i]->getVar('last'));
     }
-    // Check if desc exist before rendering the form and redirect, if there aren't desc
-    if ($desc_count > 0) {
+    // Check if customer exist before rendering the form and redirect, if there aren't customer
+    if ($customer_count > 0) {
         echo $permform->render();
         echo '<br><br>';
     } else {
-        redirect_header('desc.php?op=new', 3, AM_EQUIPMENT_PERMISSIONS_NOPERMSSET);
+        redirect_header('customer.php?op=new', 3, AM_EQUIPMENT_PERMISSIONS_NOPERMSSET);
         //exit ();
     }
 }

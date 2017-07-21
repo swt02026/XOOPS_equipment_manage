@@ -1,0 +1,23 @@
+---
+# rentals
+-
+ id: 1
+ customerid: 1
+ equipmentid: 1
+ quantity: 50
+ datefrom: '2016-07-20 00:00:00'
+ dateto: '2016-08-20 00:00:00'
+-
+ id: 2
+ customerid: 2
+ equipmentid: 2
+ quantity: 40
+ datefrom: '2016-10-20 00:00:00'
+ dateto: '2016-12-20 00:00:00'
+-
+ id: 3
+ customerid: 3
+ equipmentid: 3
+ quantity: 30
+ datefrom: '2017-01-20 00:00:00'
+ dateto: '2017-10-20 00:00:00'

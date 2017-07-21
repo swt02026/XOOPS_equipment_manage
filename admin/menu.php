@@ -1,6 +1,26 @@
 <?php
 
-$icon_dir = substr(XOOPS_VERSION, 6, 3) === '2.6' ? '' : 'images/';
+/*
+ You may not change or alter any portion of this comment or credits
+ of supporting developers from this source code or any supporting source code
+ which is considered copyrighted (c) material of the original comment or credit authors.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*/
+/**
+ * Module: Equipment
+ *
+ * @category        Module
+ * @package         equipment
+ * @author          swt02026 (https://github.com/swt02026/)
+ * @author          XOOPS Development Team <http://xoops.org>
+ * @copyright       {@link https://xoops.org/ XOOPS Project}
+ * @license         GPL 2.0 or later
+ * @link            https://xoops.org/
+ * @since           1.0.0
+ */
 
 $moduleDirName = basename(dirname(__DIR__));
 
@@ -18,55 +38,57 @@ $moduleHelper->loadLanguage('admin');
 $moduleHelper->loadLanguage('modinfo');
 $moduleHelper->loadLanguage('main');
 
-$adminmenu = [
-    [
-        'title' => _MI_EQUIPMENT_MENU0,
-        'link'  => 'admin/index.php',
-        'desc'  => _MI_EQUIPMENT_MENU0_DESC,
-        'icon'  => $pathIcon32 . '/home.png'
-    ],
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_ADMENU1,
+    'link'  => 'admin/index.php',
+    'icon'  => "{$pathIcon32}/home.png"
+);
 
-    [
-        'title' => _MI_EQUIPMENT_MENU1,
-        'link'  => 'admin/manage.php',
-        'desc'  => _MI_EQUIPMENT_MENU1_DESC,
-        'icon'  => $pathIcon32 . '/delivery.png'
-    ],
-    [
-        'title' => _MI_EQUIPMENT_MENU2,
-        'link'  => 'admin/borrow_manage.php',
-        'desc'  => _MI_EQUIPMENT_MENU2_DESC,
-        'icon'  => $pathIcon32 . '/index.png'
-    ],
-    [
-        'title' => _MI_EQUIPMENT_MENU3,
-        'link'  => 'index.php',
-        'desc'  => _MI_EQUIPMENT_MENU3_DESC,
-        'icon'  => $pathIcon32 . '/cart_add.png'
-    ],
-    [
-        'title' => MI_EQUIPMENT_ADMENU5,
-        'link'  => 'admin/desc.php',
-        'desc'  => MI_EQUIPMENT_ADMENU5_DESC,
-        'icon'  => $pathIcon32 . '/cart_add.png'
-    ],
-    [
-        'title' => MI_EQUIPMENT_ADMENU6,
-        'link'  => 'admin/borrow.php',
-        'desc'  => MI_EQUIPMENT_ADMENU6_DESC,
-        'icon'  => $pathIcon32 . '/user-icon.png'
-    ],
-    [
-        'title' => MI_EQUIPMENT_ADMENU7,
-        'link'  => 'admin/permissions.php',
-        'desc'  => MI_EQUIPMENT_ADMENU7_DESC,
-        'icon'  => $pathIcon32 . '/permissions.png'
-    ],
-    [
-        'title' => _MI_EQUIPMENT_MENU4,
-        'link'  => 'admin/about.php',
-        'desc'  => _MI_EQUIPMENT_MENU4_DESC,
-        'icon'  => $pathIcon32 . '/about.png'
-    ]
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_MENU1,
+    'link'  => 'admin/equipment_vue.php',
+    'desc'  => MI_EQUIPMENT_MENU1_DESC,
+    'icon'  => $pathIcon32 . '/delivery.png'
+);
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_MENU2,
+    'link'  => 'admin/rentals_vue.php',
+    'desc'  => MI_EQUIPMENT_MENU2_DESC,
+    'icon'  => $pathIcon32 . '/index.png'
+);
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_MENU3,
+    'link'  => 'indexvue.php',
+    'desc'  => MI_EQUIPMENT_MENU3_DESC,
+    'icon'  => $pathIcon32 . '/cart_add.png'
+);
 
-];
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_ADMENU2,
+    'link'  => 'admin/equipment.php',
+    'icon'  => "{$pathIcon32}/delivery.png"
+);
+
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_ADMENU3,
+    'link'  => 'admin/rentals.php',
+    'icon'  => "{$pathIcon32}/cart_add.png"
+);
+
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_ADMENU4,
+    'link'  => 'admin/customer.php',
+    'icon'  => "{$pathIcon32}/user-icon.png"
+);
+
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_ADMENU5,
+    'link'  => 'admin/permissions.php',
+    'icon'  => "{$pathIcon32}/permissions.png"
+);
+
+$adminmenu[] = array(
+    'title' => MI_EQUIPMENT_ADMENU6,
+    'link'  => 'admin/about.php',
+    'icon'  => "{$pathIcon32}/about.png"
+);

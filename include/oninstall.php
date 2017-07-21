@@ -103,5 +103,15 @@ function xoops_module_install_equipment(XoopsModule $module)
         }
     }
 
+    //  ---  COPY test folder files ---------------
+    if (count($configurator['copyTestFolders']) > 0) {
+        //        $file = __DIR__ . '/../testdata/images/';
+        foreach (array_keys($configurator['copyTestFolders']) as $i) {
+            $src  = $configurator['copyTestFolders'][$i][0];
+            $dest = $configurator['copyTestFolders'][$i][1];
+            $classUtility::recurseCopy($src, $dest);
+        }
+    }
+
     return true;
 }

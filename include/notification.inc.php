@@ -39,9 +39,9 @@ function equipment_notify_iteminfo($category, $item_id)
         /** @var XoopsModuleHandler $moduleHandler */
         $moduleHandler = xoops_getHandler('module');
         $module        = $moduleHandler->getByDirname('equipment');
-        /** @var XoopsConfigHandler \$modConfigHandler */
+        /** @var XoopsConfigHandler $configHandler */
         $configHandler = xoops_getHandler('config');
-        $config        = $configHandler->getConfigsByCat(0, $module->getVar('mid'));
+        $config        =& $configHandler->getConfigsByCat(0, $module->getVar('mid'));
     } else {
         $module = $GLOBALS['xoopsModule'];
         $config = $GLOBALS['xoopsModuleConfig'];
@@ -69,7 +69,7 @@ function equipment_notify_iteminfo($category, $item_id)
 
     if ('' == $category) {
         // Assume we have a valid link id
-        $sql           = 'SELECT _cid, _title FROM ' . $GLOBALS['xoopsDB']->prefix('equipment_borrow') . ' WHERE _lid = ' . $item_id;
+        $sql           = 'SELECT _cid, _title FROM ' . $GLOBALS['xoopsDB']->prefix('equipment_rentals') . ' WHERE _lid = ' . $item_id;
         $result        = $GLOBALS['xoopsDB']->query($sql); // TODO: error check
         $resultArrayay = $GLOBALS['xoopsDB']->fetchArray($result);
         $item['name']  = $resultArrayay['title'];
@@ -77,6 +77,5 @@ function equipment_notify_iteminfo($category, $item_id)
 
         return $item;
     }
-
     return null;
 }

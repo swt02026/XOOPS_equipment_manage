@@ -11,34 +11,36 @@
 
 <body>
 <div class="row">
-    <h1 style="text-align: center"><{$smarty.const._MI_EQUIPMENT_EQUIPMENT_BORROWING}></h1>
+    <h1 style="text-align: center"><{$smarty.const.MI_EQUIPMENT_EQUIPMENT_BORROWING}></h1>
     <div id="selected-list">
 
         <div v-if="query_rows.length > 0">
             <form action="admin/crud/borrow.php" method="post" enctype="multipart/form-data">
                 <div v-for="row in query_rows">
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-md-3 col-sm-3">
                         <div class="well well-sm">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 hidden-sm hidden-xs">
                                     <button type="button"
                                             data-toggle="modal"
                                             data-target="#imageModal"
-                                            @click="showImageModal(row.image_b64)"
+                                            @click="showImageModal(image_URL + row.image)"
                                             style="border:0;background:transparent">
-                                        <img :src="row.image_b64"
-                                             alt="<{$smarty.const._MI_EQUIPMENT_NO_PICTURE}>"
-                                             width="80"
-                                             height="120">
+                                        <img :src="image_URL + row.image"
+                                             alt="<{$smarty.const.MI_EQUIPMENT_NO_PICTURE}>"
+                                             width="160"
+                                             height="80">
                                     </button>
                                 </div>
-                                <div class="col-md-8 col-sm-8">
-                                    <{$smarty.const._MI_EQUIPMENT_NAME}>：{{ row.name }}<br/>
-                                    <{$smarty.const._MI_EQUIPMENT_HOLDER}>:{{ row.owner }}<br/>
-                                    <{$smarty.const._MI_EQUIPMENT_QUANTITY}>：{{ row.amount }}<br/>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <{$smarty.const.MI_EQUIPMENT_EQUIPMENT}> {{ row.name }}<br/>
+                                    <{$smarty.const.MI_EQUIPMENT_OWNER}> {{ row.owner }}<br/>
+                                    <{$smarty.const.MI_EQUIPMENT_QUANTITY}> {{ row.amount }}<br/>
                                     <div v-if="row.amount > 0">
                                         <div class="form-group">
-                                            <label :for="'a' + row.id"><{$smarty.const._MI_EQUIPMENT_BORROWED_QUANTITY}>：</label>
+                                            <label :for="'a' + row.id"><{$smarty.const.MI_EQUIPMENT_BORROWED_QUANTITY}>：</label>
 
                                             <input :id="'a' + row.id"
                                                    class="form-control"
@@ -46,7 +48,7 @@
                                                    :name="'borrow_number[' + row.id + ']'"
                                                    min="0"
                                                    :max="row.amount"
-                                                   :placeholder="'<{$smarty.const._MI_EQUIPMENT_BORROWED_QUANTITY}>(1~' + row.amount + ')'"
+                                                   :placeholder="'<{$smarty.const.MI_EQUIPMENT_BORROWED_QUANTITY}>(1~' + row.amount + ')'"
                                                    @change="append(row, $event)"
                                             />
 
@@ -59,7 +61,7 @@
                     </div>
                 </div>
                 <div v-if="items.length > 0">
-                    <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal"><{$smarty.const._MI_EQUIPMENT_SENT_OUT}></button>
+                    <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#submitModal"><{$smarty.const.MI_EQUIPMENT_SENT_OUT}></button>
                 </div>
 
                 <div class="modal fade" id="submitModal" role="dialog">
@@ -68,19 +70,19 @@
 
                             <div class="modal-header">
                                 <button data-dismiss="modal" class="close">&times;</button>
-                                <h4 class="modal-title"><{$smarty.const._MI_EQUIPMENT_BORROWING_CONFIRMATION}></h4>
+                                <h4 class="modal-title"><{$smarty.const.MI_EQUIPMENT_BORROWING_CONFIRMATION}></h4>
                             </div>
 
                             <div class="modal-body">
                                 <div v-for="item in items">
-                                    <p><{$smarty.const._MI_EQUIPMENT_NAME}>：{{ item.name }}<br/><{$smarty.const._MI_EQUIPMENT_BORROWED_QUANTITY}>:{{ item.amount }}<br/></p>
+                                    <p><{$smarty.const.MI_EQUIPMENT_NAME}>：{{ item.name }}<br/><{$smarty.const.MI_EQUIPMENT_BORROWED_QUANTITY}>:{{ item.amount }}<br/></p>
                                 </div>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-lg"><{$smarty.const._MI_EQUIPMENT_CONFIRM_DELIVERY}></button>
+                                <button type="submit" class="btn btn-lg"><{$smarty.const.MI_EQUIPMENT_CONFIRM_DELIVERY}></button>
 
-                                <button data-dismiss="modal" class="btn btn-lg"><{$smarty.const._MI_EQUIPMENT_CANCEL}></button>
+                                <button data-dismiss="modal" class="btn btn-lg"><{$smarty.const.MI_EQUIPMENT_CANCEL}></button>
                             </div>
 
                         </div>
@@ -104,7 +106,7 @@
 
                             <div class="modal-footer">
 
-                                <button data-dismiss="modal" class="btn btn-lg"><{$smarty.const._MI_EQUIPMENT_SHUT_DOWN}></button>
+                                <button data-dismiss="modal" class="btn btn-lg"><{$smarty.const.MI_EQUIPMENT_SHUT_DOWN}></button>
                             </div>
 
                         </div>
@@ -120,13 +122,13 @@
 
     <div id="borrow-list">
         <div v-if="borrow_rows.length > 0">
-            <h1 style="text-align: center"><{$smarty.const._MI_EQUIPMENT_EQUIPMENT_NOT_RETURNED}></h1>
+            <h1 style="text-align: center"><{$smarty.const.MI_EQUIPMENT_EQUIPMENT_NOT_RETURNED}></h1>
             <table class="table" style="text-align: center">
                 <thead>
                 <tr>
 
                     <td v-for="row_name in row_names">
-                          {{ row_name }}
+                        {{ row_name }}
                     </td>
 
                 </tr>
@@ -134,8 +136,8 @@
                 <tbody>
                 <tr v-for="row in borrow_rows">
                     <td>{{ row.name }}</td>
-                    <td>{{ row.owner }}</td>
-                    <td>{{ row.amount }}</td>
+                    <td>{{ row.last }}</td>
+                    <td>{{ row.quantity }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -148,6 +150,7 @@
         el: '#selected-list',
         data: {
             items: [],
+            image_URL: "<{$xoops_url}>/uploads/equipment/images/",
             image_modal_src: "",
             query_rows:<{$json_data}>
         },
@@ -183,9 +186,9 @@
         el: '#borrow-list',
         data: {
             row_names: [
-               "<{$smarty.const._MI_EQUIPMENT_NAME}>",
-                "<{$smarty.const._MI_EQUIPMENT_HOLDER}>",
-                "<{$smarty.const._MI_EQUIPMENT_QUANTITY}>"
+                "<{$smarty.const.MI_EQUIPMENT_ADMENU2}>",
+                "<{$smarty.const.MI_EQUIPMENT_HOLDER}>",
+                "<{$smarty.const.MI_EQUIPMENT_QUANTITY}>"
             ],
             borrow_rows: <{$borrow_data}>
         }

@@ -19,9 +19,9 @@
     <table class="table">
         <thead>
         <tr>
-            <td><{$smarty.const._MI_EQUIPMENT_ITEM_NAME}></td>
-            <td><{$smarty.const._MI_EQUIPMENT_BORROWED_QUANTITY}></td>
-            <td><{$smarty.const._MI_EQUIPMENT_BORROWER}></td>
+            <td><{$smarty.const.MI_EQUIPMENT_ITEM_NAME}></td>
+            <td><{$smarty.const.MI_EQUIPMENT_BORROWED_QUANTITY}></td>
+            <td><{$smarty.const.MI_EQUIPMENT_BORROWER}></td>
         </tr>
         </thead>
         <tbody>
@@ -41,13 +41,13 @@
                             data-toggle="modal"
                             data-target="#submitModal"
                             @click="setReturnAll(false, record)">
-                        <{$smarty.const._MI_EQUIPMENT_PART_OF_THE_RETURN}>
+                        <{$smarty.const.MI_EQUIPMENT_PART_OF_THE_RETURN}>
                     </button>
                     <button type="button"
                             data-toggle="modal"
                             data-target="#submitModal"
                             @click="setReturnAll(true, record)">
-                        <{$smarty.const._MI_EQUIPMENT_ALL_RETURNED}>
+                        <{$smarty.const.MI_EQUIPMENT_ALL_RETURNED}>
                     </button>
                 </div>
             </td>
@@ -67,21 +67,21 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <h4 class="modal-title">
-                            <{$smarty.const._MI_EQUIPMENT_RETURN_CONFIRMATION}>
+                            <{$smarty.const.MI_EQUIPMENT_RETURN_CONFIRMATION}>
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <h4><{$smarty.const._MI_EQUIPMENT_NAME}>：{{ operating_record.name }}</h4>
-                        <h4><{$smarty.const._MI_EQUIPMENT_BORROWER}>：{{ operating_record.borrower }}</h4>
+                        <h4><{$smarty.const.MI_EQUIPMENT_NAME}>：{{ operating_record.name }}</h4>
+                        <h4><{$smarty.const.MI_EQUIPMENT_BORROWER}>：{{ operating_record.borrower }}</h4>
 
                         <div v-if="return_all">
-                            <h4> <{$smarty.const._MI_EQUIPMENT_NUMBER_OF_RETURNS}>：{{ operating_record.amount }}</h4>
+                            <h4> <{$smarty.const.MI_EQUIPMENT_NUMBER_OF_RETURNS}>：{{ operating_record.amount }}</h4>
                             <input type="hidden"
                                    name="return_amount"
                                    v-model="operating_record.amount">
                         </div>
                         <div v-else>
-                            <h4><{$smarty.const._MI_EQUIPMENT_NUMBER_OF_RETURNS}>：
+                            <h4><{$smarty.const.MI_EQUIPMENT_NUMBER_OF_RETURNS}>：
                                 <input type="number"
                                        name="return_amount"
                                        min="1"
@@ -99,12 +99,12 @@
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               value="<{$smarty.const._MI_EQUIPMENT_CONFIRM}>"/>
+                               value="<{$smarty.const.MI_EQUIPMENT_CONFIRM}>"/>
 
 
                         <button type="button"
                                 data-dismiss="modal">
-                            <{$smarty.const._MI_EQUIPMENT_CANCEL}>
+                            <{$smarty.const.MI_EQUIPMENT_CANCEL}>
                         </button>
                     </div>
                 </div>

@@ -1,4 +1,14 @@
 <?php
+/*
+ * You may not change or alter any portion of this comment or credits
+ * of supporting developers from this source code or any supporting source code
+ * which is considered copyrighted (c) material of the original comment or credit authors.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
 /**
  * Created by PhpStorm.
  * User: jjes
@@ -7,7 +17,7 @@
  */
 include __DIR__ . '/../../../../mainfile.php';
 include __DIR__ . '/../../../../class/uploader.php';
-
+/*
 function getImageInBase64()
 {
     $tmp_name   = $_FILES['image']['tmp_name'];
@@ -27,9 +37,10 @@ function getImageInBase64()
 
     return '';
 }
+*/
 
 $append_data = array_map('htmlspecialchars', array_map('addslashes', $_POST));
-
+global $xoopsDB, $xoopsUser;
 if (strlen($append_data['name'])
     && strlen($append_data['amount'])
     && (int)$append_data['amount'] > 0) {
@@ -38,17 +49,17 @@ if (strlen($append_data['name'])
     $owner            = $xoopsUser->uname();
     $totalAmount      = $post_data_amount;
 
-    $image_b64 = getImageInBase64();
+    $image = $append_data['image'];
 
-    $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`, `total`, `image_b64`) 
+    $sql = sprintf("INSERT INTO %s(`name`, `owner`, `amount`, `total`, `image`) 
                         VALUES('{$post_data_name}',
                           '{$owner}',
                           {$post_data_amount},
                           {$post_data_amount}, 
-                          '{$image_b64}');", $xoopsDB->prefix('equipment_desc'));
+                          '{$image}');", $xoopsDB->prefix('equipment_equipment'));
 
     $xoopsDB->queryF($sql);
 }
 
-header('location:../manage.php');
+header('location:../equipment_vue.php');
 //echo "<script>window.location.href='../manage.php';</script>";

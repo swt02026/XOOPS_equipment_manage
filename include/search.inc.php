@@ -23,22 +23,27 @@
 /**
  *  equipment_search
  *
+ * @param $queryarray
+ * @param $andor
+ * @param $limit
+ * @param $offset
+ * @param $userid
  * @return array|bool
  */
 function equipment_search($queryarray, $andor, $limit, $offset, $userid)
 {
-    $sql = 'SELECT id, borrower FROM ' . $GLOBALS['xoopsDB']->prefix('equipment_borrow') . ' WHERE _online = 1';
+    $sql = 'SELECT id, last FROM ' . $GLOBALS['xoopsDB']->prefix('equipment_customer') . ' WHERE _online = 1';
 
     if ($userid !== 0) {
         $sql .= ' AND _submitter=' . (int)$userid;
     }
 
     if (is_array($queryarray) && $count = count($queryarray)) {
-        $sql .= ' AND ((borrower LIKE ' % $queryarray[0] % ')';
+        $sql .= ' AND ((address LIKE ' % $queryarray[0] % ' OR city LIKE ' % $queryarray[0] % ' OR country LIKE ' % $queryarray[0] % ')';
 
         for ($i = 1; $i < $count; ++$i) {
             $sql .= " $andor ";
-            $sql .= '(borrower LIKE ' % $queryarray[0] % ')';
+            $sql .= '(address LIKE ' % $queryarray[$i] % ' OR city LIKE ' % $queryarray[$i] % ' OR country LIKE ' % $queryarray[0] % ')';
         }
         $sql .= ')';
     }
@@ -49,8 +54,8 @@ function equipment_search($queryarray, $andor, $limit, $offset, $userid)
     $i      = 0;
     while (false !== ($myrow = $GLOBALS['xoopsDB']->fetchArray($result))) {
         $ret[$i]['image'] = 'assets/images/icons/32/_search.png';
-        $ret[$i]['link']  = 'borrow.php?id=' . $myrow['id'];
-        $ret[$i]['title'] = $myrow['borrower'];
+        $ret[$i]['link']  = 'customer.php?id=' . $myrow['id'];
+        $ret[$i]['title'] = $myrow['last'];
         ++$i;
     }
 

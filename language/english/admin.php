@@ -1,17 +1,42 @@
 <?php
 
-//1.0 Beta 1
-define('AM_EQUIPMENT_SUMMARY', 'Summary');
+/*
+ You may not change or alter any portion of this comment or credits
+ of supporting developers from this source code or any supporting source code
+ which is considered copyrighted (c) material of the original comment or credit authors.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*/
+
+/**
+ * Module: Equipment
+ *
+ * @category        Module
+ * @package         equipment
+ * @author          swt02026 (https://github.com/swt02026/)
+ * @author          XOOPS Development Team <http://xoops.org>
+ * @copyright       {@link https://xoops.org/ XOOPS Project}
+ * @license         GPL 2.0 or later
+ * @link            https://xoops.org/
+ * @since           1.0.0
+ */
+
+use Xmf\Request;
+
 //Index
 define('AM_EQUIPMENT_STATISTICS', 'Equipment statistics');
 define('AM_EQUIPMENT_THEREARE_EQUIPMENT', "There are <span class='bold'>%s</span> Equipment in the database");
-define('AM_EQUIPMENT_THEREARE_CUSTOMERS', "There are <span class='bold'>%s</span> Customers in the database");
-
+define('AM_EQUIPMENT_THEREARE_RENTALS', "There are <span class='bold'>%s</span> Rentals in the database");
+define('AM_EQUIPMENT_THEREARE_CUSTOMER', "There are <span class='bold'>%s</span> Customer in the database");
 //Buttons
-define('AM_EQUIPMENT_ADD_DESC', 'Add new Equipment');
-define('AM_EQUIPMENT_DESC_LIST', 'List of Equipment');
-define('AM_EQUIPMENT_ADD_BORROW', 'Add new Customers');
-define('AM_EQUIPMENT_BORROW_LIST', 'List of Customers');
+define('AM_EQUIPMENT_ADD_EQUIPMENT', 'Add new Equipment');
+define('AM_EQUIPMENT_EQUIPMENT_LIST', 'List of Equipment');
+define('AM_EQUIPMENT_ADD_RENTALS', 'Add new Rentals');
+define('AM_EQUIPMENT_RENTALS_LIST', 'List of Rentals');
+define('AM_EQUIPMENT_ADD_CUSTOMER', 'Add new Customer');
+define('AM_EQUIPMENT_CUSTOMER_LIST', 'List of Customer');
 //General
 define('AM_EQUIPMENT_FORMOK', 'Registered successfull');
 define('AM_EQUIPMENT_FORMDELOK', 'Deleted successfull');
@@ -28,23 +53,37 @@ define('AM_EQUIPMENT_SELECTED_ERROR', 'You selected nothing to delete');
 define('AM_EQUIPMENT_CLONED_OK', 'Record cloned successfully');
 define('AM_EQUIPMENT_CLONED_FAILED', 'Cloning of the record has failed');
 
-// Desc
-define('AM_EQUIPMENT_DESC_ADD', 'Add a desc');
-define('AM_EQUIPMENT_DESC_EDIT', 'Edit desc');
-define('AM_EQUIPMENT_DESC_DELETE', 'Delete desc');
-define('AM_EQUIPMENT_DESC_ID', 'ID');
-define('AM_EQUIPMENT_DESC_OWNER', 'Owner');
-define('AM_EQUIPMENT_DESC_NAME', 'Name');
-define('AM_EQUIPMENT_DESC_AMOUNT', 'Amount');
-define('AM_EQUIPMENT_DESC_TOTAL', 'Total');
-define('AM_EQUIPMENT_DESC_IMAGE_B64', 'Image');
-// Borrow
-define('AM_EQUIPMENT_BORROW_ADD', 'Add a borrow');
-define('AM_EQUIPMENT_BORROW_EDIT', 'Edit borrow');
-define('AM_EQUIPMENT_BORROW_DELETE', 'Delete borrow');
-define('AM_EQUIPMENT_BORROW_ID', 'ID');
-define('AM_EQUIPMENT_BORROW_BORROWER', 'Customer');
-define('AM_EQUIPMENT_BORROW_AMOUNT', 'Amount');
+// Equipment
+define('AM_EQUIPMENT_EQUIPMENT_ADD', 'Add a equipment');
+define('AM_EQUIPMENT_EQUIPMENT_EDIT', 'Edit equipment');
+define('AM_EQUIPMENT_EQUIPMENT_DELETE', 'Delete equipment');
+define('AM_EQUIPMENT_EQUIPMENT_ID', 'ID');
+define('AM_EQUIPMENT_EQUIPMENT_OWNER', 'Owner');
+define('AM_EQUIPMENT_EQUIPMENT_NAME', 'Name');
+define('AM_EQUIPMENT_EQUIPMENT_AMOUNT', 'Amount');
+define('AM_EQUIPMENT_EQUIPMENT_TOTAL', 'Total');
+define('AM_EQUIPMENT_EQUIPMENT_IMAGE', 'Image');
+// Rentals
+define('AM_EQUIPMENT_RENTALS_ADD', 'Add a rentals');
+define('AM_EQUIPMENT_RENTALS_EDIT', 'Edit rentals');
+define('AM_EQUIPMENT_RENTALS_DELETE', 'Delete rentals');
+define('AM_EQUIPMENT_RENTALS_ID', 'ID');
+define('AM_EQUIPMENT_RENTALS_CUSTOMERID', 'Customer');
+define('AM_EQUIPMENT_RENTALS_EQUIPMENTID', 'Equipment');
+define('AM_EQUIPMENT_RENTALS_QUANTITY', 'Quantity');
+define('AM_EQUIPMENT_RENTALS_DATEFROM', 'From');
+define('AM_EQUIPMENT_RENTALS_DATETO', 'To');
+// Customer
+define('AM_EQUIPMENT_CUSTOMER_ADD', 'Add a customer');
+define('AM_EQUIPMENT_CUSTOMER_EDIT', 'Edit customer');
+define('AM_EQUIPMENT_CUSTOMER_DELETE', 'Delete customer');
+define('AM_EQUIPMENT_CUSTOMER_ID', 'ID');
+define('AM_EQUIPMENT_CUSTOMER_FIRST', 'First Name');
+define('AM_EQUIPMENT_CUSTOMER_LAST', 'Last Name');
+define('AM_EQUIPMENT_CUSTOMER_ADDRESS', 'Address');
+define('AM_EQUIPMENT_CUSTOMER_CITY', 'City');
+define('AM_EQUIPMENT_CUSTOMER_COUNTRY', 'Country');
+define('AM_EQUIPMENT_CUSTOMER_CREATED', 'Since');
 //Blocks.php
 //Permissions
 define('AM_EQUIPMENT_PERMISSIONS_GLOBAL', 'Global permissions');
@@ -59,7 +98,7 @@ define('AM_EQUIPMENT_PERMISSIONS_VIEW_DESC', 'Only users in the group that you s
 define('AM_EQUIPMENT_PERMISSIONS_SUBMIT', 'Permissions to submit');
 define('AM_EQUIPMENT_PERMISSIONS_SUBMIT_DESC', 'Only users in the group that you select may submit this');
 define('AM_EQUIPMENT_PERMISSIONS_GPERMUPDATED', 'Permissions have been changed successfully');
-define('AM_EQUIPMENT_PERMISSIONS_NOPERMSSET', 'Permission cannot be set: No borrow created yet! Please create a borrow first.');
+define('AM_EQUIPMENT_PERMISSIONS_NOPERMSSET', 'Permission cannot be set: No customer created yet! Please create a customer first.');
 
 //Errors
 define('AM_EQUIPMENT_UPGRADEFAILED0', "Update failed - couldn't rename field '%s'");

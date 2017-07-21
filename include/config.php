@@ -40,39 +40,14 @@ if (@!defined('MD_' . constant($capsDirName . '_DIRNAME'))) {
 }
 
 // Define here the place where main upload path
-
-//$img_dir = $GLOBALS['xoopsModuleConfig']['uploadDir'];
-
 define($capsDirName . '_UPLOAD_URL', XOOPS_UPLOAD_URL . '/' . $moduleDirName); // WITHOUT Trailing slash
-//define("XXXXXX_UPLOAD_PATH", $img_dir); // WITHOUT Trailing slash
 define($capsDirName . '_UPLOAD_PATH', XOOPS_UPLOAD_PATH . '/' . $moduleDirName); // WITHOUT Trailing slash
 
+
 // module information
-//$copyright = "<a href='{$mod_a_w_url}' title='{$mod_a_w_name}' target='_blank'>
-//                     <img src='".{$stu_mn}_AUTHOR_LOGOIMG."' alt='{$mod_a_w_name}' /></a>";
-$copyright = "<a href='https://xoops.org' title='XOOPS Project' target='_blank'>  
+
+$copyright  = "<a href='https://xoops.org' title='XOOPS Project' target='_blank'>  
                       <img src='" . constant($capsDirName . '_AUTHOR_LOGOIMG') . "' alt='XOOPS Project' /></a>";
-
-//constant($cloned_lang . '_CATEGORY_NOTIFY')
-/*
-$uploadFolders = array(
-    constant($capsDirName . '_UPLOAD_PATH'),
-    constant($capsDirName . '_UPLOAD_PATH') . '/images',
-    constant($capsDirName . '_UPLOAD_PATH') . '/images/thumbnails'
-);
-
-
-$copyFiles = array(
-    constant($capsDirName . '_UPLOAD_PATH'),
-    constant($capsDirName . '_UPLOAD_PATH') . '/images',
-    constant($capsDirName . '_UPLOAD_PATH') . '/images/thumbnails'
-);
-
-$oldFiles = array(
-    '/include/update_functions.php',
-    '/include/install_functions.php'
-);
-*/
 
 //Configurator
 return array(
@@ -83,9 +58,17 @@ return array(
         constant($capsDirName . '_UPLOAD_PATH') . '/images/thumbnails'
     ),
     'copyBlankFiles' => array(
-        constant($capsDirName . '_UPLOAD_PATH'),
+        //        constant($capsDirName . '_UPLOAD_PATH'),
         constant($capsDirName . '_UPLOAD_PATH') . '/images',
         constant($capsDirName . '_UPLOAD_PATH') . '/images/thumbnails'
+    ),
+
+    'copyTestFolders' => array(
+        //        constant($capsDirName . '_UPLOAD_PATH'),
+        array(
+            constant('MD_' . $capsDirName . '_PATH') . '/testdata/images',
+            constant($capsDirName . '_UPLOAD_PATH') . '/images',
+        )
     ),
 
     'templateFolders' => array(

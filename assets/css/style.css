@@ -1,140 +1,69 @@
-#extgallery table.outer {
-    margin-top: 10px;
+@charset "UTF-8";
+
+/*
+ You may not change or alter any portion of this comment or credits
+ of supporting developers from this source code or any supporting source code
+ which is considered copyrighted (c) material of the original comment or credit authors.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*/
+/**
+ * Module: Equipment
+ *
+ * @category        Module
+ * @package         equipment
+ * @author          XOOPS Development Team <name@site.com> - <http://xoops.org>
+ * @copyright       {@link https://xoops.org/ XOOPS Project}
+ * @license         GPL 2.0 or later
+ * @link            https://xoops.org/
+ * @since           1.0.0
+ */
+table {
+    margin: 0;
 }
 
-#extgallery .pageNav {
-    text-align: right;
-    margin-top: 5px;
+table.Equipment {
+
+    padding: 2px;
+    border: 1px solid #ccc;
 }
 
-#extgallery .catThumb {
+td.fields {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+div.outer {
+    color: #555;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+ul.fields > li {
+    display: inline;
+    list-style: none none;
+}
+
+/* about */
+#about label, #about text {
+    display: block;
     float: left;
-    margin-right: 5px;
+    margin-bottom: 12px;
 }
 
-#extgallery #thumbTable td {
-    padding: 10px;
-    vertical-align: middle;
-    text-align: center;
-}
-
-#extgallery #rateTable td {
-    text-align: center;
-}
-
-#extgallery #photoNavLeft {
-    width: 33%;
-}
-
-#extgallery #photoNavCenter {
-    text-align: center;
-}
-
-#extgallery #photoNavRight {
-    width: 33%;
+#about label {
     text-align: right;
+    width: 200px;
+    padding-right: 20px;
 }
 
-#extgallery img.thumb {
-    padding: 5px;
-    border: 1px #778899 solid;
+br {
+    clear: left;
 }
 
-#extgallery img.thumb:hover {
-    padding: 4px;
-    border: 2px #3388CC solid;
-}
-
-#extgallery #photo {
-    text-align: center;
-}
-
-#extgallery #photo img {
-    margin-top: 10px;
-    padding: 5px;
-    border: 1px #778899 solid;
-}
-
-#extgallery #photo img:hover {
-    padding: 4px;
-    border: 2px #3388CC solid;
-}
-
-#extgallery .photoTitle {
-    font-weight: bold;
-    text-align: center;
-    padding: 5px;
-}
-
-#extgallery .photoDesc {
-    text-align: center;
-    padding: 5px;
-}
-
-#extgallery .photoExtra {
-    text-align: center;
-    padding: 5px;
-}
-
-#extgallery div.adminLink {
-    text-align: center;
-}
-
-#extgallery .socialnetwork {
-    width: 100%;
-    height: 25px;
-    margin-bottom: 40px;
-}
-
-#extgallery .socialnetwork ul li {
-    list-style: none;
-    float: left;
-}
-
-#extgallery .bookmarkme {
-    width: 100%;
-    height: 50px;
-}
-
-#extgallery .bookmarkmetitle {
-    text-align: center;
-}
-
-#extgallery .bookmarkmeitems {
-    text-align: center;
-    margin: 5px;
-}
-
-#extgallery #rss {
-    text-align: center;
-    margin: 5px;
-}
-
-#extgallery #viewecard {
-    border: 1px solid black;
-    padding: 7px;
-    margin: 0 auto 0 auto;
-}
-
-#extgallery #viewecardtd {
-    vertical-align: top;
-    padding-left: 7px;
-}
-
-#extgallery .txtleft {
-    text-align: left;
-}
-
-#extgallery .txtright {
-    text-align: right;
-}
-
-#extgallery .txtcenter {
-    text-align: center;
-}
-
-#extgallery .comments {
-    text-align: center;
-    padding: 3px;
-    margin: 3px;
+#about br {
+    clear: both;
 }
