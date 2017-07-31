@@ -108,7 +108,7 @@ define('MI_EQUIPMENT_FILE_APPROVE_NOTIFY_SUBJECT', 'Allow Facebook comments in t
 
 // Help
 define('MI_EQUIPMENT_DIRNAME', basename(dirname(dirname(__DIR__))));
-define('MI_EQUIPMENT_HELP_HEADER', __DIR__ . '/help/helpheader.html');
+define('MI_EQUIPMENT_HELP_HEADER', __DIR__ . '/help/helpheader.tpl');
 define('MI_EQUIPMENT_BACK_2_ADMIN', 'Back to Administration of ');
 define('MI_EQUIPMENT_OVERVIEW', 'Overview');
 

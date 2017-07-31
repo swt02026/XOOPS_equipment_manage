@@ -28,7 +28,7 @@ define('MI_EQUIPMENT_NAME_DESC', '設備管理');
 
 //Help
 define('MI_EQUIPMENT_DIRNAME', basename(dirname(dirname(__DIR__))));
-define('MI_EQUIPMENT_HELP_HEADER', __DIR__ . '/help/helpheader.html');
+define('MI_EQUIPMENT_HELP_HEADER', __DIR__ . '/help/helpheader.tpl');
 define('MI_EQUIPMENT_BACK_2_ADMIN', 'Back to Administration of ');
 define('MI_EQUIPMENT_OVERVIEW', 'Overview');
 
