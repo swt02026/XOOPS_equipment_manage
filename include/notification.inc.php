@@ -77,5 +77,6 @@ function equipment_notify_iteminfo($category, $item_id)
 
         return $item;
     }
+
     return null;
 }

@@ -49,13 +49,13 @@ $modversion = array(
     'min_php'             => '5.5',
     'min_xoops'           => '2.5.8',
     'min_admin'           => '1.2',
-    'min_db'              => array('mysql'  => '5.5'),
+    'min_db'              => array('mysql' => '5.5'),
     'image'               => 'assets/images/logoModule.png',
     'dirname'             => $moduleDirName,
     'modicons16'          => 'assets/images/icons/16',
     'modicons32'          => 'assets/images/icons/32',
     //About
-    'demo_site_url'       => 'http://www.xoops.org',
+    'demo_site_url'       => 'https://xoops.org',
     'demo_site_name'      => 'XOOPS Demo Site',
     'support_url'         => 'http://xoops.org/modules/newbb',
     'support_name'        => 'Support Forum',
@@ -158,7 +158,6 @@ $modversion['templates'][] = array(
     'description' => ''
 );
 
-
 $modversion['templates'][] = array('file' => 'equipment_desc.tpl', 'description' => '');
 
 $modversion['templates'][] = array('file' => 'equipment_desc_list.tpl', 'description' => '');
@@ -170,7 +169,6 @@ $modversion['templates'][] = array('file' => 'admin/equipment_admin_borrow.tpl',
 
 $modversion['templates'][] = array('file' => 'admin/equipment_admin_rentals_vue.tpl', 'description' => '');
 $modversion['templates'][] = array('file' => 'admin/equipment_admin_equipment_vue.tpl', 'description' => '');
-
 
 // ------------------- Help files ------------------- //
 $modversion['helpsection'] = array(
@@ -190,15 +188,6 @@ $modversion['helpsection'] = array(
         'name' => MI_EQUIPMENT_SUPPORT,
         'link' => 'page=support'
     ),
-
-    //    array('name' => MI_EQUIPMENT_HELP1, 'link' => 'page=help1'),
-    //    array('name' => MI_EQUIPMENT_HELP2, 'link' => 'page=help2'),
-    //    array('name' => MI_EQUIPMENT_HELP3, 'link' => 'page=help3'),
-    //    array('name' => MI_EQUIPMENT_HELP4, 'link' => 'page=help4'),
-    //    array('name' => MI_EQUIPMENT_HOWTO, 'link' => 'page=__howto'),
-    //    array('name' => MI_EQUIPMENT_REQUIREMENTS, 'link' => 'page=__requirements'),
-    //    array('name' => MI_EQUIPMENT_CREDITS, 'link' => 'page=__credits'),
-
 );
 
 // ------------------- Blocks -----------------------------//
@@ -273,8 +262,8 @@ $modversion['config'][] = array(
 );
 
 // -------------- Get Admin groups --------------
-$criteria = new CriteriaCompo ();
-$criteria->add(new Criteria ('group_type', 'Admin'));
+$criteria = new CriteriaCompo();
+$criteria->add(new Criteria('group_type', 'Admin'));
 /** @var XoopsMemberHandler $memberHandler */
 $memberHandler    = xoops_getHandler('member');
 $adminXoopsGroups = $memberHandler->getGroupList($criteria);

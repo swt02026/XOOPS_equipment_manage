@@ -48,7 +48,7 @@ class EquipmentRentalsForm extends XoopsThemeForm
      */
     public function __construct($target)
     {
-//        global $moduleHelper;
+        //        global $moduleHelper;
         $this->targetObject = $target;
 
         $title = $this->targetObject->isNew() ? sprintf(AM_EQUIPMENT_RENTALS_ADD) : sprintf(AM_EQUIPMENT_RENTALS_EDIT);

@@ -9,6 +9,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Equipment
  *
@@ -55,11 +56,11 @@ switch ($op) {
         $criteria->setOrder('ASC');
         $criteria->setLimit($rentalsPaginationLimit);
         $criteria->setStart($start);
-    /** @var EquipmentRentalsHandler $rentalsHandler */
-        $rentalsTempRows = $rentalsHandler->getCount();
+        /** @var EquipmentRentalsHandler $rentalsHandler */
+        $rentalsTempRows  = $rentalsHandler->getCount();
         $rentalsTempArray = $rentalsHandler->getAll($criteria);/*
 //
-// 
+//
                     <th class='center width5'>".AM_EQUIPMENT_FORM_ACTION."</th>
 //                    </tr>";
 //            $class = "odd";
@@ -103,13 +104,13 @@ switch ($op) {
 
                 $selectorcustomerid = EquipmentUtility::selectSorting(AM_EQUIPMENT_RENTALS_CUSTOMERID, 'customerid');
                 $GLOBALS['xoopsTpl']->assign('selectorcustomerid', $selectorcustomerid);
-                if(null !==($customerHandler->get($rentalsTempArray[$i]->getVar('customerid')))) {
+                if (null !== ($customerHandler->get($rentalsTempArray[$i]->getVar('customerid')))) {
                     $rentalsArray['customerid'] = $customerHandler->get($rentalsTempArray[$i]->getVar('customerid'))->getVar('last');
                 }
 
                 $selectorequipmentid = EquipmentUtility::selectSorting(AM_EQUIPMENT_RENTALS_EQUIPMENTID, 'equipmentid');
                 $GLOBALS['xoopsTpl']->assign('selectorequipmentid', $selectorequipmentid);
-                if(null !==($equipmentHandler->get($rentalsTempArray[$i]->getVar('equipmentid')))) {
+                if (null !== ($equipmentHandler->get($rentalsTempArray[$i]->getVar('equipmentid')))) {
                     $rentalsArray['equipmentid'] = $equipmentHandler->get($rentalsTempArray[$i]->getVar('equipmentid'))->getVar('name');
                 }
 

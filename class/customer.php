@@ -61,6 +61,7 @@ class EquipmentCustomer extends XoopsObject
         require_once XOOPS_ROOT_PATH . '/modules/equipment/class/form/customer.php';
 
         $form = new EquipmentCustomerForm($this);
+
         return $form;
     }
 
@@ -70,6 +71,7 @@ class EquipmentCustomer extends XoopsObject
     public function getGroupsRead()
     {
         global $permHelper;
+
         //return $this->publisher->getHandler('permission')->getGrantedGroupsById('customer_read', id);
         return $permHelper->getGroupsForItem('sbcolumns_read', $this->getVar('id'));
     }
@@ -80,6 +82,7 @@ class EquipmentCustomer extends XoopsObject
     public function getGroupsSubmit()
     {
         global $permHelper;
+
         //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('customer_submit', id);
         return $permHelper->getGroupsForItem('sbcolumns_submit', $this->getVar('id'));
     }
@@ -90,6 +93,7 @@ class EquipmentCustomer extends XoopsObject
     public function getGroupsModeration()
     {
         global $permHelper;
+
         //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('customer_moderation', id);
         return $permHelper->getGroupsForItem('sbcolumns_moderation', $this->getVar('id'));
     }

@@ -9,6 +9,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Equipment
  *
@@ -58,7 +59,7 @@ switch ($op) {
         $customerTempRows  = $customerHandler->getCount();
         $customerTempArray = $customerHandler->getAll($criteria);/*
 //
-// 
+//
                     <th class='center width5'>".AM_EQUIPMENT_FORM_ACTION."</th>
 //                    </tr>";
 //            $class = "odd";

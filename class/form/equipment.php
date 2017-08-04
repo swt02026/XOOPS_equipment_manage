@@ -84,7 +84,7 @@ class EquipmentEquipmentForm extends XoopsThemeForm
         }
         $imageselect->setExtra("onchange='showImgSelected(\"image_image\", \"image\", \"" . $uploadDir . '", "", "' . XOOPS_URL . "\")'");
         $imgtray->addElement($imageselect);
-        $imgtray->addElement(new XoopsFormLabel('', "<br><img src='" . XOOPS_URL . '/' . $uploadDir . '/' . $image . "' name='image_image' id='image_image' alt='' />"));
+        $imgtray->addElement(new XoopsFormLabel('', "<br><img src='" . XOOPS_URL . '/' . $uploadDir . '/' . $image . "' name='image_image' id='image_image' alt='' >"));
         $fileseltray = new XoopsFormElementTray('', '<br>');
         $fileseltray->addElement(new XoopsFormFile(AM_EQUIPMENT_FORMUPLOAD, 'image', xoops_getModuleOption('maxsize')));
         $fileseltray->addElement(new XoopsFormLabel(''));
@@ -115,7 +115,7 @@ class EquipmentEquipmentForm extends XoopsThemeForm
 
         $selectPermAdmin = new XoopsFormCheckBox('', 'admin', XOOPS_GROUP_ADMIN);
         $selectPermAdmin->addOption($groupIdAdmin, $groupNameAdmin);
-        $selectPermAdmin->setExtra("disabled='disabled'"); //comment it out, if you want to allow to remove permissions for the admin 
+        $selectPermAdmin->setExtra("disabled='disabled'"); //comment it out, if you want to allow to remove permissions for the admin
 
         // ********************************************************
         // permission view items

@@ -29,7 +29,7 @@
                                                                                                              title="<{$smarty.const._PREVIEW}>"</a> &nbsp;
                     <{if $xoops_isadmin == true}>
                         <a href="admin/rentals.php?op=edit&id=<{$rentals.id}>" title="<{$smarty.const._EDIT}>"><img src="<{xoModuleIcons16 edit.png}>" alt="<{$smarty.const._EDIT}>"
-                                                                                                                    title="<{$smarty.const._EDIT}>"/></a>
+                                                                                                                    title="<{$smarty.const._EDIT}>"></a>
                         &nbsp;
                         <a href="admin/rentals.php?op=delete&id=<{$rentals.id}>" title="<{$smarty.const._DELETE}>"><img src="<{xoModuleIcons16 delete.png}>" alt="<{$smarty.const._DELETE}>"
                                                                                                                         title="<{$smarty.const._DELETE}>"</a>

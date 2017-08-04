@@ -91,7 +91,7 @@
               method="post"
               enctype="multipart/form-data">
 
-            <input type="hidden" name="delete_id" v-model="delete_id"/>
+            <input type="hidden" name="delete_id" v-model="delete_id">
 
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -109,7 +109,7 @@
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               value="<{$smarty.const.MI_EQUIPMENT_DELETE}>"/>
+                               value="<{$smarty.const.MI_EQUIPMENT_DELETE}>">
                         <button data-dismiss="modal">
                             <{$smarty.const.MI_EQUIPMENT_CANCEL}>
                         </button>
@@ -132,7 +132,7 @@
                 <div class="modal-body">
                     <img :src="image_modal_src"
                          class="img-responsive"
-                    />
+                    >
                 </div>
 
                 <div class="modal-footer">
@@ -170,9 +170,9 @@
                                    name="image"
                                    type="file"
                                    accept="image/*"
-                                   @change="loadImage"/>
+                                   @change="loadImage">
                             <img alt="<{$smarty.const.MI_EQUIPMENT_NO_PICTURE}>"
-                                 :src="image_URL"/>
+                                 :src="image_URL">
                         </div>
                         <input type="hidden"
                                name="update_id"
@@ -185,7 +185,7 @@
                                name="name"
                                pattern="[^-*`.,!;#%&|*'><\[\]=\+?/\\]+"
                                v-model="modal_data.name"
-                               required/>
+                               required>
 
                         <label for="data_amount">
                             <{$smarty.const.MI_EQUIPMENT_QUANTITY}>：
@@ -196,16 +196,16 @@
                                min="1"
                                v-model="modal_data.total"
                                @change="setAmountDiff"
-                               required/>
+                               required>
                         <input type="hidden"
                                name="amount_diff"
-                               v-model="amount_diff"/>
+                               v-model="amount_diff">
 
 
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               :value="'<{$smarty.const.MI_EQUIPMENT_CONFIRM}>' + modal_op"/>
+                               :value="'<{$smarty.const.MI_EQUIPMENT_CONFIRM}>' + modal_op">
                         <button data-dismiss="modal"
                                 @click="clearUpload();">
                             <{$smarty.const.MI_EQUIPMENT_CANCEL}>

@@ -70,9 +70,9 @@ function editEquipmentRentals($options)
     $moduleDirName = basename(dirname(__DIR__));
 
     $form = MB_EQUIPMENT_DISPLAY;
-    $form .= "<input type='hidden' name='options[0]' value='" . $options[0] . "' />";
-    $form .= "<input name='options[1]' size='5' maxlength='255' value='" . $options[1] . "' type='text' />&nbsp;<br>";
-    $form .= MB_EQUIPMENT_TITLELENGTH . " : <input name='options[2]' size='5' maxlength='255' value='" . $options[2] . "' type='text' /><br><br>";
+    $form .= "<input type='hidden' name='options[0]' value='" . $options[0] . "' >";
+    $form .= "<input name='options[1]' size='5' maxlength='255' value='" . $options[1] . "' type='text' >&nbsp;<br>";
+    $form .= MB_EQUIPMENT_TITLELENGTH . " : <input name='options[2]' size='5' maxlength='255' value='" . $options[2] . "' type='text' ><br><br>";
 
     /** @var XoopsObjectHandler $'. rentals . 'Handler */
     $rentalsHandler = xoops_getModuleHandler('rentals', $moduleDirName);

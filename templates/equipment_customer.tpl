@@ -31,7 +31,7 @@
                                                                                                                title="<{$smarty.const._PREVIEW}>"</a> &nbsp;
                     <{if $xoops_isadmin == true}>
                         <a href="admin/customer.php?op=edit&id=<{$customer.id}>" title="<{$smarty.const._EDIT}>"><img src="<{xoModuleIcons16 edit.png}>" alt="<{$smarty.const._EDIT}>"
-                                                                                                                      title="<{$smarty.const._EDIT}>"/></a>
+                                                                                                                      title="<{$smarty.const._EDIT}>"></a>
                         &nbsp;
                         <a href="admin/customer.php?op=delete&id=<{$customer.id}>" title="<{$smarty.const._DELETE}>"><img src="<{xoModuleIcons16 delete.png}>" alt="<{$smarty.const._DELETE}>"
                                                                                                                           title="<{$smarty.const._DELETE}>"</a>

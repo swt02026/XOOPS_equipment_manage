@@ -87,19 +87,19 @@
                                        min="1"
                                        :max="max_amount"
                                        value="1"
-                                />
+                                >
                             </h4>
                         </div>
                         <input type="hidden"
                                name="id"
-                               v-model="operating_record.id"/>
+                               v-model="operating_record.id">
                         <input type="hidden"
                                name="borrower"
-                               v-model="operating_record.borrower"/>
+                               v-model="operating_record.borrower">
                     </div>
                     <div class="modal-footer">
                         <input type="submit"
-                               value="<{$smarty.const.MI_EQUIPMENT_CONFIRM}>"/>
+                               value="<{$smarty.const.MI_EQUIPMENT_CONFIRM}>">
 
 
                         <button type="button"

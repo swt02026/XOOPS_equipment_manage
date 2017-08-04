@@ -35,9 +35,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 col-sm-12">
-                                    <{$smarty.const.MI_EQUIPMENT_EQUIPMENT}> {{ row.name }}<br/>
-                                    <{$smarty.const.MI_EQUIPMENT_OWNER}> {{ row.owner }}<br/>
-                                    <{$smarty.const.MI_EQUIPMENT_QUANTITY}> {{ row.amount }}<br/>
+                                    <{$smarty.const.MI_EQUIPMENT_EQUIPMENT}> {{ row.name }}<br>
+                                    <{$smarty.const.MI_EQUIPMENT_OWNER}> {{ row.owner }}<br>
+                                    <{$smarty.const.MI_EQUIPMENT_QUANTITY}> {{ row.amount }}<br>
                                     <div v-if="row.amount > 0">
                                         <div class="form-group">
                                             <label :for="'a' + row.id"><{$smarty.const.MI_EQUIPMENT_BORROWED_QUANTITY}>：</label>
@@ -50,7 +50,7 @@
                                                    :max="row.amount"
                                                    :placeholder="'<{$smarty.const.MI_EQUIPMENT_BORROWED_QUANTITY}>(1~' + row.amount + ')'"
                                                    @change="append(row, $event)"
-                                            />
+                                            >
 
                                         </div>
                                     </div>
@@ -75,7 +75,7 @@
 
                             <div class="modal-body">
                                 <div v-for="item in items">
-                                    <p><{$smarty.const.MI_EQUIPMENT_NAME}>：{{ item.name }}<br/><{$smarty.const.MI_EQUIPMENT_BORROWED_QUANTITY}>:{{ item.amount }}<br/></p>
+                                    <p><{$smarty.const.MI_EQUIPMENT_NAME}>：{{ item.name }}<br><{$smarty.const.MI_EQUIPMENT_BORROWED_QUANTITY}>:{{ item.amount }}<br></p>
                                 </div>
                             </div>
 
@@ -101,7 +101,7 @@
                             <div class="modal-body">
                                 <img :src="image_modal_src"
                                      class="img-responsive"
-                                />
+                                >
                             </div>
 
                             <div class="modal-footer">
@@ -117,7 +117,7 @@
         </div>
     </div>
 </div>
-<hr/>
+<hr>
 <div class="row">
 
     <div id="borrow-list">

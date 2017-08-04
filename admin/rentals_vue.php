@@ -30,7 +30,6 @@ $owner = $xoopsUser->uname();
 
 //$sql = sprintf('SELECT `name`, `owner`, `amount`, `id`, `total`, `image`  FROM `%s`', $xoopsDB->prefix('equipment_equipment'));
 
-
 $sql = sprintf('SELECT `equipmentid`, `%1$s`.`quantity`, `%1$s`.`id`, `name`, `owner`  
                     FROM `%1$s` 
                     INNER JOIN `%2$s` ON `%1$s`.`equipmentid`=`%2$s`.`id`', $xoopsDB->prefix('equipment_rentals'), $xoopsDB->prefix('equipment_equipment'));
@@ -48,8 +47,7 @@ if ($xoopsDB->getRowsNum($query) > 0) {
 $json_data = json_encode($query_rows);
 $xoopsTpl->assign('json_data', $json_data);
 
-$borrow_sql = 'SELECT r.quantity, e.name,  e.owner, c.first, c.last FROM ' . $xoopsDB->prefix('equipment_equipment') . ' AS e, ' . $xoopsDB->prefix('equipment_customer') . ' AS c, '
-              . $xoopsDB->prefix('equipment_rentals') . ' AS r WHERE e.id = r.equipmentid AND c.id = r.customerid';
+$borrow_sql = 'SELECT r.quantity, e.name,  e.owner, c.first, c.last FROM ' . $xoopsDB->prefix('equipment_equipment') . ' AS e, ' . $xoopsDB->prefix('equipment_customer') . ' AS c, ' . $xoopsDB->prefix('equipment_rentals') . ' AS r WHERE e.id = r.equipmentid AND c.id = r.customerid';
 
 $query1 = $xoopsDB->query($borrow_sql);
 
@@ -57,7 +55,7 @@ $query_rows1 = [];
 if ($xoopsDB->getRowsNum($query1) > 0) {
     while ($row = $xoopsDB->fetchArray($query1)) {
         $row['permission'] = ($row['owner'] == $owner);
-        $query_rows1[]      = $row;
+        $query_rows1[]     = $row;
     }
 }
 

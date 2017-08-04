@@ -28,27 +28,27 @@ $pathIcon32 = Xmf\Module\Admin::menuIconPath('');
 $moduleDirName = basename(dirname(__DIR__));
 $capsDirName   = strtoupper($moduleDirName);
 
-//if (!defined($moduleDirName . '_DIRNAME')) {
-if (@!defined('MD_' . constant($capsDirName . '_DIRNAME'))) {
+$dirVarName = 'MD_' . $capsDirName . '_DIRNAME';
+if (@!defined($dirVarName)) {
     define('MD_' . $capsDirName . '_DIRNAME', $moduleDirName);
-    define('MD_' . $capsDirName . '_PATH', XOOPS_ROOT_PATH . '/modules/' . constant('MD_' . $capsDirName . '_DIRNAME'));
-    define('MD_' . $capsDirName . '_URL', XOOPS_URL . '/modules/' . constant('MD_' . $capsDirName . '_DIRNAME'));
-    // define('MD_' . $capsDirName . '_ADMIN', constant('MD_' . $capsDirName . '_URL') . '/admin/index.php');
-    define('MD_' . $capsDirName . '_ROOT_PATH', XOOPS_ROOT_PATH . '/modules/' . constant('MD_' . $capsDirName . '_DIRNAME'));
+    define('MD_' . $capsDirName . '_PATH', XOOPS_ROOT_PATH . '/modules/' . $moduleDirName);
+    define('MD_' . $capsDirName . '_URL', XOOPS_URL . '/modules/' . $moduleDirName);
+    define('MD_' . $capsDirName . '_ROOT_PATH', XOOPS_ROOT_PATH . '/modules/' . $moduleDirName);
     //define('MD_' . $capsDirName . '_AUTHOR_LOGOIMG', constant($capsDirName . '_URL') . '/assets/images/logoModule.png');
     define($capsDirName . '_AUTHOR_LOGOIMG', $pathIcon32 . '/xoopsmicrobutton.gif');
+    // Define here the place where main upload path
+    define($capsDirName . '_UPLOAD_URL', XOOPS_UPLOAD_URL . '/' . $moduleDirName); // WITHOUT Trailing slash
+    define($capsDirName . '_UPLOAD_PATH', XOOPS_UPLOAD_PATH . '/' . $moduleDirName); // WITHOUT Trailing slash
 }
 
-// Define here the place where main upload path
-define($capsDirName . '_UPLOAD_URL', XOOPS_UPLOAD_URL . '/' . $moduleDirName); // WITHOUT Trailing slash
-define($capsDirName . '_UPLOAD_PATH', XOOPS_UPLOAD_PATH . '/' . $moduleDirName); // WITHOUT Trailing slash
 
 
 // module information
 
-$copyright  = "<a href='https://xoops.org' title='XOOPS Project' target='_blank'>  
-                      <img src='" . constant($capsDirName . '_AUTHOR_LOGOIMG') . "' alt='XOOPS Project' /></a>";
+$copyright = "<a href='https://xoops.org' title='XOOPS Project' target='_blank'>  
+                      <img src='" . constant($capsDirName . '_AUTHOR_LOGOIMG') . "' alt='XOOPS Project' ></a>";
 
+echo $copyright;
 //Configurator
 return array(
     'name'           => 'Module Configurator',

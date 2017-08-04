@@ -60,6 +60,7 @@ class EquipmentEquipment extends XoopsObject
         require_once XOOPS_ROOT_PATH . '/modules/equipment/class/form/equipment.php';
 
         $form = new EquipmentEquipmentForm($this);
+
         return $form;
     }
 
@@ -69,6 +70,7 @@ class EquipmentEquipment extends XoopsObject
     public function getGroupsRead()
     {
         global $permHelper;
+
         //return $this->publisher->getHandler('permission')->getGrantedGroupsById('equipment_read', id);
         return $permHelper->getGroupsForItem('sbcolumns_read', $this->getVar('id'));
     }
@@ -79,6 +81,7 @@ class EquipmentEquipment extends XoopsObject
     public function getGroupsSubmit()
     {
         global $permHelper;
+
         //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('equipment_submit', id);
         return $permHelper->getGroupsForItem('sbcolumns_submit', $this->getVar('id'));
     }
@@ -89,6 +92,7 @@ class EquipmentEquipment extends XoopsObject
     public function getGroupsModeration()
     {
         global $permHelper;
+
         //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('equipment_moderation', id);
         return $permHelper->getGroupsForItem('sbcolumns_moderation', $this->getVar('id'));
     }

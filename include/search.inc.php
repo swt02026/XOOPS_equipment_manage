@@ -39,11 +39,11 @@ function equipment_search($queryarray, $andor, $limit, $offset, $userid)
     }
 
     if (is_array($queryarray) && $count = count($queryarray)) {
-        $sql .= ' AND ((address LIKE ' % $queryarray[0] % ' OR city LIKE ' % $queryarray[0] % ' OR country LIKE ' % $queryarray[0] % ')';
+        $sql .= ' AND ((address LIKE ' . $queryarray[0] . ' OR city LIKE ' . $queryarray[0] . ' OR country LIKE ' . $queryarray[0] . ')';
 
         for ($i = 1; $i < $count; ++$i) {
             $sql .= " $andor ";
-            $sql .= '(address LIKE ' % $queryarray[$i] % ' OR city LIKE ' % $queryarray[$i] % ' OR country LIKE ' % $queryarray[0] % ')';
+            $sql .= '(address LIKE ' . $queryarray[$i] . ' OR city LIKE ' . $queryarray[$i] . ' OR country LIKE ' . $queryarray[0] . ')';
         }
         $sql .= ')';
     }

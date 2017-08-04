@@ -9,6 +9,7 @@
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+
 /**
  * Module: Equipment
  *
@@ -21,6 +22,7 @@
  * @link            https://xoops.org/
  * @since           1.0.0
  */
+
 use Xmf\Request;
 use Xmf\Language;
 use Xmf\Module\Admin;
@@ -45,7 +47,7 @@ $rentalsCount = $rentalsHandler->getCount($criteria);
 $rentalsArray = $rentalsHandler->getAll($criteria);
 if ($rentalsCount > 0) {
     foreach (array_keys($rentalsArray) as $i) {
-        /** @var EquipmentRentals[]  $rentalsArray[$i] */
+        /** @var EquipmentRentals[] $rentalsArray [$i] */
         $rentals['id'] = $rentalsArray[$i]->getVar('id');
 
         /** @var XoopsObjectHandler $customerHandler */

@@ -60,6 +60,7 @@ class EquipmentRentals extends XoopsObject
         require_once XOOPS_ROOT_PATH . '/modules/equipment/class/form/rentals.php';
 
         $form = new EquipmentRentalsForm($this);
+
         return $form;
     }
 
@@ -69,6 +70,7 @@ class EquipmentRentals extends XoopsObject
     public function getGroupsRead()
     {
         global $permHelper;
+
         //return $this->publisher->getHandler('permission')->getGrantedGroupsById('rentals_read', id);
         return $permHelper->getGroupsForItem('sbcolumns_read', $this->getVar('id'));
     }
@@ -79,6 +81,7 @@ class EquipmentRentals extends XoopsObject
     public function getGroupsSubmit()
     {
         global $permHelper;
+
         //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('rentals_submit', id);
         return $permHelper->getGroupsForItem('sbcolumns_submit', $this->getVar('id'));
     }
@@ -89,6 +92,7 @@ class EquipmentRentals extends XoopsObject
     public function getGroupsModeration()
     {
         global $permHelper;
+
         //        return $this->publisher->getHandler('permission')->getGrantedGroupsById('rentals_moderation', id);
         return $permHelper->getGroupsForItem('sbcolumns_moderation', $this->getVar('id'));
     }
@@ -116,12 +120,11 @@ class EquipmentRentalsHandler extends XoopsPersistableObjectHandler
     {
         global $xoopsDB, $xoopsUser;
 
-//        $borrow_sql = sprintf('SELECT `%1$s`.`amount`, `name`, `owner`
-//                    FROM `%1$s`
-//                    INNER JOIN `%2$s` ON `%1$s`.`id`=`%2$s`.`id` WHERE `%1$s`.`borrower`="%3$s"', $xoopsDB->prefix('equipment_rentals'), $xoopsDB->prefix('equipment_equipment'), $xoopsUser->uname());
+        //        $borrow_sql = sprintf('SELECT `%1$s`.`amount`, `name`, `owner`
+        //                    FROM `%1$s`
+        //                    INNER JOIN `%2$s` ON `%1$s`.`id`=`%2$s`.`id` WHERE `%1$s`.`borrower`="%3$s"', $xoopsDB->prefix('equipment_rentals'), $xoopsDB->prefix('equipment_equipment'), $xoopsUser->uname());
 
-        $borrow_sql = 'SELECT r.quantity, e.name, c.first, c.last FROM ' . $xoopsDB->prefix('equipment_equipment') . ' AS e, ' . $xoopsDB->prefix('equipment_customer') . ' AS c, '
-                      . $xoopsDB->prefix('equipment_rentals') . ' AS r WHERE e.id = r.equipmentid AND c.id = r.customerid';
+        $borrow_sql = 'SELECT r.quantity, e.name, c.first, c.last FROM ' . $xoopsDB->prefix('equipment_equipment') . ' AS e, ' . $xoopsDB->prefix('equipment_customer') . ' AS c, ' . $xoopsDB->prefix('equipment_rentals') . ' AS r WHERE e.id = r.equipmentid AND c.id = r.customerid';
 
         $borrow_data = EquipmentUtility::getQueryDataToJSON($borrow_sql);
 
