@@ -74,7 +74,7 @@ switch ($op) {
         }
 
         $GLOBALS['xoopsTpl']->assign('equipmentRows', $equipmentTempRows);
-        $equipmentArray = array();
+        $equipmentArray = [];
 
         //    $fields = explode('|', id:smallint:5:unsigned:NOT NULL::primary:ID|owner:varchar:10::NOT NULL::index:Owner|name:varchar:30::NOT NULL::index:Name|amount:int:10:unsigned:NOT NULL:::Amount|total:int:10:unsigned:NOT NULL:::Total|image:varchar:100::NOT NULL:::Image);
         //    $fieldsCount    = count($fields);
@@ -357,11 +357,11 @@ switch ($op) {
                 echo $equipmentObject->getHtmlErrors();
             }
         } else {
-            xoops_confirm(array(
+            xoops_confirm([
                               'ok' => 1,
                               'id' => Request::getString('id', ''),
                               'op' => 'delete'
-                          ), Request::getCmd('REQUEST_URI', '', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $equipmentObject->getVar('name')));
+                          ], Request::getCmd('REQUEST_URI', '', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $equipmentObject->getVar('name')));
         }
         break;
 

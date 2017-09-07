@@ -263,7 +263,7 @@ class EquipmentUtility
             }
         }
 
-        if (!$success) {
+        if (false === $success) {
             $module->setErrors(sprintf(AM_EQUIPMENT_ERROR_BAD_XOOPS, $requiredVer, $currentVer));
         }
 

@@ -26,10 +26,10 @@
 use Xmf\Language;
 use Xmf\Module\Helper;
 
-//require_once dirname(dirname(__DIR__)) . '/mainfile.php';
+require_once dirname(dirname(__DIR__)) . '/mainfile.php';
 
 $path = dirname(dirname(__DIR__));
-require_once $path . '/include/cp_header.php';
+//require_once $path . '/include/cp_header.php';
 require_once XOOPS_ROOT_PATH . '/header.php';
 
 $moduleDirName = basename(__DIR__);

@@ -40,7 +40,7 @@ if (count ( array_intersect ( $group, $groups ) ) <= 0) {
 $adminObject->displayNavigation(basename(__FILE__));
 
 $permission                = Request::getInt('permission', 1, 'POST');
-$selected                  = array('', '', '', '');
+$selected                  = ['', '', '', ''];
 $selected[$permission - 1] = ' selected';
 
 echo "
@@ -65,11 +65,11 @@ switch ($permission) {
         $formTitle   = AM_EQUIPMENT_PERMISSIONS_GLOBAL;
         $permName    = 'equipment_ac';
         $permDesc    = AM_EQUIPMENT_PERMISSIONS_GLOBAL_DESC;
-        $globalPerms = array(
+        $globalPerms = [
             '4'  => AM_EQUIPMENT_PERMISSIONS_GLOBAL_4,
             '8'  => AM_EQUIPMENT_PERMISSIONS_GLOBAL_8,
             '16' => AM_EQUIPMENT_PERMISSIONS_GLOBAL_16
-        );
+        ];
         break;
     case 2:
         $formTitle = AM_EQUIPMENT_PERMISSIONS_APPROVE;

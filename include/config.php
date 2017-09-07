@@ -48,44 +48,43 @@ if (@!defined($dirVarName)) {
 $copyright = "<a href='https://xoops.org' title='XOOPS Project' target='_blank'>  
                       <img src='" . constant($capsDirName . '_AUTHOR_LOGOIMG') . "' alt='XOOPS Project' ></a>";
 
-echo $copyright;
 //Configurator
-return array(
+return [
     'name'           => 'Module Configurator',
-    'uploadFolders'  => array(
+    'uploadFolders'  => [
         constant($capsDirName . '_UPLOAD_PATH'),
         constant($capsDirName . '_UPLOAD_PATH') . '/images',
         constant($capsDirName . '_UPLOAD_PATH') . '/images/thumbnails'
-    ),
-    'copyBlankFiles' => array(
+    ],
+    'copyBlankFiles' => [
         //        constant($capsDirName . '_UPLOAD_PATH'),
         constant($capsDirName . '_UPLOAD_PATH') . '/images',
         constant($capsDirName . '_UPLOAD_PATH') . '/images/thumbnails'
-    ),
+    ],
 
-    'copyTestFolders' => array(
+    'copyTestFolders' => [
         //        constant($capsDirName . '_UPLOAD_PATH'),
-        array(
+        [
             constant('MD_' . $capsDirName . '_PATH') . '/testdata/images',
             constant($capsDirName . '_UPLOAD_PATH') . '/images',
-        )
-    ),
+        ]
+    ],
 
-    'templateFolders' => array(
+    'templateFolders' => [
         '/templates/',
         '/templates/blocks/',
         '/templates/admin/'
 
-    ),
-    'oldFiles'        => array(
+    ],
+    'oldFiles'        => [
         '/include/update_functions.php',
         '/include/install_functions.php'
-    ),
-    'oldFolders'      => array(
+    ],
+    'oldFolders'      => [
         '/images',
         '/css',
         '/js',
         '/tcpdf',
         '/images',
-    ),
-);
+    ],
+];

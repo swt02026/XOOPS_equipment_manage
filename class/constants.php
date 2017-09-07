@@ -20,7 +20,7 @@
  * @link            https://xoops.org/
  * @since           1.0.0
  */
-defined('XOOPS_ROOT_PATH') || exit('Restricted access');
+defined('XOOPS_ROOT_PATH') || exit('Restricted access.');
 
 /**
  *

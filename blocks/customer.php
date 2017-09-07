@@ -33,7 +33,7 @@ function showEquipmentCustomer($options)
     $moduleDirName = basename(dirname(__DIR__));
     //$myts = MyTextSanitizer::getInstance();
 
-    $block         = array();
+    $block         = [];
     $blockType     = $options[0];
     $customerCount = $options[1];
     //$titleLenght = $options[2];

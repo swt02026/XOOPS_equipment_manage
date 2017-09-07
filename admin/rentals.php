@@ -75,7 +75,7 @@ switch ($op) {
         }
 
         $GLOBALS['xoopsTpl']->assign('rentalsRows', $rentalsTempRows);
-        $rentalsArray = array();
+        $rentalsArray = [];
 
         //    $fields = explode('|', id:smallint:5:unsigned:NOT NULL::primary:ID|customerid:int:5::NOT NULL::primary:Customer|equipmentid:int:10:unsigned:NOT NULL:::Equipment|quantity:int:8::NOT NULL:::Quantity|datefrom:datetime:::NOT NULL:::From|dateto:datetime:::NOT NULL:::To);
         //    $fieldsCount    = count($fields);
@@ -223,11 +223,11 @@ switch ($op) {
                 echo $rentalsObject->getHtmlErrors();
             }
         } else {
-            xoops_confirm(array(
+            xoops_confirm([
                               'ok' => 1,
                               'id' => Request::getString('id', ''),
                               'op' => 'delete'
-                          ), Request::getCmd('REQUEST_URI', '', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $rentalsObject->getVar('customerid')));
+                          ], Request::getCmd('REQUEST_URI', '', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $rentalsObject->getVar('customerid')));
         }
         break;
 

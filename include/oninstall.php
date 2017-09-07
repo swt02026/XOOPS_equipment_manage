@@ -69,8 +69,9 @@ function xoops_module_install_equipment(XoopsModule $module)
     xoops_loadLanguage('admin', $moduleDirName);
     xoops_loadLanguage('modinfo', $moduleDirName);
     $configurator = include __DIR__ . '/config.php';
-    $classUtility = ucfirst($moduleDirName) . 'Utility';
-    if (!class_exists($classUtility)) {
+    /** @var EquipmentUtility $utilityClass */
+    $utilityClass = ucfirst($moduleDirName) . 'Utility';
+    if (!class_exists($utilityClass)) {
         xoops_load('utility', $moduleDirName);
     }
     global $xoopsModule;
@@ -91,7 +92,7 @@ function xoops_module_install_equipment(XoopsModule $module)
     if (count($configurator['uploadFolders']) > 0) {
         //    foreach (array_keys($GLOBALS['uploadFolders']) as $i) {
         foreach (array_keys($configurator['uploadFolders']) as $i) {
-            $classUtility::createFolder($configurator['uploadFolders'][$i]);
+            $utilityClass::createFolder($configurator['uploadFolders'][$i]);
         }
     }
     //  ---  COPY blank.png FILES ---------------
@@ -99,7 +100,7 @@ function xoops_module_install_equipment(XoopsModule $module)
         $file = __DIR__ . '/../assets/images/blank.png';
         foreach (array_keys($configurator['copyBlankFiles']) as $i) {
             $dest = $configurator['copyBlankFiles'][$i] . '/blank.png';
-            $classUtility::copyFile($file, $dest);
+            $utilityClass::copyFile($file, $dest);
         }
     }
 
@@ -109,7 +110,7 @@ function xoops_module_install_equipment(XoopsModule $module)
         foreach (array_keys($configurator['copyTestFolders']) as $i) {
             $src  = $configurator['copyTestFolders'][$i][0];
             $dest = $configurator['copyTestFolders'][$i][1];
-            $classUtility::recurseCopy($src, $dest);
+            $utilityClass::recurseCopy($src, $dest);
         }
     }
 

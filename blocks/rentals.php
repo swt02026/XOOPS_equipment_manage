@@ -33,7 +33,7 @@ function showEquipmentRentals($options)
     $moduleDirName = basename(dirname(__DIR__));
     //$myts = MyTextSanitizer::getInstance();
 
-    $block        = array();
+    $block        = [];
     $blockType    = $options[0];
     $rentalsCount = $options[1];
     //$titleLenght = $options[2];

@@ -74,7 +74,7 @@ switch ($op) {
         }
 
         $GLOBALS['xoopsTpl']->assign('customerRows', $customerTempRows);
-        $customerArray = array();
+        $customerArray = [];
 
         //    $fields = explode('|', id:int:8::NOT NULL::primary:ID|first:varchar:30::NOT NULL::unique:First Name|last:varchar:50::NOT NULL::unique:Last Name|address:varchar:100::NOT NULL::unique:Address|city:varchar:100::NOT NULL:::City|country:varchar:20::NOT NULL:::Country|created:datetime:::NOT NULL:::Since);
         //    $fieldsCount    = count($fields);
@@ -342,11 +342,11 @@ switch ($op) {
                 echo $customerObject->getHtmlErrors();
             }
         } else {
-            xoops_confirm(array(
+            xoops_confirm([
                               'ok' => 1,
                               'id' => Request::getString('id', ''),
                               'op' => 'delete'
-                          ), Request::getCmd('REQUEST_URI', '', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $customerObject->getVar('last')));
+                          ], Request::getCmd('REQUEST_URI', '', 'SERVER'), sprintf(AM_EQUIPMENT_FORMSUREDEL, $customerObject->getVar('last')));
         }
         break;
 

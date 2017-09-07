@@ -50,7 +50,7 @@ function equipment_search($queryarray, $andor, $limit, $offset, $userid)
 
     $sql    .= ' ORDER BY id DESC';
     $result = $GLOBALS['xoopsDB']->query($sql, $limit, $offset);
-    $ret    = array();
+    $ret    = [];
     $i      = 0;
     while (false !== ($myrow = $GLOBALS['xoopsDB']->fetchArray($result))) {
         $ret[$i]['image'] = 'assets/images/icons/32/_search.png';
