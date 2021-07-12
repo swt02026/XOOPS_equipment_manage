@@ -1,41 +1,46 @@
 <?php
-    include '../../mainfile.php';
-    $xoopsOption['template_main'] = "equipment_borrow.html";
-    include XOOPS_ROOT_PATH."/header.php";
 
-    function getQueryDataToJSON($sql){
-        global $xoopsDB;
-        $query = $xoopsDB->query($sql);
-        $query_rows = [];
+/*
+ You may not change or alter any portion of this comment or credits
+ of supporting developers from this source code or any supporting source code
+ which is considered copyrighted (c) material of the original comment or credit authors.
 
-        if($xoopsDB->getRowsNum($query) > 0){
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*/
+/**
+ * Module: Equipment
+ *
+ * @category        Module
+ * @package         equipment
+ * @author          swt02026 (https://github.com/swt02026/)
+ * @author          XOOPS Development Team <http://xoops.org>
+ * @copyright       {@link https://xoops.org/ XOOPS Project}
+ * @license         GPL 2.0 or later
+ * @link            https://xoops.org/
+ * @since           1.0.0
+ */
 
-            while ($row = $xoopsDB->fetchArray($query)){
-
-                $query_rows[] = $row;
-            }
-        }
-
-       return json_encode($query_rows);
-    }
-
-    $sql = sprintf("SELECT `name`, `owner`, `amount`, `id`, `image_b64`  FROM `%s`",
-        $xoopsDB->prefix('equipment_desc'));
-
-    $json_data = getQueryDataToJSON($sql);
-
-    $xoopsTpl->assign('json_data', $json_data);
-
-    $borrow_sql = sprintf('SELECT `%1$s`.`amount`, `name`, `owner`  
-                    FROM `%1$s` 
-                    INNER JOIN `%2$s` ON `%1$s`.`id`=`%2$s`.`id` WHERE `%1$s`.`borrower`="%3$s"',
-                $xoopsDB->prefix('equipment_borrow'), $xoopsDB->prefix('equipment_desc'), $xoopsUser->uname());
-
-    $borrow_data = getQueryDataToJSON($borrow_sql);
-
-    $xoopsTpl->assign('borrow_data', $borrow_data);
-
-
-
-    include_once XOOPS_ROOT_PATH."/footer.php";
-?>
+$GLOBALS['xoopsOption']['template_main'] = 'equipment_index.tpl';
+require_once __DIR__ . '/header.php';
+require_once XOOPS_ROOT_PATH . '/header.php';
+require_once __DIR__ . '/include/config.php';
+// Define Stylesheet
+$xoTheme->addStylesheet($stylesheet);
+// keywords
+EquipmentUtility::meta_keywords(xoops_getModuleOption('keywords', $moduleDirName));
+// description
+EquipmentUtility::meta_description(MD_EQUIPMENT_DESC);
+//
+$GLOBALS['xoopsTpl']->assign('xoops_mpageurl', MD_EQUIPMENT_URL . '/index.php');
+$GLOBALS['xoopsTpl']->assign('equipment_url', MD_EQUIPMENT_URL);
+$GLOBALS['xoopsTpl']->assign('adv', xoops_getModuleOption('advertise', $moduleDirName));
+//
+$GLOBALS['xoopsTpl']->assign('bookmarks', xoops_getModuleOption('bookmarks', $moduleDirName));
+$GLOBALS['xoopsTpl']->assign('fbcomments', xoops_getModuleOption('fbcomments', $moduleDirName));
+//
+$GLOBALS['xoopsTpl']->assign('admin', MD_EQUIPMENT_ADMIN);
+$GLOBALS['xoopsTpl']->assign('copyright', $copyright);
+//
+require_once XOOPS_ROOT_PATH . '/footer.php';

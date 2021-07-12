@@ -1,0 +1,42 @@
+---
+# customer
+-
+ id: 1
+ first: 'Fulton'
+ last: 'Flowers'
+ address: '668-799 Enim. St.'
+ city: 'Salinas'
+ country: 'Spain'
+ created: '2017-07-20 00:00:00'
+-
+ id: 2
+ first: 'Berk'
+ last: 'Olsen'
+ address: '561-2820 Quis Street'
+ city: 'Hampton'
+ country: 'Haiti'
+ created: '2017-07-20 00:00:00'
+-
+ id: 3
+ first: 'Quinn'
+ last: 'Rowe'
+ address: '3990 Egestas Road'
+ city: 'Cape Coral'
+ country: 'Barbados'
+ created: '2017-07-20 00:00:00'
+-
+ id: 4
+ first: 'Palmer'
+ last: 'Hicks'
+ address: '649-9830 Non, Street'
+ city: 'Ocean City'
+ country: 'Ireland'
+ created: '2017-07-20 00:00:00'
+-
+ id: 5
+ first: 'Karyn'
+ last: 'Hebert'
+ address: 'Ap #384-2943 Faucibus Rd.'
+ city: 'Los Alamitos'
+ country: 'United States'
+ created: '2017-07-20 00:00:00'
